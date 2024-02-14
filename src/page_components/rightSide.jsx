@@ -202,6 +202,8 @@ export default function RightSide(){
 <div className="hidden lg:block">
 
     <div className="mt-2 ml-1 border-orange-900 border-l-2  border-t-4 p-2 rounded-lg text-wrap bg-orange-50">
+    <iframe src="https://lottie.host/embed/82a20b2f-b572-4037-b6b0-28d13e30d6bd/QYnGZBnncX.json"></iframe>
+
         <h1 className="font-semibold text-lg capitalize font-serif">
         Unlock 26,754 additional remote jobs with Remotive Accelerator
         </h1>
@@ -209,9 +211,10 @@ export default function RightSide(){
         Accelerator
 Incl. Advanced search filters and email notifications
         </p>
-        <button className="mx-auto block bg-yellow-400 p-2 m-2 rounded">Get Access</button>
+        <button className="mx-auto block hover:bg-transparent border-r-2 hover:text-orange-950 hover:font-semibold hover:border-orange-950 hover:border bg-orange-950 text-white p-2 m-2 rounded">Get Access</button>
     </div>
     </div>
+
     
 <div className="fixed bottom-3 left-4">
 

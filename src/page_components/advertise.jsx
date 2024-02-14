@@ -4,6 +4,7 @@ import { FaStripe } from "react-icons/fa";
 import { SiYoutubetv } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { IconContext } from "react-icons";
+import { Link} from "react-router-dom"
 
 export default function Advertisements(){
 
@@ -23,7 +24,9 @@ export default function Advertisements(){
             </a>
             </div>
             <div className="md:flex md:items-center  p-3 capitalize my-2 border border-r-2 rounded-lg">
-                <p>trusted by leading companies who<a className="text-orange-500 cursor-pointer underline m-1"> hire on remotive.</a></p>
+                <p>trusted by leading companies who
+                <Link to="/landing" className="text-orange-500 cursor-pointer underline m-1"> hire on remotive.</Link>
+                </p>
                 <div className="flex flex-grow md:mx-6 justify-between mt-1">
                 <IconContext.Provider value={{color:"gray",size: "2.7rem"}}>
                 <FaShopify />

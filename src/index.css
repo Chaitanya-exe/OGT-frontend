@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap'); 
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button{
+    @apply cursor-pointer  bg-orange-400 px-5 py-3 my-2 capitalize rounded-lg hover:bg-slate-900 hover:text-white hover:font-semibold;
+}

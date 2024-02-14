@@ -1,13 +1,17 @@
-import React from "react";
+import React,{useState} from "react";
 
 
 export default function Header() {
+    const [isMenu,setIsMenu] = useState(false)
+    const toggleMenu=()=>{
+      setIsMenu(!isMenu)
+    }
   return (
     <>
-      <header class="text-gray-600">
-        <div className="fixed bg-sky-50 right-0 left-0 top-0">
+      <header class="text-black">
+        <div className="fixed z-10 bg-gradient-to-r right-0 left-0 top-0">
           <div class=" flex p-5 flex-row items-center justify-between relative">
-            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <a class="flex title-font font-medium items-center mb-4 md:mb-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -23,7 +27,7 @@ export default function Header() {
               <span class="ml-3 text-xl font-serif">Clone remotive</span>
             </a>
             <nav class="md:ml-auto  items-center  text-base hidden md:flex">
-              <a class="mr-5 inline-flex hover:text-gray-900 group/first ">
+              <a class="mr-5 inline-flex text-gray-900 group/first ">
                 Find Remote Jobs
                 {/* <i class="fa-solid fa-angle-down"></i> */}
                 <span className="p-2">
@@ -49,7 +53,7 @@ export default function Header() {
 
 
 
-                <div className="shadow-md hidden group-hover/second:block text-orange-950 absolute z-10 bg-sky-200 capitalize lg:left-3/4 top-14 rounded-sm p-2">
+                <div className="shadow-md hidden transition-all duration-300 ease-in-out group-hover/second:block text-orange-950 absolute z-10 bg-sky-200 capitalize lg:left-3/4 top-14 rounded-sm p-2">
                   <ul className=" *:p-1">
                     <li className="hover:text-orange-800">Publilc api </li>
                     <li className="hover:text-orange-800">
@@ -90,7 +94,7 @@ export default function Header() {
                 </svg>
               </button>
             </div>
-            <div>
+            <button className="relative group rounded bg-slate-200 text-slate-900 "   onClick={()=> toggleMenu()} >
               <svg
                 className="md:hidden float-right m-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -107,13 +111,29 @@ export default function Header() {
                 <line x1="3" y1="6" x2="21" y2="6"></line>
                 <line x1="3" y1="18" x2="21" y2="18"></line>
               </svg>
-            </div>
+
+              {
+                isMenu && (
+
+<div className="absolute rounded right-8 top-10 bg-slate-200 p-2 group-focus:block hidden">
+  <ul className= "*:text-start *:p-1 *:capitalize w-24 text-slate-800">
+  <li className="hover:text-cyan-950 hover:translate-x-2"><a>home</a></li>
+  <li className="hover:text-cyan-950 hover:translate-x-2"><a>podcast</a></li>
+  <li className="hover:text-cyan-950 hover:translate-x-2"><a>blog</a></li>
+  <li className="hover:text-cyan-950 hover:translate-x-2"><a>constact us</a></li>
+
+  
+
+  </ul>
+</div>
+)}
+            </button>
           </div>
         </div>
 
-        <div className="flex mt-20 mb-10 py-8 text-wrap flex-col bg-gradient-to-l from-red-200 via-indig via-orange-200 to-purple-100">
-          <div className="text-center md:mx-16 mx-2">
-            <h1 className="font-bold text-4xl font-[]">
+        <div className="flex mt-20 mb-10 py-8 text-wrap flex-col ">
+          <div className="text-center my-14 md:mx-16 mx-2">
+            <h1 className="font-bold text-4xl ">
               Find your dream remote job without the hassle
             </h1>
             <p className="text-center mt-2">
@@ -126,7 +146,7 @@ export default function Header() {
             </p>
           </div>
           <div className="mt-4 mb-11 sm:mx-4 md:ml-40 md:mr-10 lg:mr-72 lg:ml-96">
-            <ul className="*:rounded-full *:border *:bg-sky-50 *:capitalize *:text-orange-950 *:m-1 *:px-2 *:py-0.5 dark:text-sky-300 dark:*:border-sky-500/15 dark:*:bg-sky-500/10 *:inline-block">
+            <ul className="*:rounded-full *:border *:bg-sky-950  *:capitalize *:text-orange-950 *:m-1 *:px-2 *:py-0.5 dark:text-sky-300 dark:*:border-sky-500/15 dark:*:bg-sky-500/10 *:inline-block">
               <li>Software Development</li>
               <li>Writing</li>
               <li>Web Development</li>
