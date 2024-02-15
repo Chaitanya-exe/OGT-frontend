@@ -10,8 +10,9 @@ import Footer from './footer'
 const LandingPage = () => {
   return (
     <>
+    {/* bg-gradient-to-r from-red-500 to-blue-500 */}
 
-       <div className=' bg-gradient-to-br from-indigo-100 via-orange-200 via-orange-20 to-pink-200 '>
+       <div className='bg-gradient-to-r  from-indigo-200 to-pink-100 via-blue-100 '>
    
   
         <Header/>

@@ -122,7 +122,7 @@ const Footer = () => {
       </div>
     </div>
     <div>
-<FaArrowUpLong className='opacity-55 text-slate-200 hover:border border-y-orange-200 shadow-sm shadow-slate-400 border-x-gray-200 hover:opacity-100 m-3 size-10 fixed right-4 bottom-2 z-10 p-2 rounded-full hover:delay-150' />
+<FaArrowUpLong className='opacity-65 text-orange-950 hover:border border-y-blue-300 shadow-md shadow-slate-500 border-x-indigo-300 hover:opacity-100 m-3 size-10 fixed right-4 bottom-2 z-10 p-2 rounded-full hover:delay-150' />
     </div>
     </>
   )

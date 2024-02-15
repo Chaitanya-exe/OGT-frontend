@@ -4,6 +4,8 @@ import HomePage from "./page_components/HomePage";
 import LandingPage from "./landing_components/LandingPage";
 import LogIn from "./logIn/LogIn";
 import Reset from "./logIn/Reset";
+import Head from "./PostJob/Head";
+import AboutJob from "./PostJob/AboutJob";
 const App = () => {
   return (
     <>
@@ -12,7 +14,9 @@ const App = () => {
         <Route path="/landing" element={<LandingPage />} />
         <Route path="/logIn" element={<LogIn />} />
         <Route path="/reset" element={<Reset />} />
-      </Routes>
+      </Routes> 
+      <Head />
+      <AboutJob />
     </>
   );
 };

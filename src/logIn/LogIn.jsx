@@ -13,7 +13,7 @@ const LogIn = () => {
     <>
       <Nav className="" />
       <div className=" mx-auto w-fit md:w-2/6 shadow rounded-2xl overflow-hidden my-32 text-center text-slate-700  ">
-        <svg
+        {/* <svg
           className=""
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 390"
@@ -23,7 +23,7 @@ const LogIn = () => {
             fill-opacity="1"
             d="M0,224L48,202.7C96,181,192,139,288,133.3C384,128,480,160,576,149.3C672,139,768,85,864,101.3C960,117,1056,203,1152,224C1248,245,1344,203,1392,181.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
           ></path>
-        </svg>
+        </svg> */}
         <div className="px-9 font-light tracking-tight">
           <h1 className="text-4xl tracking-wider my-4 text-orange-500 font-riot capitalize ">
             ogt accelerator account
@@ -68,6 +68,9 @@ const LogIn = () => {
             >
               Email address
             </label>
+ 
+ 
+
           </div>
           <div className="relative mt-8">
             <input
