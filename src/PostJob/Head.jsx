@@ -4,7 +4,7 @@ const Head = () => {
   return (
     <>
     <nav >
-    <div className='h-16 shadow-md shadow-slate-300 bg-orange-100'>
+    <div className='h-16 z-10 fixed top-0 right-0 left-0 shadow shadow-gray-300 bg-orange-100'>
     <div className='flex mx-5 p-4'>
         <div className=''>logo</div>
         <div className='mx-auto '>
@@ -18,7 +18,7 @@ const Head = () => {
     </div>
 
     </div>
-    <div className='mx-4 p-7 mt-10 bg-orange-200 rounded-xl'>
+    <div className='mx-4 p-7 mt-28 bg-orange-200 rounded-xl'>
     <h1 className='text-4xl text-orange-950 font-riot py-4 '>
     Every remote job posted here will be 
     <span className='text-orange-500'> shared on Remotive's network</span>

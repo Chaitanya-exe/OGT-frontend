@@ -61,9 +61,9 @@ const Reset = () => {
         </div>
         <div className="my-16  text-center ">
           <p className="tracking-tight font-thin ">Are you a hiring manager?</p>
-          <a className="underline  cursor-pointer hover:text-gray-500 hover:no-underline">
+          <Link to={"/Form"} className="underline  cursor-pointer hover:text-gray-500 hover:no-underline">
             Post a job here
-          </a>
+          </Link>
         </div>
       </div>
 

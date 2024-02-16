@@ -105,9 +105,9 @@ const LogIn = () => {
             <p className="tracking-tight font-thin ">
               Are you a hiring manager?
             </p>
-            <a className="underline  cursor-pointer hover:text-gray-500 hover:no-underline">
+            <Link to={"/form"} className="underline  cursor-pointer hover:text-gray-500 hover:no-underline">
               Post a job here{" "}
-            </a>
+            </Link>
           </div>
         </form>
 

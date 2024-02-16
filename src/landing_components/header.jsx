@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import {Link} from "react-router-dom"
 
 
 export default function Header() {
@@ -65,7 +66,7 @@ export default function Header() {
               </a>
             </nav>
             <div className="md:block hidden *:bg-sky-100 ">
-              <button class="hover:ring-1 inline-flex items-center bg-gray-100 border-0 py-1 px-3 m-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+              <Link to="/LogIn" class="hover:ring-1 inline-flex items-center bg-gray-100 border-0 py-1 px-3 m-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
                 Log In
                 <svg
                   fill="none"
@@ -78,7 +79,7 @@ export default function Header() {
                 >
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
-              </button>
+              </Link>
               <button class="hover:ring-1  inline-flex items-center bg-gray-100 border-0 py-1 px-3 mr-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
                 For Employers
                 <svg
