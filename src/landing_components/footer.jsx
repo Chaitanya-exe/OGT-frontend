@@ -11,13 +11,22 @@ import { FaArrowUpLong } from "react-icons/fa6";
 
 
 const Footer = () => {
+  
+        const handleScrollToTop = () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+            duration: 1000,
+
+          });
+        }
   return (
     <>
 
     <div className=' text-slate-800 mt-8'>
       <div className='flex flex-col items-center space-y-4 md:flex-row md:items-baseline flex-wrap justify-between p-1 mx-6 py-8 '>
         <div>
-            <h1 className='text-orange-500 font-semibold uppercase'>Hiring remotely</h1>
+            <h1 className='text-blue-900 font-semibold uppercase'>Hiring remotely</h1>
             <ul className=' *:cursor-pointer *:text-sm font-thin flex-col flex py-1'>
                 <a>
                 Why Remotive?
@@ -34,7 +43,7 @@ const Footer = () => {
             </ul>
         </div>
         <div>
-            <h1 className='text-orange-500 font-semibold uppercase'>Hiring remotely</h1>
+            <h1 className='text-blue-900 font-semibold uppercase'>Hiring remotely</h1>
             <ul className='*:cursor-pointer *:text-sm font-thin flex-col flex py-1'>
                 <a>
                 Why Remotive?
@@ -51,7 +60,7 @@ const Footer = () => {
             </ul>
         </div>
         <div>
-            <h1 className='text-orange-500 font-semibold uppercase'>Hiring remotely</h1>
+            <h1 className='text-blue-900 font-semibold uppercase'>Hiring remotely</h1>
             <ul className='*:cursor-pointer *:text-sm font-thin flex-col flex py-1'>
                 <a>
                 Why Remotive?
@@ -68,7 +77,7 @@ const Footer = () => {
             </ul>
         </div>
         <div>
-            <h1 className='text-orange-500 font-semibold uppercase'>Hiring remotely</h1>
+            <h1 className='text-blue-900 font-semibold uppercase'>Hiring remotely</h1>
             <ul className='*:cursor-pointer *:text-sm font-thin flex-col flex py-1'>
                 <a>
                 Why Remotive?
@@ -94,26 +103,26 @@ const Footer = () => {
       </div>
       <div className= 'flex flex-shrink justify-center p-3 *:m-3'>
       <IconContext.Provider value={{size:"1.5rem"}}>
-      <a className='hover:text-sky-800 text-orange-950  cursor-pointer'>
+      <a className='hover:text-sky-800  text-slate-900 cursor-pointer'>
       <FaLinkedin  className='hover:size-7' />
       </a>
-      <a  className='hover:text-sky-800  text-orange-950 cursor-pointer'>
+      <a  className='hover:text-sky-800  text-slate-900 cursor-pointer'>
       <FaTwitter  className='hover:size-7' />
 
       </a>
-      <a  className='hover:text-sky-800  text-orange-950 cursor-pointer'>
+      <a  className='hover:text-sky-800  text-slate-900 cursor-pointer'>
       <FaInstagramSquare  className='hover:size-7' />
 
       </a>
-      <a  className='hover:text-sky-800  text-orange-950 cursor-pointer'>
+      <a  className='hover:text-sky-800   text-slate-900 cursor-pointer'>
       <FaFacebook  className='hover:size-7' />
 
       </a>
-      <a  className='hover:text-sky-800  text-orange-950  cursor-pointer'>
+      <a  className='hover:text-sky-800  text-slate-900  cursor-pointer'>
       <FaTelegramPlane className='hover:size-7' />
 
 </a>
-      <a  className='hover:text-sky-800  text-orange-950 cursor-pointer'>
+      <a  className='hover:text-sky-800   text-slate-900 cursor-pointer'>
       <IoMdMail  className='hover:size-7'/>
 
       </a>
@@ -121,8 +130,8 @@ const Footer = () => {
       </div>
       </div>
     </div>
-    <div>
-<FaArrowUpLong className='opacity-65 text-orange-950 hover:border border-y-blue-300 shadow-md shadow-slate-500 border-x-indigo-300 hover:opacity-100 m-3 size-10 fixed right-4 bottom-2 z-10 p-2 rounded-full hover:delay-150' />
+    <div  onClick={handleScrollToTop} >
+<FaArrowUpLong className='opacity-65 text-slate-900 hover:border border-y-blue-300 shadow-md shadow-slate-500 border-x-indigo-300 hover:opacity-100 m-3 size-10 fixed right-4 bottom-2 z-10 p-2 rounded-full hover:delay-150' />
     </div>
     </>
   )

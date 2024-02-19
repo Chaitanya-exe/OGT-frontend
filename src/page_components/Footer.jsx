@@ -10,7 +10,7 @@ import { IconContext } from 'react-icons';
 
 const Footer = () => {
   return (
-    <div className='bg-orange-100 mt-8'>
+    <div className='bg-sky-10 bg-gradient-to-br  from-indigo-200 to-pink-100 via-blue-100 mt-8'>
       <div className='flex justify-between p-1 mx-4 py-8 '>
         <div>
             <h1 className='text-orange-950 font-semibold uppercase'>Hiring remotely</h1>
@@ -86,7 +86,7 @@ const Footer = () => {
       <p className='m-1'>&copy; 2014-2024, made Remotely with</p>
        <FaHeart className='text-red-600' />
       </div>
-      <div className= ' bg-orange-300 flex justify-center p-3 *:m-3 text-orange-950'>
+      <div className= ' bg-blue-300 flex justify-center p-3 *:m-3 text-slate-900'>
       <IconContext.Provider value={{size:"1.5rem"}}>
       <a className='hover:text-white cursor-pointer'>
       <FaLinkedin />

@@ -8,14 +8,17 @@ import Head from './Head'
 
 const AboutJob = () => {
   const [showOptions,setShowOptions] = useState(false)
-  const Location=["Northern America","UK","Canada","Germqnay","America","France","Europe","USA","LATAM","Other:please specify"]
+  const [showInput,setShowInput] = useState(false)
+  const Location=["India","Northern America","UK","Canada","Germqnay","America","France","Europe","USA","LATAM","Other:please specify"]
 
 
-// useEffect(()=>{
-    
-//       setShowOptions(no)
-
-//   },[showOptions])
+const handleClick=(index)=>{
+  if(index==Location.length-1){
+    setShowInput(true)  }
+  else{
+    setShowInput(false)
+  }
+}
 
 
   return (
@@ -91,45 +94,23 @@ className='w-full border  text-slate-500  p-2 text-xs focus:outline-none focus:b
     <div className={showOptions?"block":"hidden"}>
     <div className='grid font-thin grid-cols-3 lg:grid-cols-4 gap-x-5 my-5'>
     {Location.map((place,index)=>(
-      <React.Fragment>
+    
 
-       <label  className={index=== Location.length-1 ?"flex peer " :"flex"} for={index}>
+       <label onChange={()=>handleClick(index)}  className={index=== Location.length-1 ?"flex peer " :"flex"} for={index}>
                 <input  className="mr-3"  type="checkbox"  id={index} name="location" />
  {place}
      </label>
-     {index===Location.length-1 && (
-     <input id='email' name='email' type='email' required autoComplete='off' placeholder='jiji'
-className='peer-target:block hidden w-full border text-slate-500 p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md' />
 
-     )}
-
-
-
-
-      </React.Fragment>  
-    )
-    )
-    }
+   ))}
     </div>
-     {/* <label className="flex" for="2">
-                <input  className="mr-3"  type="checkbox"  id="2"  name="location"  value="north america"/>
-America
-     </label>
-     <label className="flex " for="3">
-                <input  className="mr-3"  type="checkbox"  id="3"  name="location"  value="north america"/>
-UK
-     </label>
-     <label className="flex " for="4">
-                <input  className="mr-3"  type="checkbox"  id="4"  name="location"  value="north america"/>
-Canada
-     </label>
-     <label className="flex " for="5">
-                <input  className="mr-3"  type="checkbox"  id="5"  name="location"  value="north america"/>
-Germany
-     </label> */}
-
     </div>
   
+     {showInput && (
+     <input id={Location.length-1} name='other location' type='text' required placeholder='jiji'
+className='pe hidde w-full border text-slate-500 p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md' />
+
+     )
+     }
 
     </div>
     <div className='*:my-1'>

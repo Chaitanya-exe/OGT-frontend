@@ -15,7 +15,7 @@ const jobOffers=[
         company:"omni interactions",
         stream:"customer service",
         salary:"$14-$20/hour",
-        country:"us ",
+        country:"Worldwide",
         timeOfPost:"2wk ago"
 
     },
@@ -26,7 +26,7 @@ const jobOffers=[
         company:"omni interactions",
         stream:"customer service",
         salary:"$14-$20/hour",
-        country:"us ",
+        country:"USA",
         timeOfPost:"2wk ago"
 
     },
@@ -37,7 +37,7 @@ const jobOffers=[
         company:"omni interactions",
         stream:"customer service",
         salary:"$14-$20/hour",
-        country:"us ",
+        country:"Germany ",
         timeOfPost:"2wk ago"
 
     },

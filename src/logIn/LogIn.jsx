@@ -91,7 +91,7 @@ const LogIn = () => {
             </label>
           </div>
           <div>
-            <button className="bg-orange-950 text-white px-7 w-full rounded-lg py-2 mt-6 hover:bg-orange-100 font-semibold hover:border border-orange-950 hover:text-orange-950">
+            <button className="butto bg-orange-950 text-white px-7 w-full rounded-lg py-2 mt-6 hover:bg-orange-100 font-semibold hover:border border-orange-950 hover:text-orange-950">
               Log In
             </button>
             <Link

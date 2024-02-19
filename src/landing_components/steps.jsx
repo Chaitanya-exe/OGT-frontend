@@ -19,7 +19,7 @@ export default function Step(){
     <div className=' p-7 text-sky-950  '>
       <div className='mt-14 font-riot text-3xl  text-center'>
         <h1>No more hassle or guesswork in 
-        <span className='text-orange-500'> hiring great team</span> members remotely</h1>
+        <span className='text-blue-500'> hiring great team</span> members remotely</h1>
       </div>
       <div className='md:flex mt-10 *:bg-white *:m-2 *:rounded-3xl'>
         <div className='p-8 items-center flex flex-col'>
@@ -52,7 +52,7 @@ export default function Step(){
     <div className='group'>
         <div className=' text-center mt-16 items-center flex flex-col justify-center content-center'>
             <h1 className='font-riot tracking-wide text-3xl m-10 '>
-            <span className='text-orange-500'>Fish </span>where the fish are</h1>
+            <span className='text-blue-500'>Fish </span>where the fish are</h1>
             <div className='mx-20 opacity-50 group-hover:opacity-100 flex justify-center mb-5 w-ful group-hover: relative animated-div'>
 <div className='group-hover/img:opacity-85 absolute -inset-0.5  bg-gradient-to-bl rounded-md -skew-y-6 -skew-x-3 blur opacity-65 from-slate-200 to-green-400 '>
 

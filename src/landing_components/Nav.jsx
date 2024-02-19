@@ -8,8 +8,8 @@ const Nav = () => {
         }
   return (
     <>
-      <header class="text-black ">
-        <div className="fixed z-10  bg-gradient-to-br from-indigo-100 via-orange-200 to-pink-200 right-0 left-0 top-0">
+      <header class="text-slate-800 ">
+        <div className="fixed z-10 bg-gradient-to-r  from-indigo-200 to-pink-100 via-blue-100 right-0 left-0 top-0">
           <div class=" flex p-5 flex-row items-center justify-between relative">
             <a class="flex title-font font-medium items-center mb-4 md:mb-0">
               <svg
@@ -94,7 +94,7 @@ const Nav = () => {
                 </svg>
               </button>
             </div>
-            <button className="relative group rounded bg-slate-200 text-slate-900 "   onClick={()=> toggleMenu()} >
+            <button className="relative group rounded  text-slate-900 "   onClick={()=> toggleMenu()} >
               <svg
                 className="md:hidden float-right m-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -115,8 +115,8 @@ const Nav = () => {
               {
                 isMenu && (
 
-<div className="absolute rounded right-8 top-10 bg-slate-200 p-2 group-focus:block hidden">
-  <ul className= "*:text-start *:p-1 *:capitalize w-24 text-slate-800">
+<div className="absolute rounded bg-sky-800 right-8 top-10  p-2 group-focus:block hidden">
+  <ul className= "*:text-start *:p-1 *:capitalize w-24 text-white">
   <li className="hover:text-cyan-950 hover:translate-x-2"><a>home</a></li>
   <li className="hover:text-cyan-950 hover:translate-x-2"><a>podcast</a></li>
   <li className="hover:text-cyan-950 hover:translate-x-2"><a>blog</a></li>
