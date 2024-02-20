@@ -1,11 +1,24 @@
 import React,{useState,useEffect} from "react";
-import {Link} from "react-router-dom"
+// import {Link} from "react-router-dom"
+import LogIn from "../logIn/LogIn";
+import { IoMagnet } from "react-icons/io5";
+// import {Toast} from "flowbite-react"
 
 const JobLi=["Software Development","Web Development","Design","Network Engineer","Database Administrator","Systems Administrator","Data Scientist","Security Analyst","UX/UI Designer","Cloud Engineer","Blockchain Developer","Cybersecurity Engineer","Machine Learning Engineer","AI Engineer","Project Manager","Technical Support Engineer","Business Analyst","IT Manager"]
 
 export default function Header() {
     const [isMenu,setIsMenu] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
+
+  const handleLoginButtonClick = () => {
+    setIsLoginFormOpen(true);
+  };
+  
+  const handleCancel = () => {
+    setIsLoginFormOpen(false);
+  };
 
    useEffect(()=>{
     const handleScroll =()=>{
@@ -83,7 +96,7 @@ export default function Header() {
               </a>
             </nav>
             <div className="md:block hidden *:bg-sky-100 ">
-              <Link to="/LogIn" class="hover:ring-1 inline-flex items-center bg-gray-100 border-0 py-1 px-3 m-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+              <button onClick={handleLoginButtonClick} class="hover:ring-1 inline-flex items-center bg-gray-100 border-0 py-1 px-3 m-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
                 Log In
                 <svg
                   fill="none"
@@ -96,7 +109,15 @@ export default function Header() {
                 >
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
-              </Link>
+              </button>
+              {/* {isLoginFormOpen && (
+
+        <div className="fixed w-scree top-1/3 left-1/2 h-screen  flex items-center justify-cente bg-gray-900 bg-opacity-50">
+       
+
+        <LogIn />
+    
+        </div>)} */}
               <button class="hover:ring-1  inline-flex items-center bg-gray-100 border-0 py-1 px-3 mr-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
                 For Employers
                 <svg
@@ -172,6 +193,13 @@ export default function Header() {
             </ul>
           </div>
         </div>
+
+        {isLoginFormOpen && (
+          <div className="flex fixed top-0 left-0 w-full h-full items-center justify-center bg-indigo-200 bg-opacity-70 z-10">
+
+          <LogIn onCancel={handleCancel}/>
+          </div>
+        )}
       </header>
     </>
   );
