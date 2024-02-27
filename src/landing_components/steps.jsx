@@ -5,9 +5,29 @@ import { SiBookstack } from "react-icons/si";
 import { RiChatCheckFill } from "react-icons/ri";
 import exampleImage from './img/mockup.webp'
 import { IoLocation } from "react-icons/io5";
+import {motion} from "framer-motion"
 
-
-
+const ballVariants={
+  animationOne:{
+    y:[0,30],
+    x:[-20,20],
+    // scale:1.2,
+    transition:{
+      x:{
+        yoyo:Infinity,
+        duration:0.5
+      },
+      y:{
+        yoyo:Infinity,
+        duration:0.25,
+        ease:"easeOut"
+      }
+      // scale:{
+      //   yoyo:Infinity
+      // }
+    }
+  }
+}
 
 
 
@@ -53,7 +73,7 @@ export default function Step(){
         <div className=' text-center mt-16 items-center flex flex-col justify-center content-center'>
             <h1 className='font-riot tracking-wide text-3xl m-10 '>
             <span className='text-blue-500'>Fish </span>where the fish are</h1>
-            <div className='mx-20 opacity-50 group-hover:opacity-100 flex justify-center mb-5 w-ful group-hover: relative animated-div'>
+            <div className='mx-20 opacity-50 group-hover:opacity-100 flex justify-center mb-5 relative animated-div'>
 <div className='group-hover/img:opacity-85 absolute -inset-0.5  bg-gradient-to-bl rounded-md -skew-y-6 -skew-x-3 blur opacity-65 from-slate-200 to-green-400 '>
 
 </div>
@@ -86,7 +106,11 @@ export default function Step(){
             </div>
             </div>
             <p className='m-6 text-slate-800'>Broadcasted through Remotive network </p>
-        <span className='w-4 h-4 inline-block  animate-drop  mx-auto bg-orange-400 rounded-full '></span>
+        <motion.span
+        variants={ballVariants}
+        animate="animationOne"
+
+         className='w-4 h-4 animate-drp inline-block bg-orange-400 rounded-full '></motion.span>
         </div>
     </div>
     </>

@@ -12,7 +12,7 @@ const LandingPage = () => {
     <>
     {/* bg-gradient-to-r from-red-500 to-blue-500 */}
 
-       <div className='bg-gradient-to-r  from-indigo-200 to-pink-100 via-blue-100 '>
+       <div className='bg-gradient-to-l from-pink-300 via-orange-200 to-blue-200  '>
    
   
         <Header/>

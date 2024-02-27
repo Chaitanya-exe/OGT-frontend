@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        'riot':['Roboto Slab',"serif"]
+        'riot':['Roboto Slab',"serif"],
+        'Montserrat':['Montserrat','sans-serif']
       },
       boxShadow: {
         bottom: '0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)',

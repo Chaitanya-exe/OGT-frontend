@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import Head from './Head'
-// import Tippy from '@tippyjs/react'
-// import 'tippy.js/dist/tippy.css'; 
-// import "tippy.js/themes/material.css";
-// import "tippy.js/animations/perspective.css";
+
+const JobLi=["Software Development","Web Development","Design","Network Engineer","Database Administrator","Systems Administrator","Data Scientist","Security Analyst","UX/UI Designer","Cloud Engineer","Blockchain Developer","Cybersecurity Engineer","Machine Learning Engineer","AI Engineer","Project Manager","Technical Support Engineer","Business Analyst","IT Manager"]
+
 
 
 const AboutJob = () => {
@@ -23,47 +22,40 @@ const handleClick=(index)=>{
 
   return (
     <>
-    <job>
-    <Head/>
-    <form className='text-sm m-8 pt-5 *:my-3'>
+    <job >
+    <Head />
+    <form className='text-sm m-8 pt-5 *:my-3 text-slate-900'>
     <div className='*:my-1'>
 
         <h1 className='text-xl pb-4 font-bold font-rio'>Tell us about 
-         <span className='text-orange-500'> your Job</span></h1>
-         <h2 className='text-slate-800 font-semibold '>How to apply?*</h2>
+         <span className='text-blue-600'> your Job</span></h1>
+         <h2 className=' font-semibold '>How to apply?*</h2>
          <p className=' italic text-sm font-thin '>Enter the URL of your public job page. Alternatively, you can provide an email address (@). We'll redirect applicants directly to you there.
 </p>
-{/* <Tippy content={"please fill out this field"} trigger='click'   theme="material"
-          delay={300}
-          animation="perspective"> */}
 
 <input id='email' name='email' type='email' required autoComplete='off' placeholder='https://your-company.com/careers/your-job-title'
 className='w-full border text-slate-500 p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md' />
-          {/* </Tippy> */}
+     
     </div>
     <div className=' *:my-1'>
-    <h2 className='text-slate-800 font-semibold'>Job Title*</h2>
-    <input id='email' name='email' type='email' autoComplete='off' required placeholder='e.g. Lead developer,Project Manager'
+    <h2 className=' font-semibold'>Job Title*</h2>
+    <input id='job' name='job title' type='text' autoComplete='off' required placeholder='e.g. Lead developer,Project Manager'
 className='w-full border  text-slate-500  p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md' />
 
     </div>
     <div className=' *:my-1'>
-    <h2 className='text-slate-800 font-semibold'>Catergory*</h2>
-    <select name="cars" className='w-full border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md'>
-  <option value="volvo" selected>Software development</option>
-  <option value="saab">Marketing</option>
-  <option value="mercedes">Sales</option>
-  <option value="audi">Design</option>
-  <option value="volvo">Product</option>
-  <option value="saab">business</option>
-  <option value="mercedes">Sales</option>
-  <option value="audi">Design</option>
+    <h2 className=' font-semibold'>Catergory*</h2>
+    <select name="cars" className='w-full bg-white border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md'>
+    {JobLi.map((category)=>(
+  <option value="">{category}</option>
+
+    ))}
 </select>
 
     </div>
     <div className=' *:my-1'>
-    <h2 className='text-slate-800 font-semibold'>Employment Type*</h2>
-    <select name="cars" className='w-full border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md'>
+    <h2 className=' font-semibold'>Employment Type*</h2>
+    <select name="cars" className='w-full bg-white border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md'>
   <option value="volvo">Part-time</option>
   <option value="saab" selected>Full-time</option>
   <option value="mercedes">Freelance</option>
@@ -75,7 +67,7 @@ className='w-full border  text-slate-500  p-2 text-xs focus:outline-none focus:b
 
     </div>
     <div className=' *:my-1'>
-    <h2 className='text-slate-800 font-semibold text-sm'>Is there a Remote Location Requirement?</h2>
+    <h2 className='font-semibold text-sm'>Is there a Remote Location Requirement?</h2>
     <div className='flex relative justify-between font-semibold text-sm'>
 
   <label for="Worldwide" onClick={()=> setShowOptions(false)}>
@@ -107,20 +99,20 @@ className='w-full border  text-slate-500  p-2 text-xs focus:outline-none focus:b
   
      {showInput && (
      <input id={Location.length-1} name='other location' type='text' required placeholder='jiji'
-className='pe hidde w-full border text-slate-500 p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md' />
+className='pe hidde w-full border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md' />
 
      )
      }
 
     </div>
     <div className='*:my-1'>
-    <h2 className='text-slate-800 font-semibold text-sm'>Salary</h2>
+    <h2 className=' font-semibold text-sm'>Salary</h2>
     <input id='email' name='email' type='email' autoComplete='off' required placeholder='Best format is $USD per year,such as: "$50k - $60k'
-className='w-full border  text-slate-500  p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md' />
+className='w-full border  p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md' />
 <p className=' italic text-sm font-thin tracking-wide'><span className='text-slate-900 font-semibold '>Highly Recommended</span>: providing salary will give your job more visibility. It's mandatory in some US states and other countries. It's also needed for Google to list your job. Best format is $USD per year, such as: "$50k - $60k".</p>
     </div>
     <div className=' *:my-1'>
-    <h2 className='text-slate-800 font-semibold text-sm'>Job Description*</h2>
+    <h2 className='font-semibold text-sm'>Job Description*</h2>
     <p className=' italic text-sm font-thin tracking-wide'>Don’t worry if that’s not 100% perfect, you can
     <span className='text-slate-900 font-semibold'> always edit after posting</span> your job!</p>
     <p className=' italic text-sm font-thin tracking-wide'>

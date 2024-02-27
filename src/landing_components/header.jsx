@@ -1,10 +1,35 @@
 import React,{useState,useEffect} from "react";
-// import {Link} from "react-router-dom"
+import {Link} from "react-router-dom"
 import LogIn from "../logIn/LogIn";
 import { IoMagnet } from "react-icons/io5";
 // import {Toast} from "flowbite-react"
+import {motion} from "framer-motion"
 
 const JobLi=["Software Development","Web Development","Design","Network Engineer","Database Administrator","Systems Administrator","Data Scientist","Security Analyst","UX/UI Designer","Cloud Engineer","Blockchain Developer","Cybersecurity Engineer","Machine Learning Engineer","AI Engineer","Project Manager","Technical Support Engineer","Business Analyst","IT Manager"]
+const uiConatiner={
+  hidden:{
+    opacity:0,
+    scale:0
+  },
+  visible:{
+    opacity:1,
+    scale:1
+  },
+  transition:{
+    delayChildren:0.4,
+    staggerChildren:0.3,
+
+  }
+}
+const item={
+  hidden:{
+    x:30,opacity:0
+  },
+  visible:{
+    x:0,
+    opacity:1
+  }
+}
 
 export default function Header() {
     const [isMenu,setIsMenu] = useState(false)
@@ -40,7 +65,7 @@ export default function Header() {
   return (
     <>
       <header class="text-slate-800">
-        <div className={isScrolled ?"bg-blue-300 transition-all ease-linear fixed z-10   right-0 left-0 top-0": "bg-gradient-to-r transition-all ease-linear  fixed z-10   right-0 left-0 top-0"}>
+        <div className={isScrolled ?"bg-blue-400 transition-all ease-linear fixed z-10 right-0 left-0 top-0": "bg-gradient-to-l transition-all ease-linear  fixed z-10   right-0 left-0 top-0"}>
           <div class=" flex p-5 flex-row items-center justify-between relative">
             <a class="flex title-font font-medium items-center mb-4 md:mb-0">
               <svg
@@ -110,15 +135,7 @@ export default function Header() {
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
               </button>
-              {/* {isLoginFormOpen && (
-
-        <div className="fixed w-scree top-1/3 left-1/2 h-screen  flex items-center justify-cente bg-gray-900 bg-opacity-50">
-       
-
-        <LogIn />
-    
-        </div>)} */}
-              <button class="hover:ring-1  inline-flex items-center bg-gray-100 border-0 py-1 px-3 mr-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+              <Link to={"/landing"} class="hover:ring-1  inline-flex items-center bg-gray-100 border-0 py-1 px-3 mr-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
                 For Employers
                 <svg
                   fill="none"
@@ -131,7 +148,7 @@ export default function Header() {
                 >
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
-              </button>
+              </Link>
             </div>
             <button className="relative group rounded bg-sky-800 text-white "   onClick={()=> toggleMenu()} >
               <svg
@@ -155,15 +172,15 @@ export default function Header() {
                 isMenu && (
 
 <div className="absolute rounded right-8 top-10 *:text-slate-50 bg-sky-800 p-2 group-focus:block hidden">
-  <ul className= "*:text-start *:p-1 *:capitalize w-24 text-slate-800">
-  <li className="hover:text-sky-300 hover:translate-x-2"><a>home</a></li>
-  <li className="hover:text-sky-300 hover:translate-x-2"><a>podcast</a></li>
-  <li className="hover:text-sky-300 hover:translate-x-2"><a>blog</a></li>
-  <li className="hover:text-sky-300 hover:translate-x-2"><a>constact us</a></li>
+  <motion.ul variants={uiConatiner} initial="hidden" animate="visible" className= "*:text-start *:p-1 *:capitalize w-24 text-slate-800">
+  <motion.li whileHover={{x:4}} variants={item} className="hover:text-sky-300 "><a>home</a></motion.li>
+  <motion.li whileHover={{x:4}} variants={item} className="hover:text-sky-300 "><a>podcast</a></motion.li>
+  <motion.li whileHover={{x:4}} variants={item} className="hover:text-sky-300"><a>blog</a></motion.li>
+  <motion.li whileHover={{x:4}} variants={item} className="hover:text-sky-300"><a>constact us</a></motion.li>
 
   
 
-  </ul>
+  </motion.ul>
 </div>
 )}
             </button>
@@ -176,12 +193,12 @@ export default function Header() {
               Find your dream remote job without the hassle
             </h1>
             <p className="text-center mt-2">
-              Ogt is where top talents go to easily access active and fully
+              OGT is where top talents go to easily access active and fully
               remote job opportunities from vetted tech companies.
             </p>
             <p>
               Unlock 26,736 additional remote jobs with{" "}
-              <a className="underline">Ogt Accelerator</a>
+              <a className="underline">OGT Accelerator</a>
             </p>
           </div>
           <div className="mt-4 mb-11 sm:mx-4 md:ml-40 md:mr-10 lg:mr-72 lg:ml-96">
