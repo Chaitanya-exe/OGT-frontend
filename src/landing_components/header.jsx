@@ -212,7 +212,7 @@ export default function Header() {
         </div>
 
         {isLoginFormOpen && (
-          <div className="flex fixed top-0 left-0 w-full h-full items-center justify-center bg-indigo-200 bg-opacity-70 z-10">
+          <div className="flex fixed top-0 left-0 w-full h-full items-center justify-center bg-black bg-opacity-65 z-10">
 
           <LogIn onCancel={handleCancel}/>
           </div>

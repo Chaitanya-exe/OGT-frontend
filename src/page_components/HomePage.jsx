@@ -33,16 +33,27 @@ const HomePage = () => {
   };
   return (
    <>
-   <div className='bg-gradient-to-br  from-pink-400 via-orange-200 to-blue-300 '>
+   <motion.div 
+  //  initial={{opacity:0}}
+  //  animate={{opacity:1}}
+  //  exit={{opacity:0}}
+
+  initial={{width:0,
+  opacity:0}}
+   animate={{width:"100%",opacity:1}}
+   exit={{x:window.innerWidth,opacity:0, transition:{duration:0.1}}}
+       
+   
+    className='bg-gradient-to-br  from-pink-400 via-orange-200 to-blue-300 '>
 
     <Header/>
-   </div>
+   </motion.div>
    {signUp && (
     <motion.div
     variants={backdrop}
     initial="hidden"
     animate="visible"
-     className="flex fixed top-0 left-0 w-full h-full items-center justify-center bg-indigo-200 bg-opacity-70 z-10">
+     className="flex fixed top-0 left-0 w-full h-full items-center justify-center bg-black bg-opacity-65 z-10">
 <SignUp onCancel={handleCancel}/>
     </motion.div>
    )}

@@ -199,22 +199,22 @@ export default function RightSide(){
         <>
 <div className="flex ">
 
-<div className="hidden lg:block">
+{/* <div className="hidden lg:block">
 
     <div className="mt-2 ml-1 sticky top-24  border-blue-900 border-l-2  border-t-4 p-2 rounded-lg bg-indigo-50">
-    <iframe className="mx-auto size-48" src="https://lottie.host/embed/82a20b2f-b572-4037-b6b0-28d13e30d6bd/QYnGZBnncX.json"></iframe>
+    <iframe className="mx-auto size-48" src="https://lottie.host/embed/82a20b2f-b572-4037-b6b0-28d13e30d6bd/QYnGZBnncX.json"></iframe> */}
 
-        <h1 className="font-semibold text-lg capitalize font-serif">
+        {/* <h1 className="font-semibold text-lg capitalize font-serif">
         Unlock 26,754 additional remote jobs with Remotive Accelerator
         </h1>
         <p> Accelerator Incl. Advanced search filters and email notifications
         </p>
-        <button className="mx-auto block button">Get Access</button>
-    </div>
-    </div>
+        <button className="mx-auto block button">Get Access</button> */}
+    {/* </div> */}
+    {/* </div> */}
 
     
-<div className="fixed bottom-3 left-4">
+<div className="fixed bottom-3 left-4 z-10">
 
     <button className="relative ">
         <span className="hover:shadow-black hover:shadow-md inline-block h-9 w-10 bg-red-400 rounded-md">

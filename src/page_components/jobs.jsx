@@ -5,6 +5,15 @@ import { IconContext } from "react-icons";
 import { FcGlobe } from "react-icons/fc";
 import { FcMoneyTransfer } from "react-icons/fc";
 import {motion} from "framer-motion"
+
+const variant={
+  animate:{
+    rotate:"-45deg",
+    scale:1.4
+  }
+}
+
+
 export default function Jobs({ data }) {
   //           const chunkArray = (arr, chunkSize) => {
   //   const chunkedArray = [];
@@ -17,7 +26,7 @@ export default function Jobs({ data }) {
   // const chunkedData = chunkArray(data, Math.ceil(data.length / 3));
 
   return (
-    <div className="w-full mr-7 mt-2 ml-3">
+    <div className="w-full mt-2 mx-16">
       <Advertisements />
 
       {/* {chunkedData.map((data, groupIndex) => ( */}
@@ -28,8 +37,8 @@ export default function Jobs({ data }) {
             key={index}
             className={
               index < Math.ceil(data.length / 2)
-                ? "group-hover:h-24 ease-in-out group-hover:bg-opacity-70 items-center flex p-1 border my-1 rounded-lg bg-blue-100"
-                : "group-hover:h-24 ease-in-out group-hover:bg-opacity-70 items-center flex p-1 border my-1 rounded-lg bg-indigo-100"
+                ? "group-hover:h-24 ease-in-out group-hover:bg-opacity-70  items-center flex p-1 border my-1 rounded-lg bg-gradient-to-l from-blue-100 to-pink-100"
+                : "group-hover:h-24 ease-in-out group-hover:bg-opacity-70 items-center flex p-1 border my-1 rounded-lg bg-gradient-to-l from-purple-100 to-orange-100"
             }
           >
             <div className="w-16 h-16 overflow-hidden rounded-full">
@@ -39,7 +48,7 @@ export default function Jobs({ data }) {
               />
             </div>
             <div>
-              <div className="group-hover:text-lg mb-1 hover:opacity-60 flex *:font-semibold capitalize *:mx-2">
+              <div className="group-hover:text-lg mb-1 hover:opacity-60  flex *:font-semibold capitalize *:mx-2">
                 <h1 className="font-Montserrat">{job.title}</h1>
                 <h1 className=" list-disc">
                   <spa className="inline-block mx-1 h-2 w-2 bg-slate-800 rounded-full"></spa>
@@ -67,10 +76,11 @@ export default function Jobs({ data }) {
                 <button className="bg-sky-950 text-slate-50 hover:bg-white hover:border hover:text-blue-950 hover:border-slate-800">
                   Apply
                 </button>
-                <button className="flex group/btn text-nowrap items-center border border-slate-800 hover:opacity-55">
+                <motion.button variants={variant}  className="flex group/btn text-nowrap items-center border border-slate-800 hover:opacity-55">
                   See More
-                  <svg 
-                //   whileHover={{rotate:-45}}
+                  <motion.svg 
+                  variants={variant}
+                  whileHover="animate"
                   className="group-hover/btn:-rotate-45 font-extralight size-5 "
                     fill="none"
                     stroke="currentColor"
@@ -81,8 +91,8 @@ export default function Jobs({ data }) {
                     viewBox="0 0 24 24"
                   >
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </button>
+                  </motion.svg>
+                </motion.button>
               </div>
             </div>
           </div>

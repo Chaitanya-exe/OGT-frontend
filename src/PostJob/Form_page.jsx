@@ -16,7 +16,7 @@ const Form_page = () => {
     <AboutCompany/>
     <Contact/>
     <Billing/>
-    <PromotionPlan/>
+    {/* <PromotionPlan/> */}
     <Help/>
  </div>
 

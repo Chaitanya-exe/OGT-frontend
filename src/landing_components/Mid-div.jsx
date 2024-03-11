@@ -4,18 +4,39 @@ import { LiaCertificateSolid } from "react-icons/lia";
 import { GiMeditation } from "react-icons/gi";
 import { GiHighFive } from "react-icons/gi";
 import { BsEmojiHeartEyesFill } from "react-icons/bs";
+import {motion} from "framer-motion"
 
 
 
+const variants={
+  initial:
+  {
+    x:"-100%",
+    opacity:0
+
+  },
+  animate:{
+    x:0,
+    opacity:1,
+  transition:{
+    duration:2,
+    // delay:0.4,
+    type:"spring",
+    stiffness:100,
+    damping:25
+    // staggerChildren:0.2
+  }}
+}
 
 
 
 export default function Middiv() {
   return (
     <div className=' p-1 group/one  text-wrap '>
-    <div className=' m-4 p-2 md:w-1/2 *:opacity-90   *:ease-linear *:bg-cyan-50 *:-translate-x-full *:transition-all *:duration-1000 *:shadow *:rounded-lg *:group-hover/two:translate-x-0  *:group-hover/one:translate-x-0  *:p-3 *:m-4 *:text-slate-900'>
+    {/* <div className=' my-4 mx-16 p-2 md:w-1/ *:opacity-90   *:ease-linear *:bg-cyan-50 *:-translate-x-full *:transition-all *:duration-1000 *:shadow *:rounded-lg *:group-hover/two:translate-x-0  *:group-hover/one:translate-x-0  *:p-3 *:m-4 *:text-slate-900'> */}
+    <motion.div variants={variants} initial="initial" whileInView="animate" className=' my-4 mx-16 p-2 md:w-1/  *:duration-1000 *:ease-linear *:bg-cyan-50  *:shadow *:rounded-lg *:p-3 *:m-4 *:text-slate-900'>
 
-      <div  className='delay-100  group-hover/one:opacity-100  hover:delay-75  hover:bg-purple-100 hover:shadow-sm hover:shadow-purple-400'>
+      <motion.div variants={variants} className='delay-100  group-hover/one:opacity-100  hover:delay-75  hover:bg-purple-100 hover:shadow-sm hover:shadow-purple-400'>
         <h1 className=' capitalize tracking-wide text-lg pb-2 font-serif'>the only <span className='text-blue-700'>remote-focused,worldwide job board</span> for tech startups.</h1>
         <p className=' leading-tight'>When Stripe, Zapier or Shopify hire remotely, they turn to Remotive. We specialize in serving tech startups. Are we any good at it? We’ve been in business for nine years and won tons of awards
          <span className='inline-flex space-x-2 align-middle text-white mx-1 px-2'>
@@ -23,8 +44,8 @@ export default function Middiv() {
         <LiaCertificateSolid />
 
         </span></p>
-      </div>
-      <div  className=' delay-200  group-hover/one:opacity-100  hover:delay-75 hover:bg-purple-100 hover:shadow-sm hover:shadow-purple-400'>
+      </motion.div>
+      <motion.div variants={variants}  className=' delay-200  group-hover/one:opacity-100  hover:delay-75 hover:bg-purple-100 hover:shadow-sm hover:shadow-purple-400'>
 
         <h1 className=' capitalize tracking-wide text-lg pb-2 font-serif'>hire <span  className='text-blue-700'>top talent without the fuss.</span> Easily post jobs that convert.</h1>
         <p className='leading-tight'>When Stripe, Zapier or Shopify hire remotely, they turn to Remotive. We specialize in serving tech startups. Are we any good at it? We’ve been in business for nine years and won tons of awards 
@@ -33,10 +54,10 @@ export default function Middiv() {
         <GiMeditation className='text-green-500' />
 
         </span></p>
-      </div>
+      </motion.div>
     {/* </div> */}
     {/* <div className='group/two'> */}
-    <div  className=' delay-300  group-hover/one:opacity-100  hover:delay-75  hover:bg-purple-100 hover:shadow-sm hover:shadow-purple-400'>
+    <motion.div variants={variants}  className=' delay-300  group-hover/one:opacity-100  hover:delay-75  hover:bg-purple-100 hover:shadow-sm hover:shadow-purple-400'>
 
         <h1 className=' capitalize tracking-wide text-lg pb-2 font-serif'>Not just another faceless mega corporation or careless recruiter.</h1>
         <p className=' leading-tight'>When Stripe, Zapier or Shopify hire remotely, they turn to Remotive. We specialize in serving tech startups. Are we any good at it? We’ve been in business for nine years and won tons of awards
@@ -45,8 +66,8 @@ export default function Middiv() {
         <GiHighFive className='text-red-500' />
 
         </span></p>
-      </div>
-      <div  className='  delay-500  group-hover/one:opacity-100 hover:delay-75 hover:bg-purple-100 hover:shadow-sm hover:shadow-purple-400 '>
+      </motion.div>
+      <motion.div variants={variants}  className='  delay-500  group-hover/one:opacity-100 hover:delay-75 hover:bg-purple-100 hover:shadow-sm hover:shadow-purple-400 '>
 
         <h1 className=' capitalize tracking-wide text-lg pb-2 font-serif'>Plugged into the remote work community since 2014.</h1>
         <p className=' leading-tight'>When Stripe, Zapier or Shopify hire remotely, they turn to Remotive. We specialize in serving tech startups. Are we any good at it? We’ve been in business for nine years and won tons of awards
@@ -56,9 +77,9 @@ export default function Middiv() {
 
 
         </span></p>
-      </div>
+      </motion.div>
 
-      </div>
+      </motion.div>
       <div className='group/two flex justify-center mt-20 pb-6'>
         <div className='flex flex-col space-y-2'>
             <button className='button'>get qualfied candidates</button>

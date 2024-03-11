@@ -1,14 +1,20 @@
 import React, { useState } from 'react'
 import Head from './Head'
+import Help from './Help'
+
+// import { FcGlobe } from "react-icons/fc";
+// import { FcMoneyTransfer } from "react-icons/fc";
 
 const JobLi=["Software Development","Web Development","Design","Network Engineer","Database Administrator","Systems Administrator","Data Scientist","Security Analyst","UX/UI Designer","Cloud Engineer","Blockchain Developer","Cybersecurity Engineer","Machine Learning Engineer","AI Engineer","Project Manager","Technical Support Engineer","Business Analyst","IT Manager"]
+const Location=["India","Northern America","UK","Canada","Germqnay","America","France","Europe","USA","LATAM","Other:please specify"]
 
 
 
 const AboutJob = () => {
   const [showOptions,setShowOptions] = useState(false)
   const [showInput,setShowInput] = useState(false)
-  const Location=["India","Northern America","UK","Canada","Germqnay","America","France","Europe","USA","LATAM","Other:please specify"]
+  const [jobTitle,setJobTitle] = useState("")
+  const [selectedOption,setSelectedOption] = useState("")
 
 
 const handleClick=(index)=>{
@@ -17,6 +23,10 @@ const handleClick=(index)=>{
   else{
     setShowInput(false)
   }
+}
+
+const handleChange=(e)=>{
+  setJobTitle(e.target.value)
 }
 
 
@@ -33,19 +43,19 @@ const handleClick=(index)=>{
          <p className=' italic text-sm font-thin '>Enter the URL of your public job page. Alternatively, you can provide an email address (@). We'll redirect applicants directly to you there.
 </p>
 
-<input id='email' name='email' type='email' required autoComplete='off' placeholder='https://your-company.com/careers/your-job-title'
+<input   id='email' name='email' type='email' required autoComplete='off' placeholder='https://your-company.com/careers/your-job-title'
 className='w-full border text-slate-500 p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md' />
      
     </div>
     <div className=' *:my-1'>
     <h2 className=' font-semibold'>Job Title*</h2>
-    <input id='job' name='job title' type='text' autoComplete='off' required placeholder='e.g. Lead developer,Project Manager'
+    <input onChange={handleChange}  value={jobTitle} id='job' name='job title' type='text' autoComplete='off' required placeholder='e.g. Lead developer,Project Manager'
 className='w-full border  text-slate-500  p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md' />
 
     </div>
     <div className=' *:my-1'>
     <h2 className=' font-semibold'>Catergory*</h2>
-    <select name="cars" className='w-full bg-white border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md'>
+    <select value={selectedOption} onChange={(e)=> {selectedOption(e.target.value)}} name="cars" className='w-full bg-white border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md'>
     {JobLi.map((category)=>(
   <option value="">{category}</option>
 
@@ -127,6 +137,37 @@ className='w-full border  p-2 text-xs focus:outline-none focus:border-orange-500
     </form>
 
     </job>
+  <Help title={jobTitle} selectedOption={selectedOption}/>
+{/* 
+  <div className="fixed bottom-0 right-0 left-0  bg-gradient-to-bl  from-indigo-200 to-pink-100 via-blue-100 shadow-slate-900 shadow-2xl">
+        <div className="group p-2 text-sm flex justify-center  ">
+          <div className="group-hover:bg-opacity-70  border border-slate-800 items-center flex p-1 my-1 rounded-lg bg-blue-100">
+            <div className="w-14 h-14 bg-zinc-200 border-black border overflow-hidden rounded-full"></div>
+            <div>
+              <div className="mb-1 hover:opacity-60 flex *:font-semibold capitalize *:mx-2">
+                <h1>{jobTitle}title</h1>
+                <li className=" list-disc">Your Company{selectedOption}</li>
+              </div>
+              <div className="flex *:rounded-full mb-1 *:p-1 *:px-2 *:mx-2">
+                <h3 className="border  border-purple-500">
+                  Software Development
+                </h3>
+                <h3 className="bg-sky-800 text-slate-100 rounded-lg w-9">
+                  <FcMoneyTransfer className="size-4 ml-0.5 mt-1" />
+                </h3>
+                <h3 className="bg-blue-200 ">
+                  <FcGlobe className="inline-flex size-5 mr-2" />
+                  Worldwide
+                </h3>
+              </div>
+            </div>
+
+            <div className="ml-9 py-1 font-semibold text-xs px-3 text-red-950 rounded-full mr-2 bg-red-300">
+              Featured
+            </div>
+          </div>
+        </div>
+      </div> */}
       
     </>
   )
