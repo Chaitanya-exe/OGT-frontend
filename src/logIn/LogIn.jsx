@@ -29,13 +29,13 @@ const LogIn = ({ onCancel }) => {
         <div className="px-9 font-light tracking-tight">
           <div className="flex items-baseline space-x-4">
             <h1 className="text-4xl tracking-wider my-4 font-semibold font-riot capitalize ">
-              ogt accelerator account
+              ogt 
             </h1>
             <button className="" onClick={onCancel}>
               <MdCancel className="size-6" />
             </button>
           </div>
-          <p className="">Login to your account to unlock 10x more jobs!</p>
+          <p className="">Login to your account to post a project</p>
           <div className="mt-6">
             <p className=" flex justify-center items-center space-x-3">
               <PiHandWavingBold className="text-yellow-600 mr-2 size-4 " />
