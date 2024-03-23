@@ -38,9 +38,8 @@ const Nav = () => {
 
                 <div className="shadow-md hidden group-hover/first:block text-orange-950 absolute z-10 bg-sky-200  capitalize lg:right-1/4 top-14 rounded-sm p-2">
                   <ul className=" *:p-1">
-                    <li className="hover:text-orange-800">job search tips </li>
-                    <li className="hover:text-orange-800">webinar</li>
-                    <li className="hover:text-orange-800">about us </li>
+                    <li className="hover:text-orange-800">Project search tips</li>
+                    <li className="hover:text-orange-800">about us</li>
                   </ul>
                 </div>
               </a>
@@ -55,9 +54,8 @@ const Nav = () => {
 
                 <div className="shadow-md hidden transition-all duration-300 ease-in-out group-hover/second:block text-orange-950 absolute z-10 bg-sky-200 capitalize lg:left-3/4 top-14 rounded-sm p-2">
                   <ul className=" *:p-1">
-                    <li className="hover:text-orange-800">Publilc api </li>
                     <li className="hover:text-orange-800">
-                      search by skill & location
+                      search by skill
                     </li>
                     <li className="hover:text-orange-800">search by company</li>
                   </ul>
