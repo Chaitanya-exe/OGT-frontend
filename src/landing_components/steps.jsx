@@ -3,7 +3,7 @@ import { FaUserCheck } from "react-icons/fa";
 import { BiImport } from "react-icons/bi";
 import { SiBookstack } from "react-icons/si";
 import { RiChatCheckFill } from "react-icons/ri";
-import exampleImage from "./img/mockup.webp";
+// import exampleImage from "./img/mockup.webp";
 import { IoLocation } from "react-icons/io5";
 import { motion } from "framer-motion";
 

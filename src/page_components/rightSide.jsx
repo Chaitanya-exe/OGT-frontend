@@ -5,169 +5,7 @@ import { FaFaceFrown } from "react-icons/fa6";
 import { FaFaceGrin } from "react-icons/fa6";
 import { FaFaceGrinHearts } from "react-icons/fa6";
 import { GiCancel } from "react-icons/gi";
-
-const jobOffers = [
-  {
-    id: 1,
-    imgPath: "https://source.unsplash.com/random/flower",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "Worldwide",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 1,
-    imgPath: "https://source.unsplash.com/random/person",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "USA",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 1,
-    imgPath: "https://source.unsplash.com/random/shit",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "Germany ",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 1,
-    imgPath: "https://source.unsplash.com/random/house",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "us ",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 1,
-    imgPath: "https://source.unsplash.com/random/appartment",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "us ",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 1,
-    imgPath: "https://source.unsplash.com/random/company",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "us ",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 1,
-    imgPath: "https://source.unsplash.com/random/building",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "us ",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 1,
-    imgPath: "https://source.unsplash.com/random/scripture",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "us ",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 1,
-    imgPath: "https://source.unsplash.com/random/pillar",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "us ",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 1,
-    imgPath: "https://source.unsplash.com/random/heart",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "us ",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 2,
-    imgPath: "https://source.unsplash.com/random/profile",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "us ",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 3,
-    imgPath: "https://source.unsplash.com/random/avatar",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "us ",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 4,
-    imgPath: "https://source.unsplash.com/random/man",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "us ",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 5,
-    imgPath: "https://source.unsplash.com/random/woman",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "us ",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 6,
-    imgPath: "https://source.unsplash.com/random/boy",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "us ",
-    timeOfPost: "2wk ago",
-  },
-  {
-    id: 7,
-    imgPath: "https://source.unsplash.com/random/google",
-    title: "customer service rep us",
-    company: "omni interactions",
-    stream: "customer service",
-    salary: "$14-$20/hour",
-    country: "us ",
-    timeOfPost: "2wk ago",
-  },
-];
+import JobLayout from "./JobLayout";
 
 export default function RightSide() {
   return (
@@ -187,7 +25,7 @@ export default function RightSide() {
                 <h1 className="">How would you rate your experience?</h1>
                 <GiCancel />
               </div>
-              <div className=" pb-3 text-yellow-500 flex justify-around">
+              {/* <div className=" pb-3 text-yellow-500 flex justify-around">
                 <IconContext.Provider value={{ size: "2rem" }}>
                   <button className="hover:text-yellow-400">
                     <FaFaceAngry />
@@ -202,11 +40,10 @@ export default function RightSide() {
                     <FaFaceGrinHearts />
                   </button>
                 </IconContext.Provider>
-              </div>
+              </div> */}
             </div>
           </button>
         </div>
-        <Jobs data={jobOffers} />
       </div>
     </>
   );

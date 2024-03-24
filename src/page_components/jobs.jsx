@@ -1,10 +1,9 @@
-import React from "react";
-import Advertisements from "./advertise";
-import { FaLock } from "react-icons/fa";
-import { IconContext } from "react-icons";
+import React, { useContext } from "react";
 import { FcGlobe } from "react-icons/fc";
 import { FcMoneyTransfer } from "react-icons/fc";
 import { motion } from "framer-motion";
+import {Link} from "react-router-dom"
+import { GlobalContext } from "../Context";
 
 const variant = {
   animate: {
@@ -12,24 +11,12 @@ const variant = {
     scale: 1.4,
   },
 };
-
-export default function Jobs({ data }) {
-  //           const chunkArray = (arr, chunkSize) => {
-  //   const chunkedArray = [];
-  //   for (let i = 0; i < arr.length; i += chunkSize) {
-  //     chunkedArray.push(arr.slice(i, i + chunkSize));
-  //   }
-  //   return chunkedArray;
-  // };
-  // // Chunk the data array into groups of approximately 1/3 elements
-  // const chunkedData = chunkArray(data, Math.ceil(data.length / 3));
-
+ 
+export default function Jobs() {
+   const {data} = useContext(GlobalContext)
+  
   return (
-    <div className="w-full mt-2 mx-16">
-      <Advertisements />
-
-      {/* {chunkedData.map((data, groupIndex) => ( */}
-      {/* <React.Fragment key={groupIndex}> */}
+    <div >
       {data.map((job, index) => (
         <div className="group text-sm ">
           <div
@@ -72,9 +59,9 @@ export default function Jobs({ data }) {
             <div className="flex space-x-8 items-center ml-auto mr-2">
               <h1 className="mr-3">{job.timeOfPost}</h1>
               <div className="group-hover:flex space-x-6 hidden *:rounded-xl *:p-2 *:px-3 *:mx-2">
-                <button className="bg-sky-950 text-slate-50 hover:bg-white hover:border hover:text-blue-950 hover:border-slate-800">
+                <Link to="/project" className="bg-sky-950 text-slate-50 hover:bg-white hover:border hover:text-blue-950 hover:border-slate-800">
                   Apply
-                </button>
+                </Link>
                 <motion.button
                   variants={variant}
                   className="flex group/btn text-nowrap items-center border border-slate-800 hover:opacity-55"
@@ -100,27 +87,6 @@ export default function Jobs({ data }) {
           </div>
         </div>
       ))}
-      {/* {(groupIndex + 1) % Math.ceil(chunkedData.length / 3) === 0 && (
-            <div className="flex items-center p-2 border my-1 rounded-lg bg-orange-950 ">
-
-            <IconContext.Provider value={{size:"1.5rem", color:"#ffcc80"}}>
-            <FaLock />
-
-            </IconContext.Provider>
-            <div className="text-orange-200 font-semibold flex flex-grow justify-between items-center p-3 capitalize">
-            <p>
-               unlock 1023,32 additional remote jobs,advanced search & email notifictaoins 
-            </p>
-            <button className="bg-orange-200 text-orange-950 rounded-lg p-2">Get Access</button>
-
-            </div>
-            </div>
-
-
-        )}
-
-        </React.Fragment> 
-            ))} */}
     </div>
   );
 }

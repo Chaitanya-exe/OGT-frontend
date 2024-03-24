@@ -5,6 +5,7 @@ import SignUp from "../logIn/SignUp";
 import { motion } from "framer-motion";
 import Header from "./header";
 import { GlobalContext } from "../Context";
+import JobLayout from "./JobLayout";
 
 const backdrop = {
   visible: { opacity: 1 },
@@ -45,11 +46,11 @@ const HomePage = () => {
           opacity: 0,
           transition: { duration: 0.1 },
         }}
-        className="bg-gradient-to-br font-fontBody  from-pink-400 via-orange-200 to-blue-300 "
+        className="bg-gradient-to-br overflow-hidden font-fontBody  from-pink-400 via-orange-200 to-blue-300 "
       >
         <Header />
       </motion.div>
-      {signUp && (
+      {/* {signUp && (
         <motion.div
           variants={backdrop}
           initial="hidden"
@@ -58,8 +59,12 @@ const HomePage = () => {
         >
           <SignUp onCancel={handleCancel} />
         </motion.div>
-      )}
+      )} */}
+      <div className="mx-16">
       <RightSide />
+      <JobLayout/> 
+
+      </div>
       <Footer />
     </>
   );
