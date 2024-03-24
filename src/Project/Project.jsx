@@ -12,8 +12,6 @@ const Project = () => {
     <div>
       <Nav />
       <div className="mt-20 ml-7 space-y-4">
-        {/* <Links />
-        <Heading /> */}
         <Display />
       </div>
       <Footer />

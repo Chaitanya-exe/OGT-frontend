@@ -100,7 +100,7 @@ const Expect = () => {
       </div>
       <div className="space-y-3 ">
         <h2 className="font-semibold text-lg">About the company</h2>
-        <div className="space-y-2 bg-red-200 p-4 rounded-2xl">
+        <div className="space-y-2 bg-pink-100 shadow p-4 rounded-2xl">
           <div className="flex items-center space-x-3 p-2">
             <div className="w-16 h-16 overflow-hidden rounded-full">
               <img
