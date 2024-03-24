@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaQuestionCircle } from "react-icons/fa";
 import { FaShopify } from "react-icons/fa6";
 import { FaStripe } from "react-icons/fa";
@@ -8,12 +8,14 @@ import { IconContext } from "react-icons";
 import { FcGlobe } from "react-icons/fc";
 import { FcMoneyTransfer } from "react-icons/fc";
 import Form_right from "./Form_right";
+import { GlobalContext } from "../Context";
 
-const Help = ({title,selectedOption}) => {
+const Help = () => {
   //   const [selectedOption, setSelectedOption] = useState(null);
   //   const handleRadioAmount=(event) =>{
   //     setSelectedOption(event.target.value)
   //   }
+  const {jobTitle,ComapanyName,selectedOption} = useContext(GlobalContext)
   return (
     <>
       {/* //      <div className='bg-blue-100 fixed right-0 top-0 h-screen mt-16 w-1/5 '>
@@ -191,12 +193,12 @@ const Help = ({title,selectedOption}) => {
             <div className="w-14 h-14 bg-zinc-200 border-black border overflow-hidden rounded-full"></div>
             <div>
               <div className="mb-1 hover:opacity-60 flex *:font-semibold capitalize *:mx-2">
-                <h1>{title}title</h1>
-                <li className=" list-disc">Your Company{selectedOption}</li>
+                <h1>{jobTitle === "" ? "Your Job" : jobTitle }</h1>
+                <li className=" list-disc">{ComapanyName === "" ? "Your Company" : ComapanyName }</li>
               </div>
               <div className="flex *:rounded-full mb-1 *:p-1 *:px-2 *:mx-2">
                 <h3 className="border  border-purple-500">
-                  Software Development
+                  Software Development{selectedOption}
                 </h3>
                 <h3 className="bg-sky-800 text-slate-100 rounded-lg w-9">
                   <FcMoneyTransfer className="size-4 ml-0.5 mt-1" />

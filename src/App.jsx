@@ -14,8 +14,8 @@ const App = () => {
     <>
     <AnimatePresence >
        <Routes >
-        <Route exact path="/" element={<HomePage />} />
-        <Route path="/landing" element={<LandingPage />} />
+        <Route exact path="/Home" element={<HomePage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/logIn" element={<LogIn />} />
         <Route path="/reset" element={<Reset />} />
         <Route path="/form" element={<Form_page/>}/>

@@ -8,35 +8,21 @@ import { IoSparkles } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 
 const Reset = () => {
-  const navigation = useNavigate()
+  const navigation = useNavigate();
 
-  const handleConfirm=()=>{
-    navigation(-1)
-  }
+  const handleConfirm = () => {
+    navigation(-1);
+  };
   return (
     <>
       <Nav />
 
-        <div className=" mx-auto w-fit bg-blue-300 z-50 shadow rounded-2xl overflow-hidden my-28 text-center text-slate-700  ">
-        {/* <svg
-          className=""
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 390"
-        >
-          <path
-            fill="#ffccbc"
-            fill-opacity="1"
-            d="M0,224L48,202.7C96,181,192,139,288,133.3C384,128,480,160,576,149.3C672,139,768,85,864,101.3C960,117,1056,203,1152,224C1248,245,1344,203,1392,181.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-          ></path>
-        </svg> */}
+      <div className=" mx-auto w-fit bg-blue-300 z-50 shadow rounded-2xl overflow-hidden my-28 text-center text-slate-700  ">
         <div className="px-9 font-light tracking-tight">
           <div className="flex items-baseline space-x-4">
             <h1 className="text-4xl tracking-wider my-4 font-semibold font-riot capitalize ">
               ogt accelerator account
             </h1>
-            {/* <button className="" onClick={onCancel}>
-              <MdCancel className="size-6" />
-            </button> */}
           </div>
           <p className="">Login to your account to unlock 10x more jobs!</p>
           <div className="mt-6">
@@ -61,7 +47,6 @@ const Reset = () => {
           </div>
         </div>
 
-
         <div className="px-9 mt-10 flex-col flex text-start">
           <label className="text-orange-950" for="reset">
             Your Email
@@ -75,16 +60,19 @@ const Reset = () => {
           />
         </div>
         <div className="px-9 flex justify-between items-baseline">
-          <button onClick={handleConfirm} className="bg-orange-950 text-white px-7  rounded-lg py-2 mt-6 hover:bg-orange-100 font-semibold hover:border border-orange-950 hover:text-orange-950">
+          <button
+            onClick={handleConfirm}
+            className="bg-orange-950 text-white px-7  rounded-lg py-2 mt-6 hover:bg-orange-100 font-semibold hover:border border-orange-950 hover:text-orange-950"
+          >
             Confirm
           </button>
-          {/* <Link className="text-sm font-thin" to="/logIn">
-            back to Login
-          </Link> */}
         </div>
         <div className="my-12  text-center ">
           <p className="tracking-tight font-thin ">Are you a hiring manager?</p>
-          <Link to={"/Form"} className="underline  cursor-pointer hover:text-gray-500 hover:no-underline">
+          <Link
+            to={"/Form"}
+            className="underline  cursor-pointer hover:text-gray-500 hover:no-underline"
+          >
             Post a job here
           </Link>
         </div>

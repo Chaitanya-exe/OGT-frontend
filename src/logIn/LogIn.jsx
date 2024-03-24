@@ -1,35 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { PiHandWavingBold } from "react-icons/pi";
 import { GrPersonalComputer } from "react-icons/gr";
 import { LuAlertTriangle } from "react-icons/lu";
 import { IoSparkles } from "react-icons/io5";
 import { MdCancel } from "react-icons/md";
-
-// import Nav from "../landing_components/Nav";
-// import Footer from "../page_components/Footer";
-
 const LogIn = ({ onCancel }) => {
   return (
     <>
-      {/* <Nav className="" /> */}
       <div className=" mx-auto w-fit bg-blue-300 z-50 shadow rounded-2xl overflow-hidden my text-center text-slate-700  ">
-        {/* <svg
-          className=""
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 390"
-        >
-          <path
-            fill="#ffccbc"
-            fill-opacity="1"
-            d="M0,224L48,202.7C96,181,192,139,288,133.3C384,128,480,160,576,149.3C672,139,768,85,864,101.3C960,117,1056,203,1152,224C1248,245,1344,203,1392,181.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-          ></path>
-        </svg> */}
         <div className="px-9 font-light tracking-tight">
           <div className="flex items-baseline space-x-4">
-            <h1 className="text-4xl tracking-wider my-4 font-semibold font-riot capitalize ">
-              ogt 
+            <h1 className="text-4xl w-full tracking-wider my-4 font-semibold font-riot capitalize ">
+              ogt
             </h1>
             <button className="" onClick={onCancel}>
               <MdCancel className="size-6" />

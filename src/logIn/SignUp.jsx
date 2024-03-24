@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { MdCancel } from "react-icons/md";
 import {motion,AnimatePresence} from "framer-motion"
-const JobLi=["Software Development","Web Development","Design","Network Engineer","Database Administrator","Systems Administrator","Data Scientist","Security Analyst","UX/UI Designer","Cloud Engineer","Blockchain Developer","Cybersecurity Engineer","Machine Learning Engineer","AI Engineer","Project Manager","Technical Support Engineer","Business Analyst","IT Manager"]
+import { GlobalContext } from '../Context';
 
 const backdrop={
   hidden:{
@@ -16,6 +16,7 @@ const backdrop={
 }
 
 const SignUp = ({onCancel}) => {
+  const {JobLi} = useContext(GlobalContext)
   return (
     <>
     <AnimatePresence>

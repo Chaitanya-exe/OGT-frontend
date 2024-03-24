@@ -4,15 +4,14 @@ import { FaLock } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { FcGlobe } from "react-icons/fc";
 import { FcMoneyTransfer } from "react-icons/fc";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 
-const variant={
-  animate:{
-    rotate:"-45deg",
-    scale:1.4
-  }
-}
-
+const variant = {
+  animate: {
+    rotate: "-45deg",
+    scale: 1.4,
+  },
+};
 
 export default function Jobs({ data }) {
   //           const chunkArray = (arr, chunkSize) => {
@@ -76,12 +75,15 @@ export default function Jobs({ data }) {
                 <button className="bg-sky-950 text-slate-50 hover:bg-white hover:border hover:text-blue-950 hover:border-slate-800">
                   Apply
                 </button>
-                <motion.button variants={variant}  className="flex group/btn text-nowrap items-center border border-slate-800 hover:opacity-55">
-                  See More
-                  <motion.svg 
+                <motion.button
                   variants={variant}
-                  whileHover="animate"
-                  className="group-hover/btn:-rotate-45 font-extralight size-5 "
+                  className="flex group/btn text-nowrap items-center border border-slate-800 hover:opacity-55"
+                >
+                  See More
+                  <motion.svg
+                    variants={variant}
+                    whileHover="animate"
+                    className="group-hover/btn:-rotate-45 font-extralight size-5 "
                     fill="none"
                     stroke="currentColor"
                     stroke-linecap="round"
