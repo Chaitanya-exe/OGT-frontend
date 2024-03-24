@@ -11,6 +11,7 @@ const variant = {
     scale: 1.4,
   },
 };
+const MotionLink = motion(Link)
  
 export default function Jobs() {
    const {data} = useContext(GlobalContext)
@@ -62,7 +63,8 @@ export default function Jobs() {
                 <Link to="/project" className="bg-sky-950 text-slate-50 hover:bg-white hover:border hover:text-blue-950 hover:border-slate-800">
                   Apply
                 </Link>
-                <motion.button
+                <MotionLink
+                to="/project"
                   variants={variant}
                   className="flex group/btn text-nowrap items-center border border-slate-800 hover:opacity-55"
                 >
@@ -81,7 +83,7 @@ export default function Jobs() {
                   >
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </motion.svg>
-                </motion.button>
+                </MotionLink>
               </div>
             </div>
           </div>

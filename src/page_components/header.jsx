@@ -63,7 +63,7 @@ export default function Header() {
         <div
           className={
             isScrolled
-              ? "bg-blue-400 transition-all ease-linear fixed z-10 right-0 left-0 top-0"
+              ? "bg-blue-300 transition-all ease-linear fixed z-10 right-0 left-0 top-0"
               : "bg-gradient-to-tr from-pink-400 shadow via-orange-200 to-orange-50 transition-all ease-linear  fixed z-10 right-0 left-0 top-0"
           }
         >
@@ -163,7 +163,7 @@ export default function Header() {
                 </svg>
               </button>
               <Link
-                to={"/Home"}
+                to={"/"}
                 class="hover:ring-1  inline-flex items-center bg-gray-100 border-0 py-1 px-3 mr-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
               >
                 For Employers
