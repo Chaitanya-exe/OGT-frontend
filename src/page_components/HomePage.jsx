@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Header from "./header";
 import { GlobalContext } from "../Context";
 import JobLayout from "./JobLayout";
+import Main from "./Main";
 
 const backdrop = {
   visible: { opacity: 1 },
@@ -13,7 +14,7 @@ const backdrop = {
 };
 
 const HomePage = () => {
-  const { signUp, setSignUp, hasDialogBeenShown, setHasDialogBeenShown } =
+  const { signUp,isScrolled, setSignUp, hasDialogBeenShown, setHasDialogBeenShown } =
     useContext(GlobalContext);
 
   useEffect(() => {
@@ -46,10 +47,20 @@ const HomePage = () => {
           opacity: 0,
           transition: { duration: 0.1 },
         }}
-        className="bg-gradient-to-br overflow-hidden font-fontBody  from-pink-400 via-orange-200 to-blue-300 "
+        className="overflow-hidden font-fontBody"
       >
+      <div   className={
+            isScrolled
+              ? "bg-blue-300 transition-all ease-linear fixed z-10 right-0 left-0 top-0"
+              : "bg-gradient-to-tr from-pink-400 shadow via-orange-200 to-orange-50 transition-all ease-linear  fixed z-10 right-0 left-0 top-0"
+          }>
+
         <Header />
-      </motion.div>
+      </div>
+      <div className="bg-gradient-to-br   from-pink-400 shadow via-orange-200 to-orange-50">
+        <Main/>
+
+      </div>
       {/* {signUp && (
         <motion.div
           variants={backdrop}
@@ -63,9 +74,9 @@ const HomePage = () => {
       <div className="mx-16">
       <RightSide />
       <JobLayout/> 
-
-      </div>
+ </div>
       <Footer />
+      </motion.div>
     </>
   );
 };

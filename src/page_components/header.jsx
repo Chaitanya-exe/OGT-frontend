@@ -1,10 +1,9 @@
-import React, { useState, useEffect,useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import LogIn from "../logIn/LogIn";
 import { IoMagnet } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { GlobalContext } from "../Context";
-
 
 const uiConatiner = {
   hidden: {
@@ -32,14 +31,14 @@ const item = {
 };
 export default function Header() {
   const {
-    JobLi,
     isMenu,
     handleLoginButtonClick,
     handleCancel,
     isScrolled,
     setIsScrolled,
     isLoginFormOpen,
-    toggleMenu,handleSignUpButtonClick
+    toggleMenu,
+    handleSignUpButtonClick,
   } = useContext(GlobalContext);
 
   useEffect(() => {
@@ -56,16 +55,14 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
   return (
     <>
       <header class="text-slate-800">
         <div
-          className={
-            isScrolled
-              ? "bg-blue-300 transition-all ease-linear fixed z-10 right-0 left-0 top-0"
-              : "bg-gradient-to-tr from-pink-400 shadow via-orange-200 to-orange-50 transition-all ease-linear  fixed z-10 right-0 left-0 top-0"
-          }
+        // className=" transition-all ease-linear fixed z-10 right-0 left-0 top-0"
+        //     : "bg-gradient-to-tr from-pink-400 shadow via-orange-200 to-orange-50 transition-all ease-linear  fixed z-10 right-0 left-0 top-0"
+        // }
         >
           <div class=" flex p-5 flex-row items-center justify-between relative">
             <a class="flex title-font font-medium items-center mb-4 md:mb-0">
@@ -244,7 +241,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="flex mt-20 mb-10 py-8 text-wrap flex-col ">
+        {/* <div className="flex mt-20 mb-10 py-8 text-wrap flex-col ">
           <div className="text-center my-14 md:mx-16 mx-2">
             <h1 className="font-bold font-riot text-4xl">
               Find your dream remote job without the hassle
@@ -265,7 +262,8 @@ export default function Header() {
               ))}
             </ul>
           </div>
-        </div>
+        </div> */}
+        {/* <Main /> */}
 
         {isLoginFormOpen && (
           <div className="flex fixed top-0 left-0 w-full h-full items-center justify-center bg-black bg-opacity-65 z-10">

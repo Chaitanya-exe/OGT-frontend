@@ -1,11 +1,12 @@
 import React from "react";
-import Nav from "../landing_components/Nav";
+// import Nav from "../landing_components/Nav";
 import Footer from "../page_components/Footer";
 import { PiHandWavingBold } from "react-icons/pi";
 import { GrPersonalComputer } from "react-icons/gr";
 import { LuAlertTriangle } from "react-icons/lu";
 import { IoSparkles } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
+import Header from "../page_components/header";
 
 const Reset = () => {
   const navigation = useNavigate();
@@ -15,7 +16,10 @@ const Reset = () => {
   };
   return (
     <>
-      <Nav />
+    <div className="bg-blue-100">
+      <Header />
+
+    </div>
 
       <div className=" mx-auto w-fit bg-blue-300 z-50 shadow rounded-2xl overflow-hidden my-28 text-center text-slate-700  ">
         <div className="px-9 font-light tracking-tight">
