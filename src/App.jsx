@@ -8,6 +8,7 @@ import Form_page from "./PostJob/Form_page";
 
 import {AnimatePresence} from "framer-motion"
 import Project from "./Project/Project";
+import Index from "./Donation";
 
 const App = () => {
   // const location = useLocation
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/reset" element={<Reset />} />
         <Route path="/form" element={<Form_page/>}/>
         <Route path="/project" element={<Project/>}></Route>
+        <Route path="/donate" element={<Index />} ></Route>
       </Routes> 
 
     </AnimatePresence>

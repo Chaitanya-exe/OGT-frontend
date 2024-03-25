@@ -7,7 +7,7 @@ import Header from "./header";
 import { GlobalContext } from "../Context";
 import JobLayout from "./JobLayout";
 import Main from "./Main";
-import Donate_box from "./Donate_box";
+import Donate_box from "../Donation/Donate_box";
 
 const backdrop = {
   visible: { opacity: 1 },
