@@ -46,7 +46,7 @@ export default function Jobs() {
                 <h1 className="border my-auto border-purple-500">
                   {job.stream}
                 </h1>
-                <h1 className="bg-sky-800  text-slate-100">
+                <h1 className="bg-orange-200 text-sky-900">
                   <FcMoneyTransfer className="size-4 ml-0.5 inline-flex mr-2" />
                   {job.salary}
                 </h1>
@@ -60,7 +60,7 @@ export default function Jobs() {
             <div className="flex space-x-8 items-center ml-auto mr-2">
               <h1 className="mr-3">{job.timeOfPost}</h1>
               <div className="group-hover:flex space-x-6 hidden *:rounded-xl *:p-2 *:px-3 *:mx-2">
-                <Link to="/project" className="bg-sky-950 text-slate-50 hover:bg-white hover:border hover:text-blue-950 hover:border-slate-800">
+                <Link to="/project" className="bg-sky-800 text-slate-50 hover:bg-white hover:border hover:text-sky-950 hover:border-sky-800">
                   Apply
                 </Link>
                 <MotionLink

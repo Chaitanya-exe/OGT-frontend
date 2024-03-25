@@ -8,6 +8,7 @@ import { GlobalContext } from "../Context";
 import JobLayout from "./JobLayout";
 import Main from "./Main";
 import Donate_box from "../Donation/Donate_box";
+import DonateSteps from "../Donation/fold/DonateSteps";
 
 const backdrop = {
   visible: { opacity: 1 },
@@ -64,16 +65,17 @@ const HomePage = () => {
         }}
         className="overflow-hidden font-fontBody"
       >
+      {/* from-pink-400 shadow via-orange-200 to-orange-50  */}
         <div
           className={
             isScrolled
               ? "bg-blue-300 transition-all ease-linear fixed z-10 right-0 left-0 top-0"
-              : "bg-gradient-to-tr from-pink-400 shadow via-orange-200 to-orange-50 transition-all ease-linear  fixed z-10 right-0 left-0 top-0"
+              : "bg-gradient-to-t from-purple-100 to-orange-50 transition-all ease-linear  fixed z-10 right-0 left-0 top-0"
           }
         >
           <Header />
         </div>
-        <div className="bg-gradient-to-br   from-pink-400 shadow via-orange-200 to-orange-50">
+        <div className="bg-gradient-to-b from-purple-200/60 via-blue-100/80 to-orange-100">
           <Main />
         </div>
         {/* {signUp && (
@@ -93,6 +95,7 @@ const HomePage = () => {
           <RightSide />
           <JobLayout />
         </div>
+        <DonateSteps />
         <Footer />
       </motion.div>
     </>

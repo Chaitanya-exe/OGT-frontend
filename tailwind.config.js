@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {
+      colors:{
+        "top":"#EAF3F5",
+        "middle":"#FFF3E3",
+        "bottom":"#F2F4EB"
+      },
       fontFamily:{
         // 'riot':['Roboto Slab',"serif"],
         // 'Montserrat':['Montserrat','sans-serif']
