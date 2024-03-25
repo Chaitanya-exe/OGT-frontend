@@ -200,6 +200,8 @@ const GlobalState = ({ children }) => {
 
 
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
+  const [showDonationBox, setShowDonationBox] = useState(false);
+
 
   const toggleMenu = () => {
     setIsMenu(!isMenu);
@@ -236,6 +238,7 @@ const GlobalState = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
+        showDonationBox,setShowDonationBox,
         data,
         ComapanyName,handleCompanyChange,handleSignUpButtonClick,
         handleClick,

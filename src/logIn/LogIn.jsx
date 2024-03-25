@@ -8,14 +8,14 @@ import { MdCancel } from "react-icons/md";
 const LogIn = ({ onCancel }) => {
   return (
     <>
-      <div className=" mx-auto w-fit bg-blue-300 z-50 shadow rounded-2xl overflow-hidden my text-center text-slate-700  ">
+      <div className=" mx-auto w-fit bg-slate-200 z-50 shadow rounded-2xl overflow-hidden my text-center text-slate-700  ">
         <div className="px-9 font-light tracking-tight">
           <div className="flex items-baseline space-x-4">
             <h1 className="text-4xl w-full tracking-wider my-4 font-semibold font-riot capitalize ">
               ogt
             </h1>
             <button className="" onClick={onCancel}>
-              <MdCancel className="size-6" />
+              <MdCancel className="size-7 hover:opacity-90" />
             </button>
           </div>
           <p className="">Login to your account to post a project</p>
@@ -54,7 +54,7 @@ const LogIn = ({ onCancel }) => {
               for="email"
               className="absolute -top-3.5 left-0 text-pink-500 text-sm transition-all
     peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-800 peer-placeholder-shown:top-2 
-    peer-focus:-top-3.5 peer-focus:text-white peer-focus:text-sm"
+    peer-focus:-top-3.5 peer-focus:text-orange-600 peer-focus:text-sm"
             >
               Email address
             </label>
@@ -72,7 +72,7 @@ const LogIn = ({ onCancel }) => {
               for="password"
               className="absolute -top-3.5 left-0 text-pink-500 text-sm transition-all
      peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-800 peer-placeholder-shown:top-2 
-     peer-focus:-top-3.5 peer-focus:text-white peer-focus:text-sm"
+     peer-focus:-top-3.5 peer-focus:text-orange-600 peer-focus:text-sm"
             >
               Password
             </label>
@@ -83,7 +83,7 @@ const LogIn = ({ onCancel }) => {
             </button>
             <Link
               to="/reset"
-              className="text-xs float-start cursor-pointer py-2"
+              className="text-xs float-start hover:underline cursor-pointer py-2"
             >
               Reset password
             </Link>

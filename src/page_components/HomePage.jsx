@@ -7,6 +7,7 @@ import Header from "./header";
 import { GlobalContext } from "../Context";
 import JobLayout from "./JobLayout";
 import Main from "./Main";
+import Donate_box from "./Donate_box";
 
 const backdrop = {
   visible: { opacity: 1 },
@@ -14,8 +15,15 @@ const backdrop = {
 };
 
 const HomePage = () => {
-  const { signUp,isScrolled, setSignUp, hasDialogBeenShown, setHasDialogBeenShown } =
-    useContext(GlobalContext);
+  const {
+    signUp,
+    isScrolled,
+    showDonationBox,
+    setShowDonationBox,
+    setSignUp,
+    hasDialogBeenShown,
+    setHasDialogBeenShown,
+  } = useContext(GlobalContext);
 
   useEffect(() => {
     const handleSignUpScroll = () => {
@@ -33,6 +41,13 @@ const HomePage = () => {
   const handleCancel = () => {
     setSignUp(false);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowDonationBox(true)
+    },3000)
+    return () => clearTimeout(timer)
+  },[])
   return (
     <>
       <motion.div
@@ -49,19 +64,19 @@ const HomePage = () => {
         }}
         className="overflow-hidden font-fontBody"
       >
-      <div   className={
+        <div
+          className={
             isScrolled
               ? "bg-blue-300 transition-all ease-linear fixed z-10 right-0 left-0 top-0"
               : "bg-gradient-to-tr from-pink-400 shadow via-orange-200 to-orange-50 transition-all ease-linear  fixed z-10 right-0 left-0 top-0"
-          }>
-
-        <Header />
-      </div>
-      <div className="bg-gradient-to-br   from-pink-400 shadow via-orange-200 to-orange-50">
-        <Main/>
-
-      </div>
-      {/* {signUp && (
+          }
+        >
+          <Header />
+        </div>
+        <div className="bg-gradient-to-br   from-pink-400 shadow via-orange-200 to-orange-50">
+          <Main />
+        </div>
+        {/* {signUp && (
         <motion.div
           variants={backdrop}
           initial="hidden"
@@ -71,11 +86,14 @@ const HomePage = () => {
           <SignUp onCancel={handleCancel} />
         </motion.div>
       )} */}
-      <div className="mx-16">
-      <RightSide />
-      <JobLayout/> 
- </div>
-      <Footer />
+      {showDonationBox && 
+        <Donate_box />
+      }
+        <div className="mx-16">
+          <RightSide />
+          <JobLayout />
+        </div>
+        <Footer />
       </motion.div>
     </>
   );
