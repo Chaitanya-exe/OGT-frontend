@@ -20,7 +20,7 @@ const Right = () => {
     initial={{y:-18 , x:-190}}
     whileHover={{y:-50 , x:0}}
     transition={{duration:0.3}}
-     className="w-1/2 text-center space-y-5 border rounded-lg overflow-hidden">
+     className="w-1/2 bg-white text-center space-y-5 border rounded-lg overflow-hidden">
 
       <Progess />
       <div className='flex-col text-star space-y-3 *:shadow *:bg-slate-100 p-3 *:p-3 '>

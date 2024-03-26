@@ -33,7 +33,7 @@ const LogIn = ({ onCancel }) => {
             </p>
             <p className="flex justify-center items-baseline space-x-3">
               <IoSparkles className="text-red-600 size-4" />
-              <Link className="underline underline-offset-2 pr-1" to="/landing">
+              <Link className="underline underline-offset-2 pr-1" to="/">
                 Join Ogt Acceletor{" "}
               </Link>{" "}
               to get access today!
@@ -81,7 +81,7 @@ const LogIn = ({ onCancel }) => {
             <button className="button px-7 w-full rounded-lg py-2 mt-6 hover:bg-slate-100 font-semibold hover:border border-slate-950 hover:text-slate-950">
               Log In
             </button>
-            <Link
+            <Link onClick={onCancel}
               to="/reset"
               className="text-xs float-start hover:underline cursor-pointer py-2"
             >

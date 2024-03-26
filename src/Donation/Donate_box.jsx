@@ -31,7 +31,7 @@ const variants = {
 
 }
 const Donate_box = () => {
-    const {setShowDonationBox} = useContext(GlobalContext)
+    const {setShowDonationBox, setStepCount} = useContext(GlobalContext)
   return (
     <AnimatePresence>
 
@@ -60,7 +60,8 @@ const Donate_box = () => {
 <FcDonate className='block mx-auto size-6' />
 <div className='block  mx-auto text-center py-1 px-2'>
 
-<Link to="/donate" className='capitalize group rounded-sm  bg-indigo-600 text-white py-2 hover:bg-white hover:text-indigo-600 hover:font-bold hover:border border-indigo-600 hover:shadow-black/20 shadow px-3'>Donate now
+<Link to="/donate" onClick={() => setStepCount(1) }
+ className='capitalize group rounded-sm  bg-indigo-600 text-white py-2 hover:bg-white hover:text-indigo-600 hover:font-bold hover:border border-indigo-600 hover:shadow-black/20 shadow px-3'>Donate now
 <GoSmiley className='ml-3 group-hover:inline-flex size-5 hidden group-hover:ring-4 animate-pulse ring-indigo-600/70 rounded-full'/>
 </Link>
 

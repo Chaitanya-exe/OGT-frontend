@@ -91,11 +91,11 @@ const HomePage = () => {
       {showDonationBox && 
         <Donate_box />
       }
-        <div className="mx-16">
+        <div className="mx-16 *:rounded-lg">
           <RightSide />
           <JobLayout />
-        </div>
         <DonateSteps />
+        </div>
         <Footer />
       </motion.div>
     </>

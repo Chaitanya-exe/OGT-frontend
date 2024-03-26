@@ -202,6 +202,14 @@ const GlobalState = ({ children }) => {
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
   const [showDonationBox, setShowDonationBox] = useState(false);
 
+  let [activeTab, setActiveTab] = useState(2);
+  const [choosenAmount,setChoosenAmount] = useState('')
+  const [isCafEmpty,setISCafEmpty] = useState(true)
+
+  const [isChoosenAmount,setIsChoosenAmount] = useState(false)
+
+  const [StepCount,setStepCount] = useState(1)
+
 
   const toggleMenu = () => {
     setIsMenu(!isMenu);
@@ -238,6 +246,8 @@ const GlobalState = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
+        activeTab, setActiveTab,choosenAmount,setChoosenAmount,isCafEmpty,setISCafEmpty,
+        StepCount,setStepCount,
         showDonationBox,setShowDonationBox,
         data,
         ComapanyName,handleCompanyChange,handleSignUpButtonClick,
