@@ -10,10 +10,15 @@ const Left = () => {
   let [activeTab, setActiveTab] = useState(2);
   const [choosenAmount,setChoosenAmount] = useState('')
   const [isChoosenAmount,setIsChoosenAmount] = useState(false)
+  const [isCafEmpty,setISCafEmpty] = useState(true)
  console.log(choosenAmount)
 
   return (
-    <div className="w-1/3 relativ text-center space-y-5 border rounded-lg overflow-hidden">
+    <motion.div
+    initial={{scale:1 ,x:0}}
+    whileHover={{scale:1.04 ,x:30}}
+    transition={{duration:0.3}}
+     className="w-1/2 relativ bg-white z-10 text-center space-y-5 border rounded-lg overflow-hidden">
      <Progess/>
       <div className="space-y-3 px-4 text-center">
         <p>Every Donation Counts - Make Yours Today!</p>
@@ -71,11 +76,13 @@ const Left = () => {
         </div>
         <div className="grid grid-cols-3 gap-2 *:py-2  *:rounded-full text-center">
            { gridValues.map((value,index) => (
-            <div onClick={()=> setChoosenAmount(value)} key={index} className={`${choosenAmount === value ? "bg-purple-500" : "bg-gray-200 "}`}>${value}</div>
+            <div onClick={()=> {setChoosenAmount(value) ,setISCafEmpty(true)}} key={index} className={`${choosenAmount === value ? "bg-purple-500 text-white" : "bg-gray-200 "}`}>${value}</div>
            )) }
            <input
+           onClick={()=> setISCafEmpty(false)}
            onChange={(e)=>setChoosenAmount(e.target.value)}
-        //    value={"$"}
+           value= { isCafEmpty ? "$ Custom Amount" : choosenAmount}
+
            type="text"
            name="custom anount"
            placeholder="$  custom amount"
@@ -89,7 +96,7 @@ const Left = () => {
       <button disabled={!choosenAmount} className="bg-orange-500 disabled:bg-orange-300  text-slate-100 p-2 w-full rounded-full">Next</button>
 
       </div>
-    </div>
+    </motion.div>
   );
 };
 

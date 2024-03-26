@@ -2,20 +2,34 @@ import React from 'react'
 import Left from './Left'
 import Right from './Right'
 import { TbArrowCurveRight } from "react-icons/tb";
+import CTA from './CTA';
+import {motion} from "framer-motion"
 
 
 const DonateSteps = () => {
   return (
-    <div className='flex space-x-10 justify-center w-screen'>
+    <motion.div 
+    initial={{opacity:0}}
+    whileInView={{opacity:1}}
+    transition={{duration:1 , delay:0.3}}
+     className='flex my-10 items-center justify-center w-full'>
+    <motion.div 
+    initial={{x:-100}}
+    whileInView={{x:0}} 
+    transition={{type:"spring",stiffness:150}}
+    className=' flex -space-x-3 group'>
       <Left/>
-      <div className='relative'>
+      <div className='relative z-10 group-hover:-translate-y-4 opacity-0 group-hover:opacity-100 group-hover:duration-300 group-hover:delay-200'>
 
-      <TbArrowCurveRight className='size-10 rotate-45 bottom-11 right-0 text-sky-900 absolute'/>
+      <TbArrowCurveRight className='size-10 rotate-45 bottom-0 text-sky-900 absolute'/>
       </div>
 
       <Right />
+
+    </motion.div>
+      <CTA />
       
-    </div>
+    </motion.div>
   )
 }
 

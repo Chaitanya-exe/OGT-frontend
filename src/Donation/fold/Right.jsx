@@ -6,6 +6,7 @@ import { RiPaypalFill } from "react-icons/ri";
 import { SiVenmo } from "react-icons/si";
 import { CiCreditCard1 } from "react-icons/ci";
 import { CiBank } from "react-icons/ci";
+import {motion} from "framer-motion"
 
 
 
@@ -15,7 +16,11 @@ const paymentOptions=[]
 
 const Right = () => {
   return (
-    <div className="w-1/3 text-center space-y-5 border rounded-lg overflow-hidden">
+    <motion.div
+    initial={{y:-18 , x:-190}}
+    whileHover={{y:-50 , x:0}}
+    transition={{duration:0.3}}
+     className="w-1/2 text-center space-y-5 border rounded-lg overflow-hidden">
 
       <Progess />
       <div className='flex-col text-star space-y-3 *:shadow *:bg-slate-100 p-3 *:p-3 '>
@@ -28,7 +33,7 @@ const Right = () => {
 
       </div>
 
-    </div>
+    </motion.div>
   )
 }
 
