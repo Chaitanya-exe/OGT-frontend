@@ -6,7 +6,7 @@ import Facilities from "./facilities";
 import Tabs from "./tabs";
 import Footer from "./footer";
 import { motion } from "framer-motion";
-import Header from "../page_components/Header";
+import Header from "../page_components/header";
 import Main from "../page_components/Main";
 import { GlobalContext } from "../Context";
 // import { Route, Routes } from 'react-router-dom'

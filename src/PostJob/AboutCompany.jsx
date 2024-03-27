@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../Context";
 
 const AboutCompany = () => {
-  const { ComapanyName,handleCompanyChange } =
+  const { ComapanyName, handleCompanyChange, comapanyDetail,setCompanyDetail, setLogoImg } =
     useContext(GlobalContext);
+    // console.log(comapanyDetail)
   return (
     <>
       <form className="text-sm pt-5 m-8 *:my-3 text-slate-900">
@@ -14,7 +15,7 @@ const AboutCompany = () => {
           </h1>
           <h2 className=" font-semibold ">Comapany name*</h2>
           <input
-          onChange={handleCompanyChange}
+            onChange={handleCompanyChange}
             id="email"
             name="email"
             type="email"
@@ -45,6 +46,7 @@ const AboutCompany = () => {
         <div className=" *:my-1">
           <h2 className=" font-semibold text-sm">Company Logo</h2>
           <input
+            onChange={(e) => setLogoImg(e.target.files[0])}
             id="email"
             name="email"
             type="file"
@@ -67,6 +69,8 @@ const AboutCompany = () => {
           </p>
 
           <textarea
+          value={comapanyDetail}
+          onChange={(e) => setCompanyDetail(e.target.value)}
             className="w-full shadow focus:outline-none capitalize p-2"
             name="message"
             rows="4"

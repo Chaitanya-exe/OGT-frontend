@@ -191,12 +191,17 @@ const GlobalState = ({ children }) => {
   const [signUp, setSignUp] = useState(false);
   const [hasDialogBeenShown, setHasDialogBeenShown] = useState(false);
 
+  const [jobTitle, setJobTitle] = useState("");
+  const [ComapanyName, setCompanyName] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
+  const [employmentType,setEmploymentType] = useState('')
+  const [location,setLocation] = useState('Worldwide')
+  const [locationArr,setLocationArr] = useState([])
+ 
+  const [logoImg,setLogoImg] = useState(null)
+  const [comapanyDetail,setCompanyDetail] = useState('')
   const [showOptions, setShowOptions] = useState(false);
   const [showInput, setShowInput] = useState(false);
-  const [jobTitle, setJobTitle] = useState("");
-  const [selectedOption, setSelectedOption] = useState("");
-
-  const [ComapanyName, setCompanyName] = useState("");
 
 
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
@@ -206,7 +211,6 @@ const GlobalState = ({ children }) => {
   const [choosenAmount,setChoosenAmount] = useState('')
   const [isCafEmpty,setISCafEmpty] = useState(true)
 
-  const [isChoosenAmount,setIsChoosenAmount] = useState(false)
 
   const [StepCount,setStepCount] = useState(1)
 
@@ -245,7 +249,8 @@ const GlobalState = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{
+      value={{employmentType,setEmploymentType,location,setLocation,locationArr,setLocationArr,
+        logoImg,setLogoImg,comapanyDetail,setCompanyDetail,
         activeTab, setActiveTab,choosenAmount,setChoosenAmount,isCafEmpty,setISCafEmpty,
         StepCount,setStepCount,
         showDonationBox,setShowDonationBox,

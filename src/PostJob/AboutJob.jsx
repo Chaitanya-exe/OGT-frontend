@@ -21,16 +21,23 @@ const AboutJob = () => {
   const {
     JobLi,
     showOptions,
-    selectedOption,
-    jobTitle,
-    showInput,
     setShowOptions,
-    handleChange,handleClick,
+    setSelectedOption,
+    setEmploymentType,
+    location,
+    setLocation,
+    locationArr,
+    setLocationArr,
+    showInput,
+    handleChange,
+    handleClick,
   } = useContext(GlobalContext);
+  // console.log(locationArr)
+  // console.log(location)
 
-  const handleSelectChange = (e) => {
-    setSelectedOption(e.target.value);
-  };
+  // const handleSelectChange = (e) => {
+  //   setSelectedOption(e.target.value);
+  // };
   return (
     <>
       <job>
@@ -62,7 +69,7 @@ const AboutJob = () => {
             <h2 className=" font-semibold">Job Title*</h2>
             <input
               onChange={handleChange}
-              value={jobTitle}
+              // value={jobTitle}
               id="job"
               name="job title"
               type="text"
@@ -76,32 +83,33 @@ const AboutJob = () => {
             <h2 className=" font-semibold">Catergory*</h2>
             <select
               // value={selectedOption}
-              // onChange={(e) => {
-              //   selectedOption(e.target.value);
-              // }}
-              onChange={handleSelectChange}
+              onChange={(e) => {
+                setSelectedOption(e.target.value);
+              }}
+              // onChange={handleSelectChange}
               name="cars"
               className="w-full bg-white border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md"
             >
               {JobLi.map((category) => (
-                <option key={category} value={category}>{category}</option>
+                <option key={category} value={category}>
+                  {category}
+                </option>
               ))}
             </select>
           </div>
           <div className=" *:my-1">
             <h2 className=" font-semibold">Employment Type*</h2>
             <select
-              name="cars"
+              name="employmennt Type"
+              onChange={(e) => setEmploymentType(e.target.value)}
               className="w-full bg-white border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md"
             >
-              <option value="volvo">Part-time</option>
-              <option value="saab" selected>
-                Full-time
-              </option>
-              <option value="mercedes">Freelance</option>
-              <option value="audi">Internship</option>
-              <option value="volvo">Contrast</option>
-              <option value="volvo">Other</option>
+              <option>Part-time</option>
+              <option selected>Full-time</option>
+              <option>Freelance</option>
+              <option>Internship</option>
+              <option>Contrast</option>
+              <option>Other</option>
             </select>
           </div>
           <div className=" *:my-1">
@@ -111,6 +119,7 @@ const AboutJob = () => {
             <div className="flex relative justify-between font-semibold text-sm">
               <label for="Worldwide" onClick={() => setShowOptions(false)}>
                 <input
+                  onChange={(e) => setLocation(e.target.value)}
                   className="mr-1"
                   type="radio"
                   id="Worldwide"
@@ -121,6 +130,7 @@ const AboutJob = () => {
               </label>
               <label for="USA" onClick={() => setShowOptions(false)}>
                 <input
+                  onChange={(e) => setLocation(e.target.value)}
                   className="mr-1"
                   type="radio"
                   id="USA"
@@ -131,6 +141,7 @@ const AboutJob = () => {
               </label>
               <label for="other" onClick={() => setShowOptions(true)}>
                 <input
+                  onClick={() => setLocation("")}
                   className="pee mr-1 rad"
                   type="radio"
                   id="other"
@@ -151,13 +162,26 @@ const AboutJob = () => {
                     for={index}
                   >
                     <input
-                      className="mr-3"
+                      // onClick={(e) => setLocation([...location,e.target.value])}
+                      onClick={(e) => {
+                        const idx = locationArr.indexOf(place)
+                        if(idx === -1){
+                        setLocationArr([...locationArr,e.target.value])
+                        }else{
+                          setLocationArr(locationArr.filter(item => item !== place))
+                        }
+
+                      }}
+                      //  checked={locationArr.includes(place)}
+                      className="mr-3 checked:bg-blue-600"
                       type="checkbox"
                       id={index}
+                      value={place}
                       name="location"
                     />
                     {place}
                   </label>
+                  
                 ))}
               </div>
             </div>
@@ -220,7 +244,6 @@ const AboutJob = () => {
         </form>
       </job>
       <Help />
-      
     </>
   );
 };

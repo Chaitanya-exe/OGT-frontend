@@ -11,11 +11,15 @@ import Form_right from "./Form_right";
 import { GlobalContext } from "../Context";
 
 const Help = () => {
-  //   const [selectedOption, setSelectedOption] = useState(null);
-  //   const handleRadioAmount=(event) =>{
-  //     setSelectedOption(event.target.value)
-  //   }
-  const {jobTitle,ComapanyName,selectedOption} = useContext(GlobalContext)
+  const {
+    jobTitle,
+    ComapanyName,
+    selectedOption,
+    locationArr,
+    logoImg,
+    employmentType,
+    location,
+  } = useContext(GlobalContext);
   return (
     <>
       {/* //      <div className='bg-blue-100 fixed right-0 top-0 h-screen mt-16 w-1/5 '>
@@ -190,22 +194,29 @@ const Help = () => {
       <div className="fixed bottom-0 right-0 left-0  bg-gradient-to-bl  from-indigo-200 to-pink-100 via-blue-100 shadow-slate-900 shadow-2xl">
         <div className="group p-2 text-sm flex justify-center  ">
           <div className="group-hover:bg-opacity-70  border border-slate-800 items-center flex p-1 my-1 rounded-lg bg-blue-100">
-            <div className="w-14 h-14 bg-zinc-200 border-black border overflow-hidden rounded-full"></div>
+            <div className="w-14 h-14 bg-zinc-200 border-black border flex justify-center items-center overflow-hidden rounded-full">
+              {logoImg && <img src={URL.createObjectURL(logoImg)} alt="no" />}
+            </div>
             <div>
               <div className="mb-1 hover:opacity-60 flex *:font-semibold capitalize *:mx-2">
-                <h1>{jobTitle === "" ? "Your Job" : jobTitle }</h1>
-                <li className=" list-disc">{ComapanyName === "" ? "Your Company" : ComapanyName }</li>
+                <h1>{jobTitle === "" ? "Your Job" : jobTitle}</h1>
+                <li className=" list-disc">
+                  {ComapanyName === "" ? "Your Company" : ComapanyName}
+                </li>
               </div>
               <div className="flex *:rounded-full mb-1 *:p-1 *:px-2 *:mx-2">
                 <h3 className="border  border-purple-500">
-                  Software Development{selectedOption}
+                  {selectedOption === ""
+                    ? "Software Development"
+                    : selectedOption}
                 </h3>
-                <h3 className="bg-sky-800 text-slate-100 rounded-lg w-9">
-                  <FcMoneyTransfer className="size-4 ml-0.5 mt-1" />
+                <h3 className="bg-sky-800 flex text-slate-100 rounded-lg w-fit">
+                  <FcMoneyTransfer className="size-4 mx-0.5 mt-1 inline-flex" />
+                  {employmentType === "" ? "Part-time" : employmentType}
                 </h3>
-                <h3 className="bg-blue-200 ">
-                  <FcGlobe className="inline-flex size-5 mr-2" />
-                  Worldwide
+                <h3 className="bg-blue-200 truncate w- space-x-6 ">
+                  <FcGlobe className="inline-flex size-5 mr-2  " />
+                  {location === undefined ? (locationArr.join(" , ")) : location}
                 </h3>
               </div>
             </div>

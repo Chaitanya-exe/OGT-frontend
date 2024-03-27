@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Footer from "./Footer";
 import RightSide from "./rightSide";
-import SignUp from "../logIn/SignUp";
+import SignUp from "../logIn/SignUp/SignUp";
 import { motion } from "framer-motion";
 import Header from "./header";
 import { GlobalContext } from "../Context";
@@ -45,10 +45,10 @@ const HomePage = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowDonationBox(true)
-    },3000)
-    return () => clearTimeout(timer)
-  },[])
+      setShowDonationBox(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
       <motion.div
@@ -65,7 +65,7 @@ const HomePage = () => {
         }}
         className="overflow-hidden font-fontBody"
       >
-      {/* from-pink-400 shadow via-orange-200 to-orange-50  */}
+        {/* from-pink-400 shadow via-orange-200 to-orange-50  */}
         <div
           className={
             isScrolled
@@ -88,13 +88,11 @@ const HomePage = () => {
           <SignUp onCancel={handleCancel} />
         </motion.div>
       )} */}
-      {showDonationBox && 
-        <Donate_box />
-      }
+        {showDonationBox && <Donate_box />}
         <div className="mx-16 *:rounded-lg">
           <RightSide />
           <JobLayout />
-        <DonateSteps />
+          <DonateSteps />
         </div>
         <Footer />
       </motion.div>
