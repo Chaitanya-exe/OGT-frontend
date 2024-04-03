@@ -6,7 +6,7 @@ import React from "react";
 // import Heading from "./ComapnyDescription/Left/Heading";
 import Display from "./ComapnyDescription/Display";
 import Footer from "../page_components/Footer";
-import Header from "../page_components/Header";
+import Header from "../page_components/header";
 
 const Project = () => {
   return (

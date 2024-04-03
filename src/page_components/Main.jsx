@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../Context'
+import { Link } from 'react-router-dom'
 
 const Main = () => {
     const {JobLi} = useContext(GlobalContext)
@@ -16,6 +17,7 @@ const Main = () => {
             <p>
               Unlock 26,736 additional remote jobs with{" "}
               <a className="underline">OGT Accelerator</a>
+              <Link to={"/form"}> post a job</Link>
             </p>
           </div>
           <div className="mt-4 mb-11 sm:mx-4 md:ml-40 md:mr-10 lg:mr-72 lg:ml-96">

@@ -9,6 +9,7 @@ import JobLayout from "./JobLayout";
 import Main from "./Main";
 import Donate_box from "../Donation/Donate_box";
 import DonateSteps from "../Donation/fold/DonateSteps";
+import Inedx from "../Message/Inedx";
 
 const backdrop = {
   visible: { opacity: 1 },
@@ -17,6 +18,7 @@ const backdrop = {
 
 const HomePage = () => {
   const {
+    showChats,setShowChats,
     signUp,
     isScrolled,
     showDonationBox,
@@ -89,6 +91,13 @@ const HomePage = () => {
         </motion.div>
       )} */}
         {showDonationBox && <Donate_box />}
+
+        {showChats && 
+        <div className="fixed right-2 min-h-96 rounded-l-lg bottom-4 z-50 bg-slate-100">
+
+        <Inedx />
+        </div>
+        }
         <div className="mx-16 *:rounded-lg">
           <RightSide />
           <JobLayout />

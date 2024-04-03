@@ -213,6 +213,9 @@ const GlobalState = ({ children }) => {
 
 
   const [StepCount,setStepCount] = useState(1)
+  const [showChats,setShowChats] = useState(false)
+
+  const [openChat,setOpenChat] = useState(false)
 
 
   const toggleMenu = () => {
@@ -250,9 +253,10 @@ const GlobalState = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{employmentType,setEmploymentType,location,setLocation,locationArr,setLocationArr,
-        logoImg,setLogoImg,comapanyDetail,setCompanyDetail,
+        logoImg,setLogoImg,comapanyDetail,setCompanyDetail,openChat,setOpenChat,
         activeTab, setActiveTab,choosenAmount,setChoosenAmount,isCafEmpty,setISCafEmpty,
         StepCount,setStepCount,
+        showChats,setShowChats,
         showDonationBox,setShowDonationBox,
         data,
         ComapanyName,handleCompanyChange,handleSignUpButtonClick,

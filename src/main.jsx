@@ -6,7 +6,7 @@ import {BrowserRouter} from "react-router-dom"
 import GlobalState from './Context/index.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
   <BrowserRouter>
   <GlobalState>
     <App />
@@ -14,5 +14,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </GlobalState>
 
   </BrowserRouter>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 )

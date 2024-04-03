@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import LogIn from "../logIn/LogIn";
 import { IoMagnet } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { GlobalContext } from "../Context";
+import Content from "../logIn/Content";
+import { RiMessage3Fill } from "react-icons/ri";
+
 
 const uiConatiner = {
   hidden: {
@@ -31,6 +33,7 @@ const item = {
 };
 export default function Header() {
   const {
+    showChats,setShowChats,
     isMenu,
     handleLoginButtonClick,
     handleCancel,
@@ -55,16 +58,14 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  console.log(showChats)
 
   return (
     <>
       <header class="text-slate-800">
-        <div
-        // className=" transition-all ease-linear fixed z-10 right-0 left-0 top-0"
-        //     : "bg-gradient-to-tr from-pink-400 shadow via-orange-200 to-orange-50 transition-all ease-linear  fixed z-10 right-0 left-0 top-0"
-        // }
-        >
-          <div class=" flex p-5 flex-row items-center justify-between relative">
+        <div>
+          <div class=" flex p-5 items-center justify-between relative">
+          
             <a class="flex title-font font-medium items-center mb-4 md:mb-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +81,13 @@ export default function Header() {
               </svg>
               <span class="ml-3 text-xl font-serif">Clone remotive</span>
             </a>
-            <nav class="md:ml-auto  items-center  text-base hidden md:flex">
+            <nav class="md:ml-auto  items-center  text-base hidden md:flex justify-between space-x-6">
+            <div className="flex space-x-3 justify-center items-center">
+            <div onClick={() => setShowChats(!showChats)}><RiMessage3Fill className="size-5 inline-fle mx-auto align-middle" />Messages</div>
+            {/* <div onClick={() => setShowChats(true)}><RiMessage3Fill className="size-5 inline-flx mx-auto align-middle" />Notification</div> */}
+            
+
+            </div>
               <a class="mr-5 inline-flex text-gray-900 group/first ">
                 Find Remote Jobs
                 {/* <i class="fa-solid fa-angle-down"></i> */}
@@ -142,7 +149,7 @@ export default function Header() {
                 </svg>
               </button>
 
-              <button
+              <Link to={"/newAccount"}
                 onClick={handleSignUpButtonClick}
                 class="hover:ring-1 inline-flex items-center bg-gray-100 border-0 py-1 px-3 m-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
               >
@@ -158,7 +165,7 @@ export default function Header() {
                 >
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
-              </button>
+              </Link>
               <Link
                 to={"/Home"}
                 class="hover:ring-1  inline-flex items-center bg-gray-100 border-0 py-1 px-3 mr-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
@@ -243,7 +250,7 @@ export default function Header() {
 
         {isLoginFormOpen && (
           <div className="flex fixed top-0 left-0 w-full h-full items-center justify-center bg-black/80 z-10">
-            <LogIn onCancel={handleCancel} />
+            <Content onCancel={handleCancel} />
           </div>
         )}
       </header>
