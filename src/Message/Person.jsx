@@ -15,7 +15,7 @@ const Person = () => {
       <div className='w-full'>
       <div className='flex justify-between items-center'>
         <h2 className=''>"name"</h2>
-        <p className=''>5:12PM</p>
+        <p className='text-xs text-end'>5:12PM</p>
 
       </div>
 <p>text</p>

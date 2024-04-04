@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext ,useEffect, useState} from "react";
 import { MdCancel } from "react-icons/md";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { GlobalContext } from "../../Context";
 import { Link } from "react-router-dom";
 
@@ -16,64 +16,147 @@ const backdrop = {
   },
 };
 
-const SignUp = ({ onCancel }) => {
-  const { JobLi } = useContext(GlobalContext);
+const SignUp = ({setStep2SignUp }) => {
+  const { JobLi,setIsLoginFormOpen } = useContext(GlobalContext);
+  const [conuntryList,setCountryList] = useState([])
+
+  const [FirstName,setFirstName] = useState('')
+  const [termsChecked,setTermsChecked] = useState(false)
+  const [age,setAge] = useState('')
+  const [isFormValid,setIsFormValid] = useState(false)
+
+
+  useEffect(()=>{
+    fetch('https://restcountries.com/v3.1/all')
+.then(response => response.json())
+.then(data => {
+const countryNames = data.map(country => country.name.common);
+countryNames.sort((a, b) => a.localeCompare(b));
+setCountryList(countryNames)
+})
+.catch(error => {
+console.error('Error fetching country names:', error);
+});
+
+
+})
+useEffect(()=>{
+  setIsFormValid(FirstName.trim()!=='' && age.trim()!== '' && termsChecked)
+
+},[FirstName,age,termsChecked])
   return (
     <>
       <div className=" p-4 border rounded-lg">
-      <div className="divide-y-2 space-y-4 w-fit p-4 ">
+      <div className=" space-y-4 w-fit p-4 ">
 
-        <div className="flex justify-between">
+        <div className="flex justify-between border-b-2 pb-3">
           <h2 className="text-xl font-semibold tracking-wide">Create Account</h2>
-          <Link to="/logIn" className="text-sm underline text-purple-600 ">Sign In</Link>
+          <Link to="/Home" onClick={()=> setIsLoginFormOpen(true)} className="text-sm underline text-purple-600 ">Sign In</Link>
         </div>
-        <div className="text-slate-600 pt-6 grid grid-cols-2 gap-4">
-          <label className="capitalize font-semibold" > name
+        <div className="text-slate-600 pt-4 grid grid-cols-2 gap-3">
+          <label className="capitalize font-semibold" >First name
             <input
+            required
             id="name"
             type="text" name="name" 
-            placeholder="your name"
-            className="border p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
+            value={FirstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="First name"
+            className="border w-full p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
             ></input>
           </label>
-          <label className="capitalize font-semibold" > Email Address
+
+          <label className="capitalize font-semibold" >Last name
             <input
-            id="EmailAddress"
-            type="email" name="Email Address" 
-            placeholder="Your email address"
-            className="border p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
+            required
+            id="name"
+            type="text" name="name" 
+            placeholder="Last name"
+            className="border w-full p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
             ></input>
           </label>
-          <label className="capitalize font-semibold" >Password
+          
+          <label className="capitalize font-semibold" > Age
             <input
-            id="Password"
-            type="password" name="Password" 
-            placeholder="Enter Password"
-            className="border p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
-            ></input>
+            required
+            onChange={(e) => setAge(e.target.value)}
+            // min="10" max="150"
+            id="name"
+            type="date" name="name" 
+            placeholder="age"
+            className="border bg-white w-full p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
+            >
+
+            </input>
           </label>
-          <label className="capitalize font-semibold" >Confirm Password
-            <input
-            id="confirm password"
-            type="text" name="confirm password" 
-            placeholder="Confirm Password"
-            className="border p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
-            ></input>
+
+          <label className="capitalize font-semibold" > country
+          <select className=" bg-white p-2.5 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400">
+          {
+             conuntryList.map((country)=>(
+
+            <option>{country}</option>
+            ))
+          }
+          </select>
+            {/* <input
+            required
+            min="10" max="150"
+            id="name"
+            type="text" name="name" 
+            placeholder="age"
+            className="border w-full p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
+            ></input> */}
           </label>
+<label className="capitalize font-semibold">
+  <input
+  type="radio"
+  name="employee"
+  className="mr-3"
+   />
+   Employee
+</label>
+<label className="font-semibold capitalize">
+  <input
+  type="radio"
+  name="employee"
+  className="mr-3"
+   />
+   company
+</label>
+
+
+
           <label className="capitalize col-span-2  font-semibold" >Mobile Number
             <input
-            id="name"
+            required
+            id="Phone number"
             type="tel" name="name" 
-            placeholder="your name"
-            className="border col-span-2  p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
+            placeholder="Phone number"
+            className="border w-ful col-span-2  p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
             ></input>
+          </label>
+
+          <label  className="col-span-2 capitalize font-semibold" for="message">Desciption 
+<textarea id="message" name="message" rows="10" cols="76"
+className="border rounded outline-none p-3"
+
+></textarea>
           </label>
           <label className=" align-baseli content-center">
 
-          <input type="checkbox" className="size-5 mr-3"></input>
+          <input
+           type="checkbox" 
+           onChange={(e) => setTermsChecked(e.target.checked)}
+          required
+           className="size-5 mr-3"></input>
           I agree to <span className="text-purple-600">Terms & Conditions</span>
           </label>
         </div>
+          <button disabled={!isFormValid} onClick={()=>{
+            setStep2SignUp(true)
+
+          }} className="block mx-auto button">Next</button>
       </div>
       </div>
 
