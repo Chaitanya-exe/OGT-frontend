@@ -1,15 +1,33 @@
-import React, { useContext } from 'react'
+import React, { useContext,useState,useEffect } from 'react'
 import { GlobalContext } from '../Context'
 import { Link } from 'react-router-dom'
 
 const Main = () => {
     const {JobLi} = useContext(GlobalContext)
+    const [displayText, setDisplayText] = useState('');
+const text=" place for  Top Talent."
+const speed=100
+
+    useEffect(()=>{
+      let currentText=''
+      let currentIndex = 0
+      const interval = setInterval(()=>{
+        if(currentIndex == text.length){
+          clearInterval(interval)
+          return
+        }
+          currentText = text.slice(0,currentIndex + 1)
+          setDisplayText(currentText)
+          currentIndex++
+      },speed)
+      return () => clearInterval(interval)
+    },[text,speed])
   return (
     <div className="flex mt-20 mb-10 py-8 text-wrap flex-col ">
           <div className="text-center my-14 md:mx-16 mx-2">
             <h1 className="font-bold font-riot text-4xl bg-clip-text bg-gradient-to-tr from-slate-700 via-sky-950 to-blue-950 text-transparent">
           <span className='text-6xl  text-transparent bg-clip-text bg-gradient-to-br from-purple-900 via-pink-900 to-orange-500'>OGT </span>: The Global Market<span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600'>
-            place for  Top Talent.
+            {/* place for  Top Talent. */} {displayText}
             </span> 
             </h1>
             <p className="text-center mt-2 mx-28">

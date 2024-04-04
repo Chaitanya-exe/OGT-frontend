@@ -32,7 +32,7 @@ const item = {
   },
 };
 
-export default function Header() {
+export default function Header({text="OGT",speed="1000"}) {
   const {
     showChats,setShowChats,
     isMenu,
@@ -44,6 +44,7 @@ export default function Header() {
     toggleMenu,
     handleSignUpButtonClick,
   } = useContext(GlobalContext);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,13 +60,7 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  // useEffect(()=>{
-  //   let currentText=''
-  //   let currentIndex = 0
-  //   cosnt interval = setInterval(()=>{
-  //     if(currentIndex == text.length)
-  //   })
-  // })
+ 
   // console.log(showChats)
 
   return (
@@ -75,8 +70,7 @@ export default function Header() {
           <div class=" flex p-5 items-center justify-between relative">
            <div>
             <Link className="text-3xl font-lexend font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600 ">O G T</Link>
-           </div>
-            
+           </div>            
             <nav class="md:ml-auto  items-center  text-base hidden md:flex justify-between space-x-6">
             <div className="flex space-x-3 justify-center items-center">
             <div onClick={() => setShowChats(!showChats)}><RiMessage3Fill className="size-5 text-slate-700 inline-flex mr-1 mb-1 align-middle" />Messages</div>

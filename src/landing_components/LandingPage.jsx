@@ -12,7 +12,7 @@ import { GlobalContext } from "../Context";
 // import { Route, Routes } from 'react-router-dom'
 
 const LandingPage = () => {
-  const {isScrolled} =useContext(GlobalContext)
+  const { isScrolled } = useContext(GlobalContext);
   return (
     <>
       <motion.div
@@ -29,13 +29,9 @@ const LandingPage = () => {
         }}
         className="bg-gradient-to-l from-pink-300 via-orange-200 to-blue-200  font-fontBody "
       >
-      <div   className=
-               "bg-gradient-to-l transition-all ease-linear fixed z-10 right-0 left-0 top-0"
-          >
-      
-        <Header/>
-
-      </div>
+        <div className="bg-gradient-to-l transition-all ease-linear fixed z-10 right-0 left-0 top-0">
+          <Header />
+        </div>
         <Main />
         <Middiv />
         <Step />

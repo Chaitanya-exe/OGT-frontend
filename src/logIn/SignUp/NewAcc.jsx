@@ -8,7 +8,7 @@ const NewAcc = () => {
   const [step2SignUp,setStep2SignUp] = useState(false)
   return (
     <>
-      <div className="bg-gradient-to-r from-purple-300 to-neutral-400">
+      <div className="bg-gradient-to-r from-purple-100 to-orange-50">
         <Header />
       </div>
       <div className="p- h-screen flex space-x-10">
@@ -17,9 +17,9 @@ const NewAcc = () => {
             className="h-screen object-cover object-center w-full"
           />
         </div>
-        <div className="w-1/2 ">
+      
           {/* <Category /> */}
-          <div className="flex justify-center h-full">
+          <div className="flex justify-center  w-1/2 m-4 h-full">
 { 
   step2SignUp ? <Step2 /> : <SignUp setStep2SignUp={setStep2SignUp} />
 }
@@ -28,7 +28,7 @@ const NewAcc = () => {
 
           </div>
         </div>
-      </div>
+     
     </>
   );
 };

@@ -46,8 +46,8 @@ useEffect(()=>{
 },[FirstName,age,termsChecked])
   return (
     <>
-      <div className=" p-4 border rounded-lg">
-      <div className=" space-y-4 w-fit p-4 ">
+      <div className=" p-4 border rounded-lg max-h-full o">
+      <div className=" space-y-4 w-fit p-4 h-full ">
 
         <div className="flex justify-between border-b-2 pb-3">
           <h2 className="text-xl font-semibold tracking-wide">Create Account</h2>
@@ -91,7 +91,7 @@ useEffect(()=>{
           </label>
 
           <label className="capitalize font-semibold" > country
-          <select className=" bg-white p-2.5 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400">
+          <select className=" bg-white py-2.5 px-1 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400">
           {
              conuntryList.map((country)=>(
 
