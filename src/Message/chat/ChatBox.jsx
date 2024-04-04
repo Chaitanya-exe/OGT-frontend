@@ -2,13 +2,14 @@ import React,{useContext} from 'react'
 import Sender from './Sender'
 import { RxCross2 } from "react-icons/rx";
 import { GlobalContext } from '../../Context';
+import Type from './Type';
 
 const ChatBox = () => {
   const {openChat,setOpenChat} = useContext(GlobalContext)
 
   return (
     <>
-    <div className='bg-white rounded-md w-96 *:p-2  absolute right-full mx-8 bottom-3'>
+    <div className='bg-white shadow rounded-md min-w-96 *:p-2  absolute right-full mx-8 bottom-3'>
 
     <div className='flex sticky top-0 border-b-2 items-center justify-between '>
     <div className='flex justify-center items-center space-x-3'>
@@ -18,7 +19,7 @@ const ChatBox = () => {
 
         />
       </div>
-      <p>Name</p>
+      <p className='text-lg'>Name</p>
 
     </div>
       <div className='flex space-x-3'>
@@ -32,9 +33,12 @@ const ChatBox = () => {
 
       </div>
     </div>
-    <div className=''>
+   
       <Sender />
-    </div>
+
+
+      <Type />
+   
     </div>
 
     </>

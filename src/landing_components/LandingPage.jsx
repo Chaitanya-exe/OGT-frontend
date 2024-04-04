@@ -39,7 +39,7 @@ const LandingPage = () => {
         <Main />
         <Middiv />
         <Step />
-        <Facilities />
+        {/* <Facilities /> */}
         <Tabs />
         <Footer />
       </motion.div>

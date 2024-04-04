@@ -6,21 +6,23 @@ const JobLi = [
   "Software Development",
   "Web Development",
   "Design",
-  "Network Engineer",
-  "Database Administrator",
-  "Systems Administrator",
-  "Data Scientist",
+  "Networking",
+  "Database",
+  "Systems Design",
+  "Data Science",
   "Security Analyst",
   "UX/UI Designer",
-  "Cloud Engineer",
-  "Blockchain Developer",
-  "Cybersecurity Engineer",
-  "Machine Learning Engineer",
-  "AI Engineer",
-  "Project Manager",
-  "Technical Support Engineer",
-  "Business Analyst",
-  "IT Manager",
+  "Cloud",
+  "Blockchain",
+  "Cybersecurity",
+  "Machine Learning",
+  "AI",
+  "Frontend",
+  "React",
+  "Node.js",
+  "React-Redux",
+  "App Development",
+  "Full-Stack"
 ];
 const data = [
   {
@@ -216,6 +218,10 @@ const GlobalState = ({ children }) => {
   const [showChats,setShowChats] = useState(false)
 
   const [openChat,setOpenChat] = useState(false)
+  const [receiverText,setReceiverText] = useState('')
+  const [messages,setMessages] = useState([])
+
+ 
 
 
   const toggleMenu = () => {
@@ -256,6 +262,7 @@ const GlobalState = ({ children }) => {
         logoImg,setLogoImg,comapanyDetail,setCompanyDetail,openChat,setOpenChat,
         activeTab, setActiveTab,choosenAmount,setChoosenAmount,isCafEmpty,setISCafEmpty,
         StepCount,setStepCount,
+        receiverText,setReceiverText,messages,setMessages,
         showChats,setShowChats,
         showDonationBox,setShowDonationBox,
         data,

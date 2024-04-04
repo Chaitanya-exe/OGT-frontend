@@ -7,18 +7,18 @@ const Main = () => {
   return (
     <div className="flex mt-20 mb-10 py-8 text-wrap flex-col ">
           <div className="text-center my-14 md:mx-16 mx-2">
-            <h1 className="font-bold font-riot text-4xl">
-              Find your dream remote job without the hassle
+            <h1 className="font-bold font-riot text-4xl bg-clip-text bg-gradient-to-tr from-slate-700 via-sky-950 to-blue-950 text-transparent">
+          <span className='text-6xl  text-transparent bg-clip-text bg-gradient-to-br from-purple-900 via-pink-900 to-orange-500'>OGT </span>: The Global Market<span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600'>
+            place for  Top Talent.
+            </span> 
             </h1>
-            <p className="text-center mt-2">
-              OGT is where top talents go to easily access active and fully
-              remote job opportunities from vetted tech companies.
+            <p className="text-center mt-2 mx-28">
+            Connect with inspiring projects from around the world and collaborate with businesses that value your unique skills. Embrace the freedom to choose the work you love, and build a flourishing career without borders.
+For the businesses and startups it's great market place for the services which will make your business easier for you.
             </p>
-            <p>
-              Unlock 26,736 additional remote jobs with{" "}
-              <a className="underline">OGT Accelerator</a>
-              <Link to={"/form"}> post a job</Link>
-            </p>
+           
+             
+              <Link to={"/form"} className='text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600 capitalize  hover:border-b-2 border-pink-600' > post a job</Link>
           </div>
           <div className="mt-4 mb-11 sm:mx-4 md:ml-40 md:mr-10 lg:mr-72 lg:ml-96">
             <ul className="*:rounded-full *:border *:bg-sky-100 *:border-slate-600  *:capitalize *:text-slate-900 *:m-1 *:px-2 *:py-0.5 *:inline-block">

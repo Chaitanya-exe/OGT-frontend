@@ -11,7 +11,7 @@ import Help from './Help'
 const Form_page = () => {
   return (
     // <div className='flex space-x-1'>
-    <div className='divide-y-2 w-4/5 ml-8 pr-16'>
+    <div className='divide-y-2  ml-8 pr-16'>
     <AboutJob/>
     <AboutCompany/>
     <Contact/>

@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
         <div className="md:flex mx-6 pb-10 md:items-baseline  md:justify-between">
           <div className="pb-3 flex items-center justify-center text-xs font-thin">
-            <p className="m-1">&copy; 2014-2024, made Remotely with</p>
+            <p className="m-1">&copy; 2024, made <span className="ogt ">O G T</span> with</p>
             <FaHeart className="text-red-600" />
           </div>
           <div className="flex flex-shrink justify-center p-3 *:m-3">

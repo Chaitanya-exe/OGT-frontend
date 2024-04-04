@@ -93,7 +93,7 @@ const HomePage = () => {
         {showDonationBox && <Donate_box />}
 
         {showChats && 
-        <div className="fixed right-2 min-h-96 rounded-l-lg bottom-4 z-50 bg-slate-100">
+        <div className="fixed right-2 min-h-96 rounded-l-lg bottom-4 z-50 bg-slate-50 shadow-lg">
 
         <Inedx />
         </div>

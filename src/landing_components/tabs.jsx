@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import {Link} from "react-router-dom"
 export default function Tabs() {
   const [toggleState, setToggleState] = useState(1);
 
@@ -10,7 +10,7 @@ export default function Tabs() {
     <>
       <div className="m-6">
         <div className="text-center m-6">
-          <h1 className=" font-riot text-2xl capitalize m-2">how it works</h1>
+          <h1 className=" font-riot text-3xl text-slate-800 capitalize m-2">how it works</h1>
           <span className="rounded-full relative w-full h-1 inline-block bg-pink-50">
             <span
               className={
@@ -40,7 +40,7 @@ export default function Tabs() {
                   toggleState === 1 ? "" : "text-opacity-45 text-slate-900"
                 }
               >
-                Tell us more about whom you are looking for.
+                Tell us about your requirements in your Project.
               </p>
             </div>
             <div
@@ -64,14 +64,14 @@ export default function Tabs() {
                     : "text-xl font-riot capitalize  text-opacity-55"
                 }
               >
-                1. post your job
+                2. Pay upon completion
               </h1>
               <p
                 className={
                   toggleState === 2 ? "" : "text-opacity-45 text-slate-900"
                 }
               >
-                Tell us more about whom you are looking for.
+            You will be notified on project completion
               </p>
             </div>
             <div
@@ -95,13 +95,13 @@ export default function Tabs() {
                     : "text-xl font-riot capitalize  text-opacity-55"
                 }
               >
-                1. post your job
+                3. Delivery upon conformation
               </h1>
               <p
                 className={
                   toggleState === 3 ? "" : "text-opacity-45 text-slate-900"
                 }>
-                Tell us more about whom you are looking for.
+            Project will be delivered after payment conformation
               </p>
             </div>
             <div
@@ -118,7 +118,7 @@ export default function Tabs() {
         </div>
       </div>
       <div className="flex content-center mt-24">
-        <button className="button mx-auto ">post a job from $ 299/mon</button>
+        <Link to={"/donate"} className="button mx-auto ">Donate Us</Link>
       </div>
     </>
   );

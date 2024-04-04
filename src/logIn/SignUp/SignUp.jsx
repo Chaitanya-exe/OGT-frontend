@@ -80,9 +80,9 @@ useEffect(()=>{
             <input
             required
             onChange={(e) => setAge(e.target.value)}
-            // min="10" max="150"
+            min="18" max="90"
             id="name"
-            type="date" name="name" 
+            type="number" name="name" 
             placeholder="age"
             className="border bg-white w-full p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
             >
@@ -114,7 +114,7 @@ useEffect(()=>{
   name="employee"
   className="mr-3"
    />
-   Employee
+   Employer
 </label>
 <label className="font-semibold capitalize">
   <input
@@ -122,7 +122,7 @@ useEffect(()=>{
   name="employee"
   className="mr-3"
    />
-   company
+   developer
 </label>
 
 

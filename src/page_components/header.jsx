@@ -31,6 +31,7 @@ const item = {
     opacity: 1,
   },
 };
+
 export default function Header() {
   const {
     showChats,setShowChats,
@@ -58,38 +59,33 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  console.log(showChats)
+  // useEffect(()=>{
+  //   let currentText=''
+  //   let currentIndex = 0
+  //   cosnt interval = setInterval(()=>{
+  //     if(currentIndex == text.length)
+  //   })
+  // })
+  // console.log(showChats)
 
   return (
     <>
       <header class="text-slate-800">
         <div>
           <div class=" flex p-5 items-center justify-between relative">
-          
-            <a class="flex title-font font-medium items-center mb-4 md:mb-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-              </svg>
-              <span class="ml-3 text-xl font-serif">Clone remotive</span>
-            </a>
+           <div>
+            <Link className="text-3xl font-lexend font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600 ">O G T</Link>
+           </div>
+            
             <nav class="md:ml-auto  items-center  text-base hidden md:flex justify-between space-x-6">
             <div className="flex space-x-3 justify-center items-center">
-            <div onClick={() => setShowChats(!showChats)}><RiMessage3Fill className="size-5 inline-fle mx-auto align-middle" />Messages</div>
+            <div onClick={() => setShowChats(!showChats)}><RiMessage3Fill className="size-5 text-slate-700 inline-flex mr-1 mb-1 align-middle" />Messages</div>
             {/* <div onClick={() => setShowChats(true)}><RiMessage3Fill className="size-5 inline-flx mx-auto align-middle" />Notification</div> */}
             
 
             </div>
               <a class="mr-5 inline-flex text-gray-900 group/first ">
-                Find Remote Jobs
+                Contact us
                 {/* <i class="fa-solid fa-angle-down"></i> */}
                 <span className="p-2">
                   <svg
@@ -102,14 +98,13 @@ export default function Header() {
                 </span>
                 <div className="shadow-md hidden group-hover/first:block text-orange-950 absolute z-10 bg-sky-200  capitalize lg:left-2/7 top-12 rounded px-1 py-2">
                   <ul className=" *:p-1">
-                    <li className="hover:text-orange-800">job search tips </li>
-                    <li className="hover:text-orange-800">webinar</li>
+                    <li className="hover:text-orange-800">Contact details</li>
                     <li className="hover:text-orange-800">about us </li>
                   </ul>
                 </div>
               </a>
               <a class="mr-5 inline-flex hover:text-gray-900 group/second">
-                Resources
+                Search by
                 <span className="p-2">
                   <svg
                     className="h-3 w-3"
@@ -121,11 +116,10 @@ export default function Header() {
                 </span>
                 <div className="shadow-md hidden transition-all duration-300 ease-in-out group-hover/second:block text-orange-950 absolute z-10 bg-sky-200 capitalize lg:left-3/ top-12 rounded px-1 py-2">
                   <ul className=" *:p-1">
-                    <li className="hover:text-orange-800">Publilc api </li>
                     <li className="hover:text-orange-800">
-                      search by skill & location
+                       skill
                     </li>
-                    <li className="hover:text-orange-800">search by company</li>
+                    <li className="hover:text-orange-800">company</li>
                   </ul>
                 </div>
               </a>

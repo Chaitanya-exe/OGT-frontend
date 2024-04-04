@@ -10,7 +10,7 @@ const Inedx = () => {
   const {openChat,setOpenChat} = useContext(GlobalContext)
   return (
     <>
-    <div className='relative  p-3 m-2'>
+    <div className='relative text-slate-900  p-3 m-2'>
     <div className='space-y-3 flex-col justify-start items-start'>
       <Head />
       <Search />
