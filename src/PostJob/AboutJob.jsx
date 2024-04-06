@@ -40,7 +40,7 @@ const AboutJob = () => {
   // };
   return (
     <>
-      <job>
+      <div>
         <Head />
         <form className="text-sm m-8 pt-5 *:my-3 text-slate-900">
           <div className="*:my-1">
@@ -242,7 +242,7 @@ const AboutJob = () => {
             ></textarea>
           </div>
         </form>
-      </job>
+      </div>
       <Help />
     </>
   );

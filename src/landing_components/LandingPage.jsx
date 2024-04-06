@@ -37,7 +37,9 @@ const LandingPage = () => {
         <Step />
         {/* <Facilities /> */}
         <Tabs />
+        <div className="bg-blue-950">
         <Footer />
+        </div>
       </motion.div>
     </>
   );

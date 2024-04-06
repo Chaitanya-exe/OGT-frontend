@@ -13,3 +13,10 @@
 .ogt{
     @apply bg-clip-text text-transparent bg-gradient-to-r  from-purple-950 to-pink-600
 }
+.footer-gradient{
+    @apply  bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-orange-300 to-purple-600 
+}
+.footer-ogt{
+    @apply bg-clip-text text-transparent bg-gradient-to-r  from-purple-500 to-pink-600
+
+}

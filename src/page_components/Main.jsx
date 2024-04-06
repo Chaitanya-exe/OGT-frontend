@@ -11,7 +11,7 @@ const Main = () => {
   useEffect(() => {
     let currentText = "";
     let currentIndex = 0;
-    setTimeout(() => {
+    // setTimeout(() => {
       const interval = setInterval(() => {
         if (currentIndex == text.length) {
           clearInterval(interval);
@@ -21,7 +21,7 @@ const Main = () => {
         setDisplayText(currentText);
         currentIndex++;
       }, speed);
-    }, 1500);
+    // }, 1500);
     return () => clearInterval(interval);
   }, [text, speed]);
   return (
