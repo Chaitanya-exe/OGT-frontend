@@ -24,7 +24,7 @@ export default function Advertisements() {
           </p>
         </a>
       </div>
-      <div className="md:flex md:items-center  p-3 capitalize my-2 border border-r-2 rounded-lg">
+      {/* <div className="md:flex md:items-center  p-3 capitalize my-2 border border-r-2 rounded-lg">
         <p>
           trusted by leading companies who
           <Link
@@ -43,7 +43,7 @@ export default function Advertisements() {
             <FaGithub className="text-slate-800 size-10" />
           </IconContext.Provider>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
