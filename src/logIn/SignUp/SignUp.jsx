@@ -20,32 +20,15 @@ const backdrop = {
 const SignUp = ({ setStep2SignUp }) => {
   const {
     JobLi,
+    user,
+    setUser,
     setIsLoginFormOpen,
-    FirstName,
-    setFirstName,
-    lastName,
-    setLastName,
-    desciption,
-    setDescription,
-    phonenumber,
-    setPhoneNumber,
-    country,
-    setCountry,
-    userName,
-    setUserName,
-    password,
-    setPassword,
-    isEmployer,
-    setIsEmployer,
-    email,
-    setEmail,
     termsChecked,
     setTermsChecked,
-    age,
-    setAge,
     isFormValid,
     setIsFormValid,
   } = useContext(GlobalContext);
+
   const [conuntryList, setCountryList] = useState([]);
 
   useEffect(() => {
@@ -61,8 +44,10 @@ const SignUp = ({ setStep2SignUp }) => {
       });
   });
   useEffect(() => {
-    setIsFormValid(FirstName.trim() !== "" && age >= 18 && termsChecked);
-  }, [FirstName, age, termsChecked]);
+    setIsFormValid(
+      user.firstName.trim() !== "" && user.age >= 18 && termsChecked
+    );
+  }, [user.firstName, user.age, termsChecked]);
   return (
     <>
       <div className=" p-4 border rounded-lg max-h-full o">
@@ -84,11 +69,14 @@ const SignUp = ({ setStep2SignUp }) => {
               First name
               <input
                 required
-                id="name"
+                id="firstName"
                 type="text"
-                name="name"
-                value={FirstName}
-                onChange={(e) => setFirstName(e.target.value)}
+                name="firstName"
+                value={user.firstName}
+                onChange={(e) => {
+                  const { name, value } = e.target;
+                  setUser({ ...user, [name]: value });
+                }}
                 placeholder="First name"
                 className="border w-full p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
               ></input>
@@ -98,13 +86,14 @@ const SignUp = ({ setStep2SignUp }) => {
               Last name
               <input
                 required
-                id="name"
-                value={lastName}
+                id="lastName"
+                value={user.lastName}
                 onChange={(e) => {
-                  setLastName(e.target.value);
+                  const { name, value } = e.target;
+                  setUser({ ...user, [name]: value });
                 }}
                 type="text"
-                name="name"
+                name="lastName"
                 placeholder="Last name"
                 className="border w-full p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
               ></input>
@@ -115,12 +104,16 @@ const SignUp = ({ setStep2SignUp }) => {
               Age
               <input
                 required
-                onChange={(e) => setAge(e.target.value)}
+                onChange={(e) => {
+                  const { name } = e.target;
+                  setUser({ ...user, [name]: e.target.value });
+                }}
                 min="18"
                 max="90"
-                id="name"
+                id="age"
                 type="number"
-                name="name"
+                name="age"
+                value={user.age}
                 placeholder="age"
                 className="border bg-white w-full p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
               ></input>
@@ -130,7 +123,12 @@ const SignUp = ({ setStep2SignUp }) => {
               {" "}
               country
               <select
-                onChange={(e) => setCountry(e.target.value)}
+                value={user.country}
+                name="country"
+                onChange={(e) => {
+                  const { name, value } = e.target;
+                  setUser({ ...user, [name]: value });
+                }}
                 className=" bg-white py-2.5 px-1 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
               >
                 {conuntryList.map((country) => (
@@ -140,19 +138,25 @@ const SignUp = ({ setStep2SignUp }) => {
             </label>
             <label className="capitalize font-semibold">
               <input
-                // onChange={(isEmployer) => setIsEmployer(!isEmployer)}
-                onClick={() => setIsEmployer(true)}
+                onClick={(e) => {
+                  const { name, value } = e.target;
+                  setUser({ ...user, [name]: true });
+                }}
                 type="radio"
-                name="employee"
+                name="isEmployer"
+                value={user.isEmployer}
                 className="mr-3"
               />
               Employer
             </label>
             <label className="font-semibold capitalize">
               <input
-                onClick={() => setIsEmployer(false)}
                 type="radio"
-                name="employee"
+                onClick={(e) => {
+                  const { name, value } = e.target;
+                  setUser({ ...user, [name]: false });
+                }}
+                name="isEmployer"
                 className="mr-3"
               />
               developer
@@ -162,17 +166,17 @@ const SignUp = ({ setStep2SignUp }) => {
               Mobile Number
               <input
                 required
-                value={phonenumber}
+                value={user.phNumber}
                 onChange={(e) => {
                   const num = e.target.value;
                   const length = num.length;
                   if (length <= 10) {
-                    setPhoneNumber(`${e.target.value}`);
+                    setUser({ ...user, [phNumber]: num });
                   }
                 }}
                 id="Phone number"
                 type="tel"
-                name="name"
+                name="phNumber"
                 placeholder="Phone number"
                 className="border w-ful col-span-2  p-2 my-1 font-normal rounded-sm block outline outline-1 outline-purple-400"
               ></input>
@@ -185,9 +189,9 @@ const SignUp = ({ setStep2SignUp }) => {
               Desciption
               <textarea
                 id="message"
-                value={desciption}
-                onChange={(e) => setDescription(e.target.value)}
-                name="message"
+                value={user.desc}
+                onChange={(e) => setUser({ ...user, [desc]: e.target.value })}
+                name="desc"
                 rows="10"
                 cols="76"
                 className="border rounded outline-none p-3"

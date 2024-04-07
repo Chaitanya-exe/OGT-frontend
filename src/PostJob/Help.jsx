@@ -19,6 +19,7 @@ const Help = () => {
     logoImg,
     employmentType,
     location,
+    project
   } = useContext(GlobalContext);
   return (
     <>
@@ -201,7 +202,7 @@ const Help = () => {
               <div className="mb-1 hover:opacity-60 flex *:font-semibold capitalize *:mx-2">
                 <h1>{jobTitle === "" ? "Your Job" : jobTitle}</h1>
                 <li className=" list-disc">
-                  {ComapanyName === "" ? "Your Company" : ComapanyName}
+                  {project.postedBy === "" ? "Your Company" : project.postedBy}
                 </li>
               </div>
               <div className="flex *:rounded-full mb-1 *:p-1 *:px-2 *:mx-2">
@@ -212,11 +213,11 @@ const Help = () => {
                 </h3>
                 <h3 className="bg-sky-800 flex text-slate-100 rounded-lg w-fit">
                   <FcMoneyTransfer className="size-4 mx-0.5 mt-1 inline-flex" />
-                  {employmentType === "" ? "Part-time" : employmentType}
+                  {/* {employmentType === "" ? "Part-time" : employmentType} */}
                 </h3>
                 <h3 className="bg-blue-200 truncate w- space-x-6 ">
                   <FcGlobe className="inline-flex size-5 mr-2  " />
-                  {location === undefined ? (locationArr.join(" , ")) : location}
+                  {/* {location === undefined ? (locationArr.join(" , ")) : location} */}
                 </h3>
               </div>
             </div>

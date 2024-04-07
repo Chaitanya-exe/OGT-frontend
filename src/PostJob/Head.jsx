@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 const List=[
     {num: "3,000,000+",
      text: " unique yearly visits on remotive.com"},
@@ -21,7 +22,9 @@ const Head = () => {
     <nav className="bg-gradient-to-r rounded-xl  from-indigo-200 to-pink-100 via-blue-100 " >
     <div className='h-16 z-10 fixed top-0 right-0 left-0 shadow shadow-gray-300 bg-gradient-to-r  from-indigo-200 to-pink-100 via-blue-100 '>
     <div className='flex mx-5 p-4'>
-        <div className=''>logo</div>
+    <div>
+            <Link className="text-3xl font-lexend font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600 ">O G T</Link>
+           </div> 
         <div className='mx-auto '>
             <ol type='1' className='flex space-x-6'>
                 <li>1. create your list</li>

@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../Context";
 
+
 const AboutCompany = () => {
-  const { ComapanyName, handleCompanyChange, comapanyDetail,setCompanyDetail, setLogoImg } =
-    useContext(GlobalContext);
-    // console.log(comapanyDetail)
+  const {project,setProject, ComapanyName, handleCompanyChange, comapanyDetail,setCompanyDetail, setLogoImg } =
+  useContext(GlobalContext);
+  console.log(project)
   return (
     <>
       <form className="text-sm pt-5 m-8 *:my-3 text-slate-900">
@@ -15,11 +16,14 @@ const AboutCompany = () => {
           </h1>
           <h2 className=" font-semibold ">Comapany name*</h2>
           <input
-            onChange={handleCompanyChange}
-            id="email"
-            name="email"
-            type="email"
-            value={ComapanyName}
+            // onChange={handleCompanyChange}
+            // value={project.postedBy}
+            onChange={(e)=>
+            { const {name,value} = e.target
+              setProject({...project,[name]: e.target.value})}}
+            id="postedBy"
+            name="postedBy"
+            type="text"
             required
             autoComplete="off"
             placeholder=""

@@ -3,41 +3,39 @@ import Head from "./Head";
 import Help from "./Help";
 import { GlobalContext } from "../Context";
 
-const Location = [
-  "India",
-  "Northern America",
-  "UK",
-  "Canada",
-  "Germqnay",
-  "America",
-  "France",
-  "Europe",
-  "USA",
-  "LATAM",
-  "Other:please specify",
-];
+// const Location = [
+//   "India",
+//   "Northern America",
+//   "UK",
+//   "Canada",
+//   "Germqnay",
+//   "America",
+//   "France",
+//   "Europe",
+//   "USA",
+//   "LATAM",
+//   "Other:please specify",
+// ];
 
 const AboutJob = () => {
   const {
     JobLi,
-    showOptions,
-    setShowOptions,
+    jobTitle,
+    price,setPrice,
+    // showOptions,
+    // setShowOptions,
     setSelectedOption,
-    setEmploymentType,
-    location,
-    setLocation,
-    locationArr,
-    setLocationArr,
-    showInput,
+    selectedOption,
+    // setEmploymentType,
+    // location,
+    // setLocation,
+    // locationArr,
+    // setLocationArr,
+    // showInput,
     handleChange,
-    handleClick,
+    // handleClick,
   } = useContext(GlobalContext);
-  // console.log(locationArr)
-  // console.log(location)
-
-  // const handleSelectChange = (e) => {
-  //   setSelectedOption(e.target.value);
-  // };
+  
   return (
     <>
       <div>
@@ -69,7 +67,7 @@ const AboutJob = () => {
             <h2 className=" font-semibold">Job Title*</h2>
             <input
               onChange={handleChange}
-              // value={jobTitle}
+              value={jobTitle}
               id="job"
               name="job title"
               type="text"
@@ -82,12 +80,11 @@ const AboutJob = () => {
           <div className=" *:my-1">
             <h2 className=" font-semibold">Catergory*</h2>
             <select
-              // value={selectedOption}
+              value={selectedOption}
               onChange={(e) => {
                 setSelectedOption(e.target.value);
               }}
-              // onChange={handleSelectChange}
-              name="cars"
+              name="category"
               className="w-full bg-white border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md"
             >
               {JobLi.map((category) => (
@@ -97,7 +94,7 @@ const AboutJob = () => {
               ))}
             </select>
           </div>
-          <div className=" *:my-1">
+          {/* <div className=" *:my-1">
             <h2 className=" font-semibold">Employment Type*</h2>
             <select
               name="employmennt Type"
@@ -111,8 +108,8 @@ const AboutJob = () => {
               <option>Contrast</option>
               <option>Other</option>
             </select>
-          </div>
-          <div className=" *:my-1">
+          </div> */}
+          {/* <div className=" *:my-1">
             <h2 className="font-semibold text-sm">
               Is there a Remote Location Requirement?
             </h2>
@@ -150,8 +147,8 @@ const AboutJob = () => {
                 />
                 Other location requirements
               </label>
-            </div>
-            <div className={showOptions ? "block" : "hidden"}>
+            </div> */}
+            {/* <div className={showOptions ? "block" : "hidden"}>
               <div className="grid font-thin grid-cols-3 lg:grid-cols-4 gap-x-5 my-5">
                 {Location.map((place, index) => (
                   <label
@@ -184,9 +181,9 @@ const AboutJob = () => {
                   
                 ))}
               </div>
-            </div>
+            </div> */}
 
-            {showInput && (
+            {/* {showInput && (
               <input
                 id={Location.length - 1}
                 name="other location"
@@ -196,13 +193,15 @@ const AboutJob = () => {
                 className="pe hidde w-full border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md"
               />
             )}
-          </div>
+          </div> */}
           <div className="*:my-1">
             <h2 className=" font-semibold text-sm">Salary</h2>
             <input
-              id="email"
-              name="email"
-              type="email"
+value={price}
+onChange={(e)=> setPrice(e.target.value)}
+              id="salary"
+              name="salary"
+              type="number"
               autoComplete="off"
               required
               placeholder='Best format is $USD per year,such as: "$50k - $60k'
@@ -234,16 +233,17 @@ const AboutJob = () => {
               publishing :){" "}
             </p>
             <textarea
+            // value={}
               className="w-full shadow focus:outline-none"
               name="message"
-              rows="4"
+              rows="8"
               cols="50"
               placeholder="Enter your message here"
             ></textarea>
           </div>
         </form>
       </div>
-      <Help />
+    
     </>
   );
 };

@@ -196,9 +196,18 @@ const GlobalState = ({ children }) => {
   const [jobTitle, setJobTitle] = useState("");
   const [ComapanyName, setCompanyName] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
-  const [employmentType, setEmploymentType] = useState("");
-  const [location, setLocation] = useState("Worldwide");
-  const [locationArr, setLocationArr] = useState([]);
+  const [price,setPrice] = useState()
+  const [Jobdesciption,setJobDescription] = useState('')
+
+  const [project,setProject] = useState({
+    title:"",
+  desc:"",
+  price:null,
+  category:"",
+  postedBy:'',
+  DeliveryTime: "",
+  isCompleted:false
+  })
 
   const [logoImg, setLogoImg] = useState(null);
   const [comapanyDetail, setCompanyDetail] = useState("");
@@ -219,16 +228,7 @@ const GlobalState = ({ children }) => {
   const [receiverText, setReceiverText] = useState("");
   const [messages, setMessages] = useState([]);
 
-  const [FirstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [desciption, setDescription] = useState("");
-  const [phonenumber, setPhoneNumber] = useState("");
-  const [country, setCountry] = useState("");
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [isEmployer, setIsEmployer] = useState(false);
-  const [email, setEmail] = useState("");
-
+ 
   const [user, setUser] = useState({
     username: "",
     firstName: "",
@@ -281,38 +281,16 @@ const GlobalState = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{
+      value={{project,setProject,
         user,setUser,
-        FirstName,
-        setFirstName,
-        lastName,
-        setLastName,
-        desciption,
-        setDescription,
-        phonenumber,
-        setPhoneNumber,
-        country,
-        setCountry,
-        userName,
-        setUserName,
-        password,
-        setPassword,
-        isEmployer,
-        setIsEmployer,
-        email,
-        setEmail,
+        
+      
         termsChecked,
         setTermsChecked,
-        age,
-        setAge,
+       
         isFormValid,
         setIsFormValid,
-        employmentType,
-        setEmploymentType,
-        location,
-        setLocation,
-        locationArr,
-        setLocationArr,
+       
         logoImg,
         setLogoImg,
         comapanyDetail,

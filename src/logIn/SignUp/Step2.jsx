@@ -4,41 +4,19 @@ import { GlobalContext } from "../../Context";
 import axios from "axios";
 
 const Step2 = () => {
-  const {
-    user,
-    setUser,
-    FirstName,
-    setFirstName,
-    lastName,
-    setLastName,
-    desciption,
-    setDescription,
-    phonenumber,
-    setPhoneNumber,
-    country,
-    setCountry,
-    userName,
-    setUserName,
-    password,
-    setPassword,
-    isEmployer,
-    setIsEmployer,
-    email,
-    setEmail,
-    termsChecked,
-    setTermsChecked,
-    age,
-    setAge,
-  } = useContext(GlobalContext);
-
+  const { user, setUser } = useContext(GlobalContext);
+  console.log(user.username, user.password, user.email);
   return (
     <div className=" mt-12 w-full m-48 flex-col justify-center items-center space-y-8">
       <label className="capitalize font-semibold ">
         {" "}
         Username
         <input
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
+          value={user.username}
+          onChange={(e) => {
+            const { name } = e.target;
+            setUser({ ...user, [name]: e.target.value });
+          }}
           required
           id="username"
           type="text"
@@ -52,11 +30,14 @@ const Step2 = () => {
         Email Address
         <input
           required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={user.email}
+          onChange={(e) => {
+            const { name } = e.target;
+            setUser({ ...user, [name]: e.target.value });
+          }}
           id="EmailAddress"
           type="email"
-          name="Email Address"
+          name="email"
           placeholder="Your email address"
           className="border p-2 my-1 w-full font-normal rounded-sm block outline outline-1 outline-purple-400"
         ></input>
@@ -64,12 +45,15 @@ const Step2 = () => {
       <label className="capitalize font-semibold">
         Password
         <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={user.password}
+          onChange={(e) => {
+            const { name } = e.target;
+            setUser({ ...user, [name]: e.target.value });
+          }}
           required
           id="Password"
           type="password"
-          name="Password"
+          name="password"
           placeholder="Enter Password"
           className="border p-2 my-1 w-full font-normal rounded-sm block outline outline-1 outline-purple-400"
         ></input>
@@ -86,20 +70,8 @@ const Step2 = () => {
         ></input>
       </label>
       <Link
-        // to={"/home"}
+        to={"/home"}
         onClick={async () => {
-          setUser({
-            username: userName,
-            firstName: FirstName,
-            lastName: lastName,
-            age: age,
-            email: email,
-            password: password,
-            country: country,
-            desc: desciption,
-            phNumber: phonenumber,
-            isEmployer: isEmployer,
-          });
           const data = user;
           const response = await axios.post(
             "http://192.168.43.149:5000/api/users/register",
