@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, } from "react";
 import Head from "./Head";
 import Help from "./Help";
 import { GlobalContext } from "../Context";
@@ -18,23 +18,7 @@ import { GlobalContext } from "../Context";
 // ];
 
 const AboutJob = () => {
-  const {
-    JobLi,
-    jobTitle,
-    price,setPrice,
-    // showOptions,
-    // setShowOptions,
-    setSelectedOption,
-    selectedOption,
-    // setEmploymentType,
-    // location,
-    // setLocation,
-    // locationArr,
-    // setLocationArr,
-    // showInput,
-    handleChange,
-    // handleClick,
-  } = useContext(GlobalContext);
+ const {JobLi,project,setProject} = useContext(GlobalContext)
   
   return (
     <>
@@ -66,10 +50,13 @@ const AboutJob = () => {
           <div className=" *:my-1">
             <h2 className=" font-semibold">Job Title*</h2>
             <input
-              onChange={handleChange}
-              value={jobTitle}
-              id="job"
-              name="job title"
+              value={project.title}
+              onChange={(e) => {
+                const {name} = e.target
+                setProject({...project,[name] : e.target.value})
+              }}
+              id="title"
+              name="title"
               type="text"
               autoComplete="off"
               required
@@ -80,10 +67,12 @@ const AboutJob = () => {
           <div className=" *:my-1">
             <h2 className=" font-semibold">Catergory*</h2>
             <select
-              value={selectedOption}
+              value={project.category}
               onChange={(e) => {
-                setSelectedOption(e.target.value);
-              }}
+                const {name} = e.target
+                setProject({...project,[name] : e.target.value})
+
+        }}
               name="category"
               className="w-full bg-white border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md"
             >
@@ -197,14 +186,35 @@ const AboutJob = () => {
           <div className="*:my-1">
             <h2 className=" font-semibold text-sm">Salary</h2>
             <input
-value={price}
-onChange={(e)=> setPrice(e.target.value)}
-              id="salary"
-              name="salary"
+  value={project.price}
+              onChange={(e) => {
+                const {name} = e.target
+                setProject({...project,[name] : e.target.value})
+
+        }}
+              id="price"
+              name="price"
               type="number"
               autoComplete="off"
               required
               placeholder='Best format is $USD per year,such as: "$50k - $60k'
+              className="w-full border  p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md"
+            />
+
+<h2 className=" font-semibold text-sm">Delivery Time</h2>
+            <input
+  value={project.DeliveryTime}
+              onChange={(e) => {
+                const {name} = e.target
+                setProject({...project,[name] : e.target.value})
+
+        }}
+              id="DeliveryTime"
+              name="DeliveryTime"
+              type="text"
+              autoComplete="off"
+              required
+              placeholder='delivery time for project such as: "2 day or 10 hr"'
               className="w-full border  p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md"
             />
             <p className=" italic text-sm font-thin tracking-wide">
@@ -233,9 +243,14 @@ onChange={(e)=> setPrice(e.target.value)}
               publishing :){" "}
             </p>
             <textarea
-            // value={}
+              value={project.desc}
+              onChange={(e) => {
+                const {name} = e.target
+                setProject({...project,[name] : e.target.value})
+
+        }}
               className="w-full shadow focus:outline-none"
-              name="message"
+              name="desc"
               rows="8"
               cols="50"
               placeholder="Enter your message here"

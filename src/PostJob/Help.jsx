@@ -200,20 +200,20 @@ const Help = () => {
             </div>
             <div>
               <div className="mb-1 hover:opacity-60 flex *:font-semibold capitalize *:mx-2">
-                <h1>{jobTitle === "" ? "Your Job" : jobTitle}</h1>
+                <h1>{project.title === "" ? "Your Job" : project.title}</h1>
                 <li className=" list-disc">
                   {project.postedBy === "" ? "Your Company" : project.postedBy}
                 </li>
               </div>
               <div className="flex *:rounded-full mb-1 *:p-1 *:px-2 *:mx-2">
                 <h3 className="border  border-purple-500">
-                  {selectedOption === ""
+                  {project.category === ""
                     ? "Software Development"
-                    : selectedOption}
+                    : project.category}
                 </h3>
                 <h3 className="bg-sky-800 flex text-slate-100 rounded-lg w-fit">
                   <FcMoneyTransfer className="size-4 mx-0.5 mt-1 inline-flex" />
-                  {/* {employmentType === "" ? "Part-time" : employmentType} */}
+                  {project.price === "" ? "$" : "$" + project.price}
                 </h3>
                 <h3 className="bg-blue-200 truncate w- space-x-6 ">
                   <FcGlobe className="inline-flex size-5 mr-2  " />

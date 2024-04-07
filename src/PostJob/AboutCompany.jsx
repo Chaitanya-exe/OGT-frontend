@@ -3,7 +3,7 @@ import { GlobalContext } from "../Context";
 
 
 const AboutCompany = () => {
-  const {project,setProject, ComapanyName, handleCompanyChange, comapanyDetail,setCompanyDetail, setLogoImg } =
+  const {project,setProject, comapanyDetail,setCompanyDetail, setLogoImg } =
   useContext(GlobalContext);
   console.log(project)
   return (
@@ -16,8 +16,7 @@ const AboutCompany = () => {
           </h1>
           <h2 className=" font-semibold ">Comapany name*</h2>
           <input
-            // onChange={handleCompanyChange}
-            // value={project.postedBy}
+            value={project.postedBy}
             onChange={(e)=>
             { const {name,value} = e.target
               setProject({...project,[name]: e.target.value})}}
