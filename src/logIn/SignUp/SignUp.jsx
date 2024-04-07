@@ -168,10 +168,11 @@ const SignUp = ({ setStep2SignUp }) => {
                 required
                 value={user.phNumber}
                 onChange={(e) => {
+                  const {name} = e.target
                   const num = e.target.value;
                   const length = num.length;
                   if (length <= 10) {
-                    setUser({ ...user, [phNumber]: num });
+                    setUser({ ...user, [name]: num });
                   }
                 }}
                 id="Phone number"
@@ -190,7 +191,9 @@ const SignUp = ({ setStep2SignUp }) => {
               <textarea
                 id="message"
                 value={user.desc}
-                onChange={(e) => setUser({ ...user, [desc]: e.target.value })}
+                onChange={(e) => {
+                  const {name}  = e.target
+                  setUser({ ...user, [name]: e.target.value })}}
                 name="desc"
                 rows="10"
                 cols="76"
