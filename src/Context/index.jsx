@@ -22,7 +22,7 @@ const JobLi = [
   "Node.js",
   "React-Redux",
   "App Development",
-  "Full-Stack"
+  "Full-Stack",
 ];
 const data = [
   {
@@ -196,33 +196,58 @@ const GlobalState = ({ children }) => {
   const [jobTitle, setJobTitle] = useState("");
   const [ComapanyName, setCompanyName] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
-  const [employmentType,setEmploymentType] = useState('')
-  const [location,setLocation] = useState('Worldwide')
-  const [locationArr,setLocationArr] = useState([])
- 
-  const [logoImg,setLogoImg] = useState(null)
-  const [comapanyDetail,setCompanyDetail] = useState('')
+  const [employmentType, setEmploymentType] = useState("");
+  const [location, setLocation] = useState("Worldwide");
+  const [locationArr, setLocationArr] = useState([]);
+
+  const [logoImg, setLogoImg] = useState(null);
+  const [comapanyDetail, setCompanyDetail] = useState("");
   const [showOptions, setShowOptions] = useState(false);
   const [showInput, setShowInput] = useState(false);
-
 
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
   const [showDonationBox, setShowDonationBox] = useState(false);
 
   let [activeTab, setActiveTab] = useState(2);
-  const [choosenAmount,setChoosenAmount] = useState('')
-  const [isCafEmpty,setISCafEmpty] = useState(true)
+  const [choosenAmount, setChoosenAmount] = useState("");
+  const [isCafEmpty, setISCafEmpty] = useState(true);
+
+  const [StepCount, setStepCount] = useState(1);
+  const [showChats, setShowChats] = useState(false);
+
+  const [openChat, setOpenChat] = useState(false);
+  const [receiverText, setReceiverText] = useState("");
+  const [messages, setMessages] = useState([]);
+
+  const [FirstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [desciption, setDescription] = useState("");
+  const [phonenumber, setPhoneNumber] = useState("");
+  const [country, setCountry] = useState("");
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [isEmployer, setIsEmployer] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const [user, setUser] = useState({
+    username: "",
+    firstName: "",
+    lastName: "",
+    age: 18,
+    email: "",
+    password: "",
+    country: "",
+    desc: "",
+    phNumber: "",
+    isEmployer: false,
+  });
+
+  
 
 
-  const [StepCount,setStepCount] = useState(1)
-  const [showChats,setShowChats] = useState(false)
-
-  const [openChat,setOpenChat] = useState(false)
-  const [receiverText,setReceiverText] = useState('')
-  const [messages,setMessages] = useState([])
-
- 
-
+  const [termsChecked, setTermsChecked] = useState(false);
+  const [age, setAge] = useState(18);
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const toggleMenu = () => {
     setIsMenu(!isMenu);
@@ -234,8 +259,6 @@ const GlobalState = ({ children }) => {
     setSignUp(true);
     // hasDialogBeenShown(false)
   };
-
-
 
   const handleCancel = () => {
     setIsLoginFormOpen(false);
@@ -258,15 +281,64 @@ const GlobalState = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{employmentType,setEmploymentType,location,setLocation,locationArr,setLocationArr,
-        logoImg,setLogoImg,comapanyDetail,setCompanyDetail,openChat,setOpenChat,
-        activeTab, setActiveTab,choosenAmount,setChoosenAmount,isCafEmpty,setISCafEmpty,
-        StepCount,setStepCount,
-        receiverText,setReceiverText,messages,setMessages,
-        showChats,setShowChats,
-        showDonationBox,setShowDonationBox,
+      value={{
+        user,setUser,
+        FirstName,
+        setFirstName,
+        lastName,
+        setLastName,
+        desciption,
+        setDescription,
+        phonenumber,
+        setPhoneNumber,
+        country,
+        setCountry,
+        userName,
+        setUserName,
+        password,
+        setPassword,
+        isEmployer,
+        setIsEmployer,
+        email,
+        setEmail,
+        termsChecked,
+        setTermsChecked,
+        age,
+        setAge,
+        isFormValid,
+        setIsFormValid,
+        employmentType,
+        setEmploymentType,
+        location,
+        setLocation,
+        locationArr,
+        setLocationArr,
+        logoImg,
+        setLogoImg,
+        comapanyDetail,
+        setCompanyDetail,
+        openChat,
+        setOpenChat,
+        activeTab,
+        setActiveTab,
+        choosenAmount,
+        setChoosenAmount,
+        isCafEmpty,
+        setISCafEmpty,
+        StepCount,
+        setStepCount,
+        receiverText,
+        setReceiverText,
+        messages,
+        setMessages,
+        showChats,
+        setShowChats,
+        showDonationBox,
+        setShowDonationBox,
         data,
-        ComapanyName,handleCompanyChange,handleSignUpButtonClick,
+        ComapanyName,
+        handleCompanyChange,
+        handleSignUpButtonClick,
         handleClick,
         handleChange,
         showOptions,
