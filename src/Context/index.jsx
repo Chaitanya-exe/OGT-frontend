@@ -196,18 +196,19 @@ const GlobalState = ({ children }) => {
   const [jobTitle, setJobTitle] = useState("");
   const [ComapanyName, setCompanyName] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
-  const [price,setPrice] = useState()
-  const [Jobdesciption,setJobDescription] = useState('')
+  const [price, setPrice] = useState();
+  const [Jobdesciption, setJobDescription] = useState("");
+  const [token, setToken] = useState("");
 
-  const [project,setProject] = useState({
-    title:"",
-  desc:"",
-  price:null,
-  category:"",
-  postedBy:'',
-  DeliveryTime: "",
-  isCompleted:false
-  })
+  const [project, setProject] = useState({
+    title: "",
+    desc: "",
+    price: null,
+    category: "",
+    postedBy: "",
+    DeliveryTime: "",
+    isCompleted: false,
+  });
 
   const [logoImg, setLogoImg] = useState(null);
   const [comapanyDetail, setCompanyDetail] = useState("");
@@ -227,8 +228,9 @@ const GlobalState = ({ children }) => {
   const [openChat, setOpenChat] = useState(false);
   const [receiverText, setReceiverText] = useState("");
   const [messages, setMessages] = useState([]);
+  const [error, setError] = useState("");
+  const [isUserLoggedIn, setISUserLoggedIn] = useState(false);
 
- 
   const [user, setUser] = useState({
     username: "",
     firstName: "",
@@ -241,9 +243,6 @@ const GlobalState = ({ children }) => {
     phNumber: "",
     isEmployer: false,
   });
-
-  
-
 
   const [termsChecked, setTermsChecked] = useState(false);
   const [age, setAge] = useState(18);
@@ -281,16 +280,24 @@ const GlobalState = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{project,setProject,
-        user,setUser,
-        
-      
+      value={{
+        project,
+        setProject,
+        user,
+        setUser,
+        token,
+        setToken,
+        error,
+        setError,
+        isUserLoggedIn,
+        setISUserLoggedIn,
+
         termsChecked,
         setTermsChecked,
-       
+
         isFormValid,
         setIsFormValid,
-       
+
         logoImg,
         setLogoImg,
         comapanyDetail,

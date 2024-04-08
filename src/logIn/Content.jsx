@@ -12,12 +12,12 @@ const Content = ({onCancel}) => {
 
   return (
     <>
-          <div className=" mx-auto  w-fit bg-slate-100 z-50 shadow rounded-2xl overflow-hidden text-center text-sky-900 ">
+          <div className=" mx-auto  w-1/3 bg-slate-100 z-50 shadow rounded-2xl overflow-hidden text-center text-sky-900 ">
 
      <div className="px-9 font-light trackin-tight">
           <div className="flex items-baseline space-x-4">
-            <h1 className="text-4xl w-full tracking-wider my-4 font-semibold font-riot capitalize ">
-              ogt
+            <h1 className="text-4xl ogt w-full tracking-wider my-4 font-semibold font-riot capitalize ">
+              O G T
             </h1>
             <motion.button
               initial={{ rotate: 0, opacity: 1 }}
@@ -28,8 +28,8 @@ const Content = ({onCancel}) => {
               <MdCancel className="size-7 hover:opacity-90" />
             </motion.button>
           </div>
-          <p className="">Login to your account to post a project</p>
-          <div className="mt-6">
+          <p className="">You have to be<span className='font-semibold'> Logged In</span> to use the platform</p>
+          {/* <div className="mt-6">
             <p className=" flex justify-center items-center space-x-3">
               <PiHandWavingBold className="text-yellow-600 mr-2 size-4 " />
               Only paying users can Log In
@@ -48,7 +48,7 @@ const Content = ({onCancel}) => {
               </Link>{" "}
               to get access today!
             </p>
-          </div>
+          </div> */}
         </div>
 
         <LogIn onCancel={onCancel} />

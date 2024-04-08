@@ -4,7 +4,8 @@ import { GlobalContext } from "../../Context";
 import axios from "axios";
 
 const Step2 = () => {
-  const { user, setUser } = useContext(GlobalContext);
+  const { user, setUser, setToken, setISUserLoggedIn } =
+    useContext(GlobalContext);
   console.log(user.username, user.password, user.email);
   return (
     <div className=" mt-12 w-full m-48 flex-col justify-center items-center space-y-8">
@@ -72,12 +73,22 @@ const Step2 = () => {
       <Link
         to={"/home"}
         onClick={async () => {
-          const data = user;
-          const response = await axios.post(
-            "http://localhost:5000/api/users/register",
-            data
-          );
-          const loginData = response.data;
+          try {
+            const data = user;
+            const response = await axios.post(
+              "http://localhost:5000/api/users/register",
+              data
+            );
+            const resData = response.data;
+            setToken(resData.token);
+            setISUserLoggedIn(true);
+            setUser({
+              ...resData.user,
+              password: "",
+            });
+          } catch (err) {
+            console.log(err.response.data);
+          }
         }}
         className="button w-fit mx-auto block"
       >

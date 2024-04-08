@@ -1,21 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-
 import { motion } from "framer-motion";
 import { FcGoogle } from "react-icons/fc";
-
+import { GlobalContext } from "../Context";
+import axios from "axios";
+import { data } from "autoprefixer";
 const LogIn = ({ onCancel }) => {
-  const [userEmail, setUserEmail] = useState("");
+  const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState();
+  const { user, token, setToken, setError, error, setISUserLoggedIn, setUser } =
+    useContext(GlobalContext);
+
+  const handleLogin = async (e) => {
+    try {
+      e.preventDefault();
+      const reqData = {
+        username: userName,
+        password: userPassword,
+      };
+      const response = await axios.post(
+        "http://localhost:5000/api/users/login",
+        reqData
+      );
+      const resData = await response.data;
+      const loginToken = await resData.token;
+      const userInfo = await resData.info;
+      setISUserLoggedIn(true);
+
+      setToken(loginToken);
+      setUser({
+        ...userInfo,
+        password: "",
+      });
+      console.log(`You have been logged in as ${user.username}`);
+    } catch (err) {
+      setError(err.response.data);
+      console.log(error);
+    }
+  };
 
   return (
     <>
       <div className=" mx-auto w-full bg-slate-100 z-50 shado rounded-2xl overflow-hidden text-center text-sky-900 ">
-    
         <form className="my-10 px-8 ">
           <div className="relative">
             <input
-              onChange={(e) => setUserEmail(e.target.value)}
+              onChange={(e) => setUserName(e.target.value)}
               id="email"
               name="email"
               type="text"
@@ -28,7 +58,7 @@ const LogIn = ({ onCancel }) => {
     peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-800 peer-placeholder-shown:top-2 
     peer-focus:-top-3.5 peer-focus:text-orange-600 peer-focus:text-sm"
             >
-              Email address
+              Username
             </label>
           </div>
           <div className="relative mt-8">
@@ -51,17 +81,20 @@ const LogIn = ({ onCancel }) => {
             </label>
           </div>
           <div className="mt-3 space-y-3">
-            <button className="button w-full hover:bg-slate-100 font-semibold hover:border border-slate-950 hover:text-slate-950">
+            <button
+              className="button w-full hover:bg-slate-100 font-semibold hover:border border-slate-950 hover:text-slate-950"
+              onClick={(e) => handleLogin(e)}
+            >
               Log In
             </button>
-            <div  className="flex space-x-2 items-center justify-center px-5 py-3 my-2 w-full rounded-lg bg-slate-200/70 font-semibold border text-slate-950">
+            {/* <div  className="flex space-x-2 items-center justify-center px-5 py-3 my-2 w-full rounded-lg bg-slate-200/70 font-semibold border text-slate-950">
 <FcGoogle className="size-5"/>
             <button>
               Log In with Google
             </button>
 
-            </div>
-  
+            </div> */}
+
             <Link
               onClick={onCancel}
               to="/reset"
@@ -69,11 +102,19 @@ const LogIn = ({ onCancel }) => {
             >
               Reset password
             </Link>
-            <p className="text-sm float-end" >New ?
-            <Link to="/newAccount"onClick={onCancel} className=" hover:underline cursor-pointer font-semibold "> Create Account</Link>
+            <p className="text-sm float-end">
+              New ?
+              <Link
+                to="/newAccount"
+                onClick={onCancel}
+                className=" hover:underline cursor-pointer font-semibold "
+              >
+                {" "}
+                Create Account
+              </Link>
             </p>
           </div>
-          <div className="mt-14 -mb-16 text-sm text-center ">
+          {/* <div className="mt-14 -mb-16 text-sm text-center ">
             <p className="tracking-tight font-thin ">
               Are you a hiring manager?
             </p>
@@ -83,7 +124,7 @@ const LogIn = ({ onCancel }) => {
             >
               Post a job here{" "}
             </Link>
-          </div>
+          </div> */}
         </form>
 
         <svg

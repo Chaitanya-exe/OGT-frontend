@@ -6,7 +6,6 @@ import { GlobalContext } from "../Context";
 import Content from "../logIn/Content";
 import { RiMessage3Fill } from "react-icons/ri";
 
-
 const uiConatiner = {
   hidden: {
     opacity: 0,
@@ -32,9 +31,10 @@ const item = {
   },
 };
 
-export default function Header({text="OGT",speed="1000"}) {
+export default function Header({ text = "OGT", speed = "1000" }) {
   const {
-    showChats,setShowChats,
+    showChats,
+    setShowChats,
     isMenu,
     handleLoginButtonClick,
     handleCancel,
@@ -43,8 +43,10 @@ export default function Header({text="OGT",speed="1000"}) {
     isLoginFormOpen,
     toggleMenu,
     handleSignUpButtonClick,
+    isUserLoggedIn,
+    setISUserLoggedIn,
+    user,
   } = useContext(GlobalContext);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +62,7 @@ export default function Header({text="OGT",speed="1000"}) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
- 
+
   // console.log(showChats)
 
   return (
@@ -68,16 +70,19 @@ export default function Header({text="OGT",speed="1000"}) {
       <header class="text-slate-800">
         <div>
           <div class=" flex p-5 items-center justify-between relative">
-           <div>
-            <Link className="text-3xl font-lexend font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600 ">O G T</Link>
-           </div>            
-            <nav class="md:ml-auto  items-center  text-base hidden md:flex justify-between space-x-6">
-            <div className="flex space-x-3 justify-center items-center">
-            <div onClick={() => setShowChats(!showChats)}><RiMessage3Fill className="size-5 text-slate-700 inline-flex mr-1 mb-1 align-middle" />Messages</div>
-            {/* <div onClick={() => setShowChats(true)}><RiMessage3Fill className="size-5 inline-flx mx-auto align-middle" />Notification</div> */}
-            
-
+            <div>
+              <Link className="text-3xl font-lexend font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600 ">
+                O G T
+              </Link>
             </div>
+            <nav class="md:ml-auto  items-center  text-base hidden md:flex justify-between space-x-6">
+              <div className="flex space-x-3 justify-center items-center">
+                <div onClick={() => setShowChats(!showChats)}>
+                  <RiMessage3Fill className="size-5 text-slate-700 inline-flex mr-1 mb-1 align-middle" />
+                  Messages
+                </div>
+                {/* <div onClick={() => setShowChats(true)}><RiMessage3Fill className="size-5 inline-flx mx-auto align-middle" />Notification</div> */}
+              </div>
               <a class="mr-5 inline-flex text-gray-900 group/first ">
                 Contact us
                 {/* <i class="fa-solid fa-angle-down"></i> */}
@@ -110,68 +115,71 @@ export default function Header({text="OGT",speed="1000"}) {
                 </span>
                 <div className="shadow-md hidden transition-all duration-300 ease-in-out group-hover/second:block text-orange-950 absolute z-10 bg-sky-200 capitalize lg:left-3/ top-12 rounded px-1 py-2">
                   <ul className=" *:p-1">
-                    <li className="hover:text-orange-800">
-                       skill
-                    </li>
+                    <li className="hover:text-orange-800">skill</li>
                     <li className="hover:text-orange-800">company</li>
                   </ul>
                 </div>
               </a>
             </nav>
-            <div className="md:block hidden *:bg-sky-100 ">
-              <button
-                onClick={handleLoginButtonClick}
-                class="hover:ring-1 inline-flex items-center bg-gray-100 border-0 py-1 px-3 m-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
-              >
-                Log In
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-1"
-                  viewBox="0 0 24 24"
+            {isUserLoggedIn ? (
+              `${user.username}`
+            ) : (
+              <div className="md:block hidden *:bg-sky-100 ">
+                <button
+                  onClick={handleLoginButtonClick}
+                  class="hover:ring-1 inline-flex items-center bg-gray-100 border-0 py-1 px-3 m-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
                 >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </button>
+                  Log In
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    class="w-4 h-4 ml-1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
 
-              <Link to={"/newAccount"}
-                onClick={handleSignUpButtonClick}
-                class="hover:ring-1 inline-flex items-center bg-gray-100 border-0 py-1 px-3 m-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
-              >
-                Sign up
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-1"
-                  viewBox="0 0 24 24"
+                <Link
+                  to={"/newAccount"}
+                  onClick={handleSignUpButtonClick}
+                  class="hover:ring-1 inline-flex items-center bg-gray-100 border-0 py-1 px-3 m-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
                 >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </Link>
-              <Link
-                to={"/Home"}
-                class="hover:ring-1  inline-flex items-center bg-gray-100 border-0 py-1 px-3 mr-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
-              >
-                For Employers
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-1"
-                  viewBox="0 0 24 24"
+                  Sign up
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    class="w-4 h-4 ml-1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </Link>
+                <Link
+                  to={"/Home"}
+                  class="hover:ring-1  inline-flex items-center bg-gray-100 border-0 py-1 px-3 mr-2 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
                 >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </Link>
-            </div>
+                  For Employers
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    class="w-4 h-4 ml-1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </Link>
+              </div>
+            )}
             <button
               className="relative group rounded bg-sky-800 text-white "
               onClick={() => toggleMenu()}
