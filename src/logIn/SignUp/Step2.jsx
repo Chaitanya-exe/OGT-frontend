@@ -74,11 +74,10 @@ const Step2 = () => {
         onClick={async () => {
           const data = user;
           const response = await axios.post(
-            "http://192.168.43.149:5000/api/users/register",
+            "http://localhost:5000/api/users/register",
             data
           );
           const loginData = response.data;
-          console.log(loginData);
         }}
         className="button w-fit mx-auto block"
       >
