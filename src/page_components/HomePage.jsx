@@ -1,15 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import Footer from "./Footer";
 import RightSide from "./rightSide";
-import SignUp from "../logIn/SignUp/SignUp";
 import { motion } from "framer-motion";
 import Header from "./header";
 import { GlobalContext } from "../Context";
-import JobLayout from "./JobLayout";
 import Main from "./Main";
 import Donate_box from "../Donation/Donate_box";
 import DonateSteps from "../Donation/fold/DonateSteps";
 import Inedx from "../Message/Inedx";
+import Footer from "../landing_components/footer";
+import Advertisements from "./advertise";
+import Jobs from "./jobs";
 
 const backdrop = {
   visible: { opacity: 1 },
@@ -41,10 +41,6 @@ const HomePage = () => {
     };
   }, [hasDialogBeenShown]);
 
-  const handleCancel = () => {
-    setSignUp(false);
-  };
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowDonationBox(true);
@@ -67,7 +63,6 @@ const HomePage = () => {
         }}
         className="overflow-hidden font-fontBody"
       >
-        {/* from-pink-400 shadow via-orange-200 to-orange-50  */}
         <div
           className={
             isScrolled
@@ -99,11 +94,18 @@ const HomePage = () => {
         </div>
         }
         <div className="mx-16 *:rounded-lg">
+        <div className="w-full mt-2">
+<Advertisements />
+<Jobs />
+        </div>
           <RightSide />
-          <JobLayout />
           <DonateSteps />
         </div>
-        <Footer />
+        <div className="bg-gradient-to-br  from-indigo-200 to-pink-100 via-blue-100">
+
+        <Footer route="home" />
+
+        </div>
       </motion.div>
     </>
   );

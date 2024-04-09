@@ -12,8 +12,7 @@ export default {
         "bottom":"#F2F4EB"
       },
       fontFamily:{
-        // 'riot':['Roboto Slab',"serif"],
-        // 'Montserrat':['Montserrat','sans-serif']
+        faqs: ["Playfair Display", "serif"],
         fontBody: ["Readex Pro", "sans-serif"],
         lexend:["Lexend","sans-serif"]
       },

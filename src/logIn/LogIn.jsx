@@ -27,6 +27,8 @@ const LogIn = ({ onCancel }) => {
       const userInfo = await resData.info;
       setISUserLoggedIn(true);
 
+      onCancel()
+
       setToken(loginToken);
       setUser({
         ...userInfo,

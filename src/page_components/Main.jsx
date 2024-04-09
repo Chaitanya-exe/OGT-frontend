@@ -11,8 +11,8 @@ const Main = () => {
   useEffect(() => {
     let currentText = "";
     let currentIndex = 0;
-    // setTimeout(() => {
-      const interval = setInterval(() => {
+    setTimeout(() => {
+      let interval = setInterval(() => {
         if (currentIndex == text.length) {
           clearInterval(interval);
           return;
@@ -21,11 +21,11 @@ const Main = () => {
         setDisplayText(currentText);
         currentIndex++;
       }, speed);
-    // }, 1500);
-    return () => clearInterval(interval);
+      return () => clearInterval(interval);
+    }, 1500);
   }, [text, speed]);
   return (
-    <div className="flex mt-20 mb-10 py-8 text-wrap flex-col ">
+    <div className="flex mt-16 mb-10 py-10 text-wrap flex-col ">
       <div className="text-center my-14 md:mx-16 mx-2">
         <h1 className="font-bold font-riot text-4xl bg-clip-text bg-gradient-to-tr from-slate-700 via-sky-950 to-blue-950 text-transparent">
           <span className="text-6xl  text-transparent bg-clip-text bg-gradient-to-br from-purple-900 via-pink-900 to-orange-500">
@@ -45,10 +45,11 @@ const Main = () => {
 
         <Link
           to={"/form"}
-          className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600 capitalize  hover:border-b-2 border-pink-600"
+          className="text-lg relative group font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600 capitalize"
         >
           {" "}
           post a job
+        <span className="absolute inset-x-0 bottom-0 h-0.5 bg-pink-600 rounded-full transform origin-center transition-transform duration-300 scale-x-0 group-hover:scale-x-100"></span>
         </Link>
       </div>
       <div className="mt-4 mb-11 sm:mx-4 md:ml-40 md:mr-10 lg:mr-72 lg:ml-96">

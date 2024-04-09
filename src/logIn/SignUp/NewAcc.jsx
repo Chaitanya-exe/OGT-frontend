@@ -11,8 +11,8 @@ const NewAcc = () => {
       <div className="bg-gradient-to-r from-purple-100 to-orange-50">
         <Header />
       </div>
-      <div className=" h-screen flex space-x-10">
-        <div className="w-1/3 overflow-hidden flex justify-center items-center">
+      <div className=" flex space-x-10">
+        <div className="w-1/3 sticky left-0 bottom-0 top-0 h-full overflow-hidden flex justify-center items-center">
           <img src="https://source.unsplash.com/random/flower" 
             className="h-screen object-cover object-center w-full"
           />

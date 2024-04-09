@@ -71,7 +71,7 @@ export default function Header({ text = "OGT", speed = "1000" }) {
         <div>
           <div class=" flex p-5 items-center justify-between relative">
             <div>
-              <Link className="text-3xl font-lexend font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600 ">
+              <Link to="/home" className="text-3xl font-lexend font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600 ">
                 O G T
               </Link>
             </div>
@@ -98,7 +98,7 @@ export default function Header({ text = "OGT", speed = "1000" }) {
                 <div className="shadow-md hidden group-hover/first:block text-orange-950 absolute z-10 bg-sky-200  capitalize lg:left-2/7 top-12 rounded px-1 py-2">
                   <ul className=" *:p-1">
                     <li className="hover:text-orange-800">Contact details</li>
-                    <li className="hover:text-orange-800">about us </li>
+                    <Link to="/aboutUs" className="hover:text-orange-800">about us </Link>
                   </ul>
                 </div>
               </a>

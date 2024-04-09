@@ -1,9 +1,4 @@
 import React from "react";
-import { FaShopify } from "react-icons/fa6";
-import { FaStripe } from "react-icons/fa";
-import { SiYoutubetv } from "react-icons/si";
-import { FaGithub } from "react-icons/fa";
-import { IconContext } from "react-icons";
 import { Link } from "react-router-dom";
 
 export default function Advertisements() {
@@ -24,26 +19,7 @@ export default function Advertisements() {
           </p>
         </a>
       </div>
-      {/* <div className="md:flex md:items-center  p-3 capitalize my-2 border border-r-2 rounded-lg">
-        <p>
-          trusted by leading companies who
-          <Link
-            to="/"
-            className="text-purple-700 cursor-pointer underline m-1"
-          >
-            {" "}
-            hire on remotive.
-          </Link>
-        </p>
-        <div className="flex flex-grow md:mx-6 items-center justify-between mt-1">
-          <IconContext.Provider value={{}}>
-            <FaShopify className="text-slate-800 size-10" />
-            <FaStripe className="text-slate-800 size-14" />
-            <SiYoutubetv className="text-slate-800 size-16" />
-            <FaGithub className="text-slate-800 size-10" />
-          </IconContext.Provider>
-        </div>
-      </div> */}
+     
     </>
   );
 }

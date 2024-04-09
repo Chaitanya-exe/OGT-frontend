@@ -5,7 +5,6 @@ import { FaFaceFrown } from "react-icons/fa6";
 import { FaFaceGrin } from "react-icons/fa6";
 import { FaFaceGrinHearts } from "react-icons/fa6";
 import { GiCancel } from "react-icons/gi";
-import JobLayout from "./JobLayout";
 
 export default function RightSide() {
   return (

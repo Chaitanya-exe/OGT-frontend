@@ -7,7 +7,7 @@ import Persons from './Persons'
 import { GlobalContext } from '../Context'
 
 const Inedx = () => {
-  const {openChat,setOpenChat} = useContext(GlobalContext)
+  const {openChat} = useContext(GlobalContext)
   return (
     <>
     <div className='relative text-slate-900  p-3 m-2'>
@@ -16,7 +16,6 @@ const Inedx = () => {
       <Search />
       <div className='flex space-x-2'>
       <Persons />
-      {/* <ChatBox /> */}
 
       </div>
 

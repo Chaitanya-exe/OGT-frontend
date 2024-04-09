@@ -229,7 +229,7 @@ const GlobalState = ({ children }) => {
   const [receiverText, setReceiverText] = useState("");
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
-  const [isUserLoggedIn, setISUserLoggedIn] = useState(false);
+  const [isUserLoggedIn, setISUserLoggedIn] = useState(true);
 
   const [user, setUser] = useState({
     username: "",

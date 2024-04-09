@@ -50,7 +50,7 @@ const SignUp = ({ setStep2SignUp }) => {
   }, [user.firstName, user.age, termsChecked]);
   return (
     <>
-      <div className=" p-4 border rounded-lg max-h-full o">
+      <div className=" px-4 mb-6 h-fit mb- border rounded-lg">
         <div className=" space-y-4 w-fit p-4 h-full ">
           <div className="flex justify-between border-b-2 pb-3">
             <h2 className="text-xl font-semibold tracking-wide">
@@ -200,7 +200,7 @@ const SignUp = ({ setStep2SignUp }) => {
                 className="border rounded outline-none p-3"
               ></textarea>
             </label>
-            <label className=" align-baseli content-center">
+            <label className="  col-span-2 content-center">
               <input
                 type="checkbox"
                 onChange={(e) => setTermsChecked(e.target.checked)}
@@ -211,6 +211,7 @@ const SignUp = ({ setStep2SignUp }) => {
               <span className="text-purple-600">Terms & Conditions</span>
             </label>
           </div>
+        </div>
           <button
             disabled={!isFormValid}
             onClick={() => {
@@ -220,7 +221,6 @@ const SignUp = ({ setStep2SignUp }) => {
           >
             Next
           </button>
-        </div>
       </div>
 
       {/* <AnimatePresence>

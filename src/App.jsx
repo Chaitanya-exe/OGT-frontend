@@ -13,6 +13,9 @@ import SignUp from "./logIn/SignUp/SignUp";
 import NewAcc from "./logIn/SignUp/NewAcc";
 import { GlobalContext } from "./Context";
 import Content from "./logIn/Content";
+import AboutUs from "./About us/AboutUs";
+import FAQs from "./Faqs/FAQs";
+import Course from "./Resources/Course";
 
 const App = () => {
   const {isLoginFormOpen,handleCancel} = useContext(GlobalContext)
@@ -29,6 +32,9 @@ const App = () => {
           <Route path="/project" element={<Project />}></Route>
           <Route path="/donate" element={<Index />}></Route>
           <Route path="/newAccount" element={<NewAcc />}></Route>
+          <Route path="/aboutUs" element={<AboutUs/>}></Route>
+          <Route path="/FAQ's" element={<FAQs/>}></Route>
+          <Route path="/Free-courses" element={<Course />}></Route>
         </Routes>
 {/* 
         {isLoginFormOpen && (

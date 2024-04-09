@@ -35,10 +35,9 @@ const LandingPage = () => {
         <Main />
         <Middiv />
         <Step />
-        {/* <Facilities /> */}
         <Tabs />
         <div className="bg-blue-950">
-        <Footer />
+        <Footer route="/" />
         </div>
       </motion.div>
     </>
