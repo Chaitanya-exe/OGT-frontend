@@ -2,12 +2,14 @@ import React, { useContext, useState, useEffect } from "react";
 import { GlobalContext } from "../Context";
 import { Link } from "react-router-dom";
 
-const Main = () => {
+const Main = ({route,isDeveloperChecked,setIsDeveloperChecked}) => {
   const { JobLi } = useContext(GlobalContext);
+  // const [isDeveloperChecked,setIsDeveloperChecked] = useState(true)
   const [displayText, setDisplayText] = useState("");
   const text = ": The Global marketplace for  Top Talent.";
   const speed = 100;
-
+  
+  console.log(isDeveloperChecked)
   useEffect(() => {
     let currentText = "";
     let currentIndex = 0;
@@ -32,7 +34,7 @@ const Main = () => {
             OGT{" "}
           </span>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-purple-950 to-pink-600">
-            {/* place for  Top Talent. */} {displayText}
+           {displayText}
           </span>
         </h1>
         <p className="text-center mt-2 mx-28">
@@ -58,6 +60,18 @@ const Main = () => {
             <li className="bg-blue-200">{job}</li>
           ))}
         </ul>
+      </div>
+      <div className={` ${route == "/" ? "mx-auto text-center " : "hidden"} "text-center space-x-2 flex-col space-y-3"`}>
+        
+  <input id="Developer"  onClick={() => {setIsDeveloperChecked(true)}} class="peer/Developer size-4" type="radio" name="status" checked={isDeveloperChecked} />
+  <label for="Developer" class="peer-checked/Developer:text-blue-500  text-lg ">Developer</label>
+
+      
+  <input id="Employer" onClick={() => {setIsDeveloperChecked(false)}} class="peer/Employer size-4" type="radio" name="status" />
+  <label for="Employer" class="peer-checked/Employer:text-blue-500 text-lg">Employer</label>
+
+  <div class="hidden peer-checked/Developer:block text-slate-900">For a Developer</div>
+  <div class="hidden peer-checked/Employer:block text-slate-900">For a Employer.</div>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { GlobalContext } from "../Context";
 import Content from "../logIn/Content";
 import { RiMessage3Fill } from "react-icons/ri";
+import Dashboard from "../Dashboard/Dashboard";
 
 const uiConatiner = {
   hidden: {
@@ -96,8 +97,8 @@ export default function Header({ text = "OGT", speed = "1000" }) {
                   </svg>
                 </span>
                 <div className="shadow-md hidden group-hover/first:block text-orange-950 absolute z-10 bg-sky-200  capitalize lg:left-2/7 top-12 rounded px-1 py-2">
-                  <ul className=" *:p-1">
-                    <li className="hover:text-orange-800">Contact details</li>
+                  <ul className=" *:p-1 *:block">
+                    <Link to="/contactDetails" className="hover:text-orange-800">Contact details</Link>
                     <Link to="/aboutUs" className="hover:text-orange-800">about us </Link>
                   </ul>
                 </div>
@@ -122,7 +123,7 @@ export default function Header({ text = "OGT", speed = "1000" }) {
               </a>
             </nav>
             {isUserLoggedIn ? (
-              `${user.username}`
+              <Dashboard />
             ) : (
               <div className="md:block hidden *:bg-sky-100 ">
                 <button

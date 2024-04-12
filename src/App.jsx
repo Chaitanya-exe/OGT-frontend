@@ -16,6 +16,7 @@ import Content from "./logIn/Content";
 import AboutUs from "./About us/AboutUs";
 import FAQs from "./Faqs/FAQs";
 import Course from "./Resources/Course";
+import ConatctUs from "./Contact-details/ConatctUs";
 
 const App = () => {
   const {isLoginFormOpen,handleCancel} = useContext(GlobalContext)
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/aboutUs" element={<AboutUs/>}></Route>
           <Route path="/FAQ's" element={<FAQs/>}></Route>
           <Route path="/Free-courses" element={<Course />}></Route>
+          <Route path="/contactDetails" element={<ConatctUs />}></Route>
         </Routes>
 {/* 
         {isLoginFormOpen && (

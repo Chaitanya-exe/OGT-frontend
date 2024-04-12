@@ -20,3 +20,15 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r  from-purple-500 to-pink-600
 
 }
+
+.slick-slide > div {
+    margin: 0 10px;
+}
+
+.slick-slider .slick-arrow {
+    scale: 1.4;
+    color: #be2222;
+    background-color: #121010; /* Adjust color as needed */
+    border-radius: 50%; /* Optional rounded corners */
+  }
+  

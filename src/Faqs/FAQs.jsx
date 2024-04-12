@@ -11,7 +11,7 @@ const FAQs = () => {
           <Header />
         </div>
         <QA />
-        <div className="bg-blue-950 absolute bottom-0 left-0 right-0">
+        <div className="bg-blue-950">
           <Footer route="Faqs" />
         </div>
       </div>
@@ -25,7 +25,7 @@ const QA = () => {
   const [selected, setSelected] = useState(null);
   return (
     <>
-      <div className="flex justify-center mt-20 font-faqs">
+      <div className="flex justify-center mt-20 font-faqs p-16">
         <div className="w-1/2 ">
           {data.map((item, i) => (
             <div className={` ${selected == i ? "bg-gradient-to-t from-purple-100" : ""} "item rounded-md shadow  cursor-pointer font-semibold capitalize p-3 m-1"`}>
