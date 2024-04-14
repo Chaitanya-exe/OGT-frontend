@@ -11,9 +11,11 @@ const Index = () => {
   const { StepCount, setStepCount } = useContext(GlobalContext);
 
   return (
-    <div className="">
+    <>
+    <div className="bg-gradient-to-t from-purple-100 to-blue-200 transition-all ease-linear fixed z-50 right-0 left-0 top-0">
       <Header />
-      <div className="text-center space-y-10 p-3 ">
+    </div>
+      <div className="text-center mt-20 space-y-10 p-3 ">
       <h1 className="text-4xl font-semibold text-sky-900">Step : {StepCount===1 ? "1" : StepCount===2 ? "2" : StepCount===3 ? "last" : ""}</h1>
 
       <div className="flex justify-center items-center">
@@ -23,7 +25,8 @@ const Index = () => {
       </AnimatePresence>
       </div>
       </div>
-    </div>
+
+    </>
   );
 };
 
