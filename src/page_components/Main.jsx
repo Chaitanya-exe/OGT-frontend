@@ -9,7 +9,7 @@ const Main = ({route,isDeveloperChecked,setIsDeveloperChecked}) => {
   const text = ": The Global marketplace for  Top Talent.";
   const speed = 100;
   
-  console.log(isDeveloperChecked)
+  
   useEffect(() => {
     let currentText = "";
     let currentIndex = 0;

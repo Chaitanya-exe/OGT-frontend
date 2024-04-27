@@ -229,7 +229,7 @@ const GlobalState = ({ children }) => {
   const [receiverText, setReceiverText] = useState("");
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
-  const [isUserLoggedIn, setISUserLoggedIn] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   const [user, setUser] = useState({
     username: "",
@@ -290,7 +290,7 @@ const GlobalState = ({ children }) => {
         error,
         setError,
         isUserLoggedIn,
-        setISUserLoggedIn,
+        setIsUserLoggedIn,
 
         termsChecked,
         setTermsChecked,

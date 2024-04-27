@@ -45,7 +45,7 @@ export default function Header({ text = "OGT", speed = "1000" }) {
     toggleMenu,
     handleSignUpButtonClick,
     isUserLoggedIn,
-    setISUserLoggedIn,
+    setIsUserLoggedIn,
     user,
   } = useContext(GlobalContext);
 
