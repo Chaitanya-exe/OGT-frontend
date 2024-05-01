@@ -58,7 +58,7 @@ const Footer = ({route}) => {
             </h1>
             <ul className=" *:cursor-pointer space-y-2 *:text-sm font-thin flex-col flex py-1">
 
-              <a  className={route === 'home' ? "text-slate-900" : "text-slate-100"}>Instagram <FaInstagram  className="inline-flex size-4 mb-0.5"  /></a>
+              <a href="https://www.instagram.com/vishukaushikk?igsh=MTg4OWI4ejIweW0zOQ==" className={route === 'home' ? "text-slate-900" : "text-slate-100"}>Instagram <FaInstagram  className="inline-flex size-4 mb-0.5"  /></a>
               <a  className={route === 'home' ? "text-slate-900" : "text-slate-100"}>Discord <RiDiscordLine className="inline-flex size-5 mb-0.5"/> </a>
             </ul>
           </div>
