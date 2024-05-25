@@ -7,8 +7,7 @@ import { GlobalContext } from '../Context';
 
 
 
-const Head = () => {
-  const {setShowChats} = useContext(GlobalContext)
+const Head = ({setShowChats}) => {
   return (
     <div className='flex items-center justify-between'>
       <div className='w-12 h-12 border flex justify-center items-center rounded-full overflow-hidden'>

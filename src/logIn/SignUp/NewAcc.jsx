@@ -18,7 +18,6 @@ const NewAcc = () => {
           />
         </div>
       
-          {/* <Category /> */}
           <div className="flex justify-center  w-1/2 m-4 h-full">
 { 
   step2SignUp ? <Step2 /> : <SignUp setStep2SignUp={setStep2SignUp} />

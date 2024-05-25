@@ -30,8 +30,8 @@ const variants = {
     }
 
 }
-const Donate_box = () => {
-    const {setShowDonationBox, setStepCount} = useContext(GlobalContext)
+const Donate_box = ({setShowDonationBox}) => {
+    const { setStepCount} = useContext(GlobalContext)
   return (
     <AnimatePresence>
 

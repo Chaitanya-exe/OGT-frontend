@@ -14,7 +14,7 @@ import {motion} from "framer-motion"
 
 const paymentOptions=[]
 
-const Right = () => {
+const RightDonateCard = () => {
   return (
     <motion.div
     initial={{y:-18 , x:-190}}
@@ -37,4 +37,4 @@ const Right = () => {
   )
 }
 
-export default Right
+export default RightDonateCard

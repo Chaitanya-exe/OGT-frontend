@@ -6,10 +6,10 @@ import { GlobalContext } from "../Context";
 import Main from "./Main";
 import Donate_box from "../Donation/Donate_box";
 import DonateSteps from "../Donation/fold/DonateSteps";
-import Inedx from "../Message/Inedx";
 import Footer from "../landing_components/footer";
 import Advertisements from "./advertise";
 import Jobs from "./jobs";
+import MessageBox from "../Message/MessageBox";
 
 const backdrop = {
   visible: { opacity: 1 },
@@ -18,28 +18,33 @@ const backdrop = {
 
 const HomePage = () => {
   const {
-    showChats,setShowChats,
+    // showChats,setShowChats,
     signUp,
-    isScrolled,
-    showDonationBox,
-    setShowDonationBox,
+    // isScrolled,
+    // showDonationBox,
+    // setShowDonationBox,
     setSignUp,
     hasDialogBeenShown,
     setHasDialogBeenShown,
   } = useContext(GlobalContext);
 
-  useEffect(() => {
-    const handleSignUpScroll = () => {
-      if (window.scrollY > 300 && !hasDialogBeenShown) {
-        setSignUp(true);
-        setHasDialogBeenShown(true);
-      }
-    };
-    window.addEventListener("scroll", handleSignUpScroll);
-    return () => {
-      window.removeEventListener("scroll", handleSignUpScroll);
-    };
-  }, [hasDialogBeenShown]);
+  const [showDonationBox, setShowDonationBox] = useState(false);
+  const [showChats, setShowChats] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+
+  // useEffect(() => {
+  //   const handleSignUpScroll = () => {
+  //     if (window.scrollY > 300 && !hasDialogBeenShown) {
+  //       setSignUp(true);
+  //       setHasDialogBeenShown(true);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleSignUpScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleSignUpScroll);
+  //   };
+  // }, [hasDialogBeenShown]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -50,10 +55,6 @@ const HomePage = () => {
   return (
     <>
       <motion.div
-        //  initial={{opacity:0}}
-        //  animate={{opacity:1}}
-        //  exit={{opacity:0}}
-
         initial={{ width: 0, opacity: 0 }}
         animate={{ width: "100%", opacity: 1 }}
         exit={{
@@ -63,14 +64,11 @@ const HomePage = () => {
         }}
         className="overflow-hidden font-fontBody"
       >
-        <div
-          className={
-            isScrolled
-              ? "bg-gradient-to-t from-purple-100 to-blue-200 transition-all ease-linear fixed z-50 right-0 left-0 top-0"
-              : "bg-gradient-to-t from-purple-100 to-orange-50 transition-all ease-linear  fixed z-50 right-0 left-0 top-0"
-          }
-        >
-          <Header />
+        <div  className=
+         {`${isScrolled
+              ? "bg-gradient-to-t from-purple-100 to-blue-200 text-slate-800" : "bg-gradient-to-t from-purple-100 to-orange-50" } transition-all ease-linear  fixed z-50 right-0 left-0 top-0 `}>
+
+        <Header showChats={showChats} setShowChats={setShowChats} isScrolled={isScrolled} setIsScrolled={setIsScrolled} />
         </div>
         <div className="bg-gradient-to-b from-purple-200/60 via-blue-100/80 to-orange-100">
           <Main />
@@ -85,27 +83,26 @@ const HomePage = () => {
           <SignUp onCancel={handleCancel} />
         </motion.div>
       )} */}
-        {showDonationBox && <Donate_box />}
-
-        {showChats && 
-        <div className="fixed right-2 min-h-96 rounded-l-lg bottom-4 z-50 bg-slate-50 shadow-lg">
-
-        <Inedx />
-        </div>
-        }
         <div className="mx-16 *:rounded-lg">
-        <div className="w-full mt-2">
-<Advertisements />
-<Jobs />
-        </div>
+          {/* <div className="w-full mt-2"> */}
+          <Advertisements />
+          <Jobs />
+          {/* </div> */}
           <RightSide />
           <DonateSteps />
         </div>
         <div className="bg-gradient-to-br  from-indigo-200 to-pink-100 via-blue-100">
-
-        <Footer route="home" />
-
+          <Footer route="home" />
         </div>
+        {showDonationBox && (
+          <Donate_box setShowDonationBox={setShowDonationBox} />
+        )}
+
+        {showChats && (
+          <div className="fixed right-2 min-h-96 rounded-l-lg bottom-4 z-50 bg-slate-50 shadow-lg">
+            <MessageBox setShowChats={setShowChats} />
+          </div>
+        )}
       </motion.div>
     </>
   );

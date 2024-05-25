@@ -188,8 +188,6 @@ const data = [
 ];
 
 const GlobalState = ({ children }) => {
-  const [isMenu, setIsMenu] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [signUp, setSignUp] = useState(false);
   const [hasDialogBeenShown, setHasDialogBeenShown] = useState(false);
 
@@ -203,7 +201,7 @@ const GlobalState = ({ children }) => {
   const [project, setProject] = useState({
     title: "",
     desc: "",
-    price: null,
+    price: 8,
     category: "",
     postedBy: "",
     DeliveryTime: "",
@@ -216,14 +214,12 @@ const GlobalState = ({ children }) => {
   const [showInput, setShowInput] = useState(false);
 
   const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
-  const [showDonationBox, setShowDonationBox] = useState(false);
 
   let [activeTab, setActiveTab] = useState(2);
   const [choosenAmount, setChoosenAmount] = useState("");
   const [isCafEmpty, setISCafEmpty] = useState(true);
 
   const [StepCount, setStepCount] = useState(1);
-  const [showChats, setShowChats] = useState(false);
 
   const [openChat, setOpenChat] = useState(false);
   const [receiverText, setReceiverText] = useState("");
@@ -248,15 +244,11 @@ const GlobalState = ({ children }) => {
   const [age, setAge] = useState(18);
   const [isFormValid, setIsFormValid] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenu(!isMenu);
-  };
   const handleLoginButtonClick = () => {
     setIsLoginFormOpen(true);
   };
   const handleSignUpButtonClick = () => {
     setSignUp(true);
-    // hasDialogBeenShown(false)
   };
 
   const handleCancel = () => {
@@ -287,6 +279,7 @@ const GlobalState = ({ children }) => {
         setUser,
         token,
         setToken,
+        
         error,
         setError,
         isUserLoggedIn,
@@ -316,10 +309,7 @@ const GlobalState = ({ children }) => {
         setReceiverText,
         messages,
         setMessages,
-        showChats,
-        setShowChats,
-        showDonationBox,
-        setShowDonationBox,
+       
         data,
         ComapanyName,
         handleCompanyChange,
@@ -341,13 +331,8 @@ const GlobalState = ({ children }) => {
         setHasDialogBeenShown,
         handleLoginButtonClick,
         handleCancel,
-        isMenu,
-        setIsMenu,
-        isScrolled,
-        setIsScrolled,
         isLoginFormOpen,
         setIsLoginFormOpen,
-        toggleMenu,
       }}
     >
       {children}

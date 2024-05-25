@@ -9,7 +9,7 @@ import { GiCancel } from "react-icons/gi";
 export default function RightSide() {
   return (
     <>
-      <div className="flex ">
+      {/* <div className="flex "> */}
         <div className="fixed bottom-3 left-4 z-10">
           <button className="relative ">
             <span className="hover:shadow-black hover:shadow-md inline-block h-9 w-10 bg-red-400 rounded-md">
@@ -24,26 +24,11 @@ export default function RightSide() {
                 <h1 className="">How would you rate your experience?</h1>
                 <GiCancel />
               </div>
-              {/* <div className=" pb-3 text-yellow-500 flex justify-around">
-                <IconContext.Provider value={{ size: "2rem" }}>
-                  <button className="hover:text-yellow-400">
-                    <FaFaceAngry />
-                  </button>
-                  <button className="hover:text-yellow-400">
-                    <FaFaceFrown />
-                  </button>
-                  <button className="hover:text-yellow-400">
-                    <FaFaceGrin />
-                  </button>
-                  <button className="hover:text-yellow-400">
-                    <FaFaceGrinHearts />
-                  </button>
-                </IconContext.Provider>
-              </div> */}
+            
             </div>
           </button>
         </div>
-      </div>
+      {/* </div> */}
     </>
   );
 }

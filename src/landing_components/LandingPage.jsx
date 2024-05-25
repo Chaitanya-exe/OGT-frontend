@@ -9,19 +9,13 @@ import { motion } from "framer-motion";
 import Header from "../page_components/header";
 import Main from "../page_components/Main";
 import { GlobalContext } from "../Context";
-// import { Route, Routes } from 'react-router-dom'
 
 const LandingPage = () => {
-  const { isScrolled } = useContext(GlobalContext);
   const [isDeveloperChecked,setIsDeveloperChecked] = useState(true)
 
   return (
     <>
       <motion.div
-        //       initial={{opacity:0}}
-        //  animate={{opacity:1}}
-        //  exit={{opacity:0}}
-
         initial={{ width: 0, opacity: 0 }}
         animate={{ width: "100%", opacity: 1 }}
         exit={{

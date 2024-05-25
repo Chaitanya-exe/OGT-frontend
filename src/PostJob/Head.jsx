@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from "react-router-dom"
 const List=[
     {num: "3,000,000+",
@@ -16,7 +16,9 @@ const List=[
                         text: "members in our private Slack Community"},
     ]
 
-const Head = () => {
+
+
+const Head = ({stepNum,setStepNum}) => {
   return (
     <>
     <nav className="bg-gradient-to-r rounded-xl  from-indigo-200 to-pink-100 via-blue-100 " >
@@ -26,10 +28,10 @@ const Head = () => {
             <Link className="text-3xl font-lexend font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600 ">O G T</Link>
            </div> 
         <div className='mx-auto '>
-            <ol type='1' className='flex space-x-6'>
-                <li>1. create your list</li>
-                <li>2. preview</li>
-                <li>3. confirm & pay</li>
+            <ol type='1' className='flex space-x-6 *:capitalize'>
+                <li className={`${stepNum === 1 ? "font-semibold ogt " : ""} text-slate-600`}>1.Complete your Project Form</li>
+                <li className={`${stepNum === 2 ? "font-semibold ogt" : ""} text-slate-600`}>2. preview</li>
+                <li className={`${stepNum === 3 ? "font-semibold ogt" : ""} text-slate-600`}>3. confirm & pay</li>
             </ol>
         </div>
 

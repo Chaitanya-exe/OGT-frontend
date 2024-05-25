@@ -17,16 +17,16 @@ export default function Jobs() {
    const {data} = useContext(GlobalContext)
   
   return (
-    <div >
+    <div className="w-full mt-2" >
       {data.map((job, index) => (
         <div className="group text-sm ">
           <div
             key={index}
-            className={
-              index < Math.ceil(data.length / 2)
-                ? "group-hover:h-24 ease-in-out group-hover:bg-opacity-70  items-center flex p-1 border my-1 rounded-lg bg-gradient-to-l from-blue-100 to-pink-100"
-                : "group-hover:h-24 ease-in-out group-hover:bg-opacity-70 items-center flex p-1 border my-1 rounded-lg bg-gradient-to-l from-purple-100 to-orange-100"
-            }
+            className={`
+             ${ index < Math.ceil(data.length / 2)
+                ? " from-blue-100 to-pink-100" : "from-purple-100 to-orange-100" }
+                 group-hover:h-24 ease-in-out group-hover:bg-opacity-70  items-center flex p-1 border my-1 rounded-lg bg-gradient-to-l 
+           ` }
           >
             <div className="w-16 h-16 overflow-hidden rounded-full">
               <img
@@ -34,6 +34,7 @@ export default function Jobs() {
                 src={job.imgPath}
               />
             </div>
+            
             <div>
               <div className="group-hover:text-lg mb-1 hover:opacity-60  flex *:font-semibold capitalize *:mx-2">
                 <h1 className="font-Montserrat">{job.title}</h1>

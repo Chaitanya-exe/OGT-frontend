@@ -1,6 +1,4 @@
 import React, { useContext, } from "react";
-import Head from "./Head";
-import Help from "./Help";
 import { GlobalContext } from "../Context";
 
 // const Location = [
@@ -23,9 +21,9 @@ const AboutJob = () => {
   return (
     <>
       <div>
-        <Head />
+       
         <form className="text-sm m-8 pt-5 *:my-3 text-slate-900">
-          <div className="*:my-1">
+          {/* <div className="*:my-1">
             <h1 className="text-xl pb-4 font-bold font-rio">
               Tell us about
               <span className="text-blue-600"> your Job</span>
@@ -46,9 +44,9 @@ const AboutJob = () => {
               placeholder="https://your-company.com/careers/your-job-title"
               className="w-full border text-slate-500 p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md"
             />
-          </div>
+          </div> */}
           <div className=" *:my-1">
-            <h2 className=" font-semibold">Job Title*</h2>
+            <h2 className=" font-semibold">Project Title*</h2>
             <input
               value={project.title}
               onChange={(e) => {
@@ -184,9 +182,10 @@ const AboutJob = () => {
             )}
           </div> */}
           <div className="*:my-1">
-            <h2 className=" font-semibold text-sm">Salary</h2>
+            <h2 className=" font-semibold text-sm">Salary (in $)</h2>
             <input
   value={project.price}
+  placeholder="in $"
               onChange={(e) => {
                 const {name} = e.target
                 setProject({...project,[name] : e.target.value})
@@ -195,6 +194,7 @@ const AboutJob = () => {
               id="price"
               name="price"
               type="number"
+              min={3}
               autoComplete="off"
               required
               placeholder='Best format is $USD per year,such as: "$50k - $60k'
@@ -217,7 +217,7 @@ const AboutJob = () => {
               placeholder='delivery time for project such as: "2 day or 10 hr"'
               className="w-full border  p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md"
             />
-            <p className=" italic text-sm font-thin tracking-wide">
+            {/* <p className=" italic text-sm font-thin tracking-wide">
               <span className="text-slate-900 font-semibold ">
                 Highly Recommended
               </span>
@@ -225,10 +225,10 @@ const AboutJob = () => {
               mandatory in some US states and other countries. It's also needed
               for Google to list your job. Best format is $USD per year, such
               as: "$50k - $60k".
-            </p>
+            </p> */}
           </div>
           <div className=" *:my-1">
-            <h2 className="font-semibold text-sm">Job Description*</h2>
+            <h2 className="font-semibold text-sm">Project Description*</h2>
             <p className=" italic text-sm font-thin tracking-wide">
               Don’t worry if that’s not 100% perfect, you can
               <span className="text-slate-900 font-semibold">
@@ -256,6 +256,26 @@ const AboutJob = () => {
               placeholder="Enter your message here"
             ></textarea>
           </div>
+          <div className="*:my-1">
+          <h1 className="text-xl pb-4 font-bold font-rio">
+            Tell us about
+            <span className="text-blue-600"> User</span>
+          </h1>
+          <h2 className=" font-semibold ">UserName*</h2>
+          <input
+            value={project.postedBy}
+            onChange={(e)=>
+            { const {name,value} = e.target
+              setProject({...project,[name]: e.target.value})}}
+            id="postedBy"
+            name="postedBy"
+            type="text"
+            required
+            autoComplete="off"
+            placeholder=""
+            className="w-full border  p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md"
+          />
+        </div>
         </form>
       </div>
     

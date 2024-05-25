@@ -1,9 +1,12 @@
 import React from 'react'
-import Left from './Left'
+import Left from './LeftDonateCard'
 import Right from './Right'
 import { TbArrowCurveRight } from "react-icons/tb";
 import CTA from './CTA';
 import {motion} from "framer-motion"
+import LeftDonateCard from './LeftDonateCard';
+import RightDonateCard from './Right';
+import CTAforDonation from './CTA';
 
 
 const DonateSteps = () => {
@@ -18,16 +21,16 @@ const DonateSteps = () => {
     whileInView={{x:0}} 
     transition={{type:"spring",stiffness:150}}
     className=' flex -space-x-6 group'>
-      <Left/>
+      <LeftDonateCard/>
       <div className='relative z-10 group-hover:-translate-y-4 opacity-0 group-hover:opacity-100 group-hover:duration-300 group-hover:delay-200'>
 
       <TbArrowCurveRight className='size-10 rotate-45 bottom-0 text-sky-900 absolute'/>
       </div>
 
-      <Right />
+      <RightDonateCard />
 
     </motion.div>
-      <CTA />
+      <CTAforDonation />
       
     </motion.div>
   )

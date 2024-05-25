@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { IoMagnet } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { GlobalContext } from "../Context";
 import Content from "../logIn/Content";
@@ -32,22 +31,28 @@ const item = {
   },
 };
 
-export default function Header({ text = "OGT", speed = "1000" }) {
+export default function Header({ text = "OGT", speed = "1000" ,showChats,setShowChats,isScrolled,setIsScrolled}) {
   const {
-    showChats,
-    setShowChats,
-    isMenu,
+    // showChats,
+    // setShowChats,
+    // isMenu,
     handleLoginButtonClick,
     handleCancel,
-    isScrolled,
-    setIsScrolled,
+    // isScrolled,
+    // setIsScrolled,
     isLoginFormOpen,
-    toggleMenu,
+    // toggleMenu,
     handleSignUpButtonClick,
     isUserLoggedIn,
-    setISUserLoggedIn,
-    user,
   } = useContext(GlobalContext);
+
+  // const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenu, setIsMenu] = useState(false);
+
+
+  const toggleMenu = () => {
+    setIsMenu(!isMenu);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,29 +69,28 @@ export default function Header({ text = "OGT", speed = "1000" }) {
     };
   }, []);
 
-  // console.log(showChats)
-
   return (
     <>
-      <header class="text-slate-800">
+      <header className="">
         <div>
           <div class=" flex p-5 items-center justify-between relative">
-            <div>
-              <Link to="/home" className="text-3xl font-lexend font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600 ">
-                O G T
-              </Link>
-            </div>
+            <Link
+              to="/home"
+              className="text-3xl font-lexend font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-pink-600 "
+            >
+              O G T
+            </Link>
+
             <nav class="md:ml-auto  items-center  text-base hidden md:flex justify-between space-x-6">
-              <div className="flex space-x-3 justify-center items-center">
-                <div onClick={() => setShowChats(!showChats)}>
-                  <RiMessage3Fill className="size-5 text-slate-700 inline-flex mr-1 mb-1 align-middle" />
-                  Messages
-                </div>
-                {/* <div onClick={() => setShowChats(true)}><RiMessage3Fill className="size-5 inline-flx mx-auto align-middle" />Notification</div> */}
+              {/* <div className="flex space-x-3 justify-center items-center"> */}
+              <div onClick={() => setShowChats(!showChats)}>
+                <RiMessage3Fill className="size-5 text-slate-700 inline-flex mr-1 mb-1 align-middle" />
+                Messages
+                {/* </div> */}
               </div>
+
               <a class="mr-5 inline-flex text-gray-900 group/first ">
                 Contact us
-                {/* <i class="fa-solid fa-angle-down"></i> */}
                 <span className="p-2">
                   <svg
                     className="h-3 w-3"
@@ -98,8 +102,15 @@ export default function Header({ text = "OGT", speed = "1000" }) {
                 </span>
                 <div className="shadow-md hidden group-hover/first:block text-orange-950 absolute z-10 bg-sky-200  capitalize lg:left-2/7 top-12 rounded px-1 py-2">
                   <ul className=" *:p-1 *:block">
-                    <Link to="/contactDetails" className="hover:text-orange-800">Contact details</Link>
-                    <Link to="/aboutUs" className="hover:text-orange-800">about us </Link>
+                    <Link
+                      to="/contactDetails"
+                      className="hover:text-orange-800"
+                    >
+                      Contact details
+                    </Link>
+                    <Link to="/aboutUs" className="hover:text-orange-800">
+                      about us{" "}
+                    </Link>
                   </ul>
                 </div>
               </a>
@@ -122,6 +133,7 @@ export default function Header({ text = "OGT", speed = "1000" }) {
                 </div>
               </a>
             </nav>
+
             {isUserLoggedIn ? (
               <Dashboard />
             ) : (
@@ -181,6 +193,7 @@ export default function Header({ text = "OGT", speed = "1000" }) {
                 </Link>
               </div>
             )}
+
             <button
               className="relative group rounded bg-sky-800 text-white "
               onClick={() => toggleMenu()}

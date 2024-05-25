@@ -6,7 +6,7 @@ import Progess from "./Progess";
   
 const gridValues = [10, 20, 30,50,100,200];
 
-const Left = () => {
+const LeftDonateCard = () => {
   let [activeTab, setActiveTab] = useState(2);
   const [choosenAmount,setChoosenAmount] = useState('')
   const [isChoosenAmount,setIsChoosenAmount] = useState(false)
@@ -100,4 +100,4 @@ const Left = () => {
   );
 };
 
-export default Left;
+export default LeftDonateCard;

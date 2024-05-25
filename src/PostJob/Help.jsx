@@ -1,24 +1,13 @@
 import React, { useContext, useState } from "react";
-import { FaQuestionCircle } from "react-icons/fa";
-import { FaShopify } from "react-icons/fa6";
-import { FaStripe } from "react-icons/fa";
-import { SiYoutubetv } from "react-icons/si";
-import { FaGithub } from "react-icons/fa";
-import { IconContext } from "react-icons";
 import { FcGlobe } from "react-icons/fc";
 import { FcMoneyTransfer } from "react-icons/fc";
-import Form_right from "./Form_right";
 import { GlobalContext } from "../Context";
 
 const Help = () => {
   const {
-    jobTitle,
-    ComapanyName,
-    selectedOption,
-    locationArr,
+  
     logoImg,
-    employmentType,
-    location,
+   
     project
   } = useContext(GlobalContext);
   return (
@@ -192,13 +181,13 @@ const Help = () => {
 
 //                 </div>
 //         </div> */}
-      <div className="fixed bottom-0 right-0 left-0  bg-gradient-to-bl  from-indigo-200 to-pink-100 via-blue-100 shadow-slate-900 shadow-2xl">
+      <div className="fixed bottom-0 right-0 left-0   bg-gradient-to-bl  from-indigo-200 to-pink-100 via-blue-100 shadow-slate-900 shadow-2xl">
         <div className="group p-2 text-sm flex justify-center  ">
-          <div className="group-hover:bg-opacity-70  border border-slate-800 items-center flex p-1 my-1 rounded-lg bg-blue-100">
-            <div className="w-14 h-14 bg-zinc-200 border-black border flex justify-center items-center overflow-hidden rounded-full">
+          <div className="group-hover:bg-opacity-70 w-1/3 border border-slate-800 items-center flex p-1 my-1 rounded-lg bg-blue-100">
+            {/* <div className="w-14 h-14 bg-zinc-200 border-black border flex justify-center items-center overflow-hidden rounded-full">
               {logoImg && <img src={URL.createObjectURL(logoImg)} alt="no" />}
-            </div>
-            <div>
+            </div> */}
+            <div className="flex-1">
               <div className="mb-1 hover:opacity-60 flex *:font-semibold capitalize *:mx-2">
                 <h1>{project.title === "" ? "Your Job" : project.title}</h1>
                 <li className=" list-disc">
@@ -228,7 +217,6 @@ const Help = () => {
           </div>
         </div>
       </div>
-      {/* // </div> */}
     </>
   );
 };

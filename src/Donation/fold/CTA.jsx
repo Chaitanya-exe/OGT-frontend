@@ -17,7 +17,7 @@ const hehe ={
     }
 }
 
-const CTA = () => {
+const CTAforDonation = () => {
     const {setStepCount} = useContext(GlobalContext)
   return (
     <motion.div
@@ -46,4 +46,4 @@ const CTA = () => {
   );
 };
 
-export default CTA;
+export default CTAforDonation;
