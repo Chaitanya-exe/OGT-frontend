@@ -17,13 +17,14 @@ import AboutUs from "./About us/AboutUs";
 import FAQs from "./Faqs/FAQs";
 import Course from "./Resources/Course";
 import ConatctUs from "./Contact-details/ConatctUs";
+import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
-  const {isLoginFormOpen,handleCancel} = useContext(GlobalContext)
-  // const location = useLocation
+  // const {isLoginFormOpen,handleCancel} = useContext(GlobalContext)
   return (
     <>
       <AnimatePresence>
+      <ScrollToTop />
         <Routes>
           <Route exact path="/Home" element={<HomePage />} />
           <Route path="/" element={<LandingPage />} />
