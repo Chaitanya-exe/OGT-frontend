@@ -44,6 +44,8 @@ export default function Header({ text = "OGT", speed = "1000" ,showChats,setShow
     // toggleMenu,
     handleSignUpButtonClick,
     isUserLoggedIn,
+    setISUserLoggedIn,
+    user,
   } = useContext(GlobalContext);
 
   // const [isScrolled, setIsScrolled] = useState(false);

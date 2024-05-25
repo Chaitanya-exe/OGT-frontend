@@ -8,7 +8,7 @@ import { data } from "autoprefixer";
 const LogIn = ({ onCancel }) => {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState();
-  const { user, token, setToken, setError, error, setISUserLoggedIn, setUser } =
+  const { user, token, setToken, setError, error, setIsUserLoggedIn, setUser } =
     useContext(GlobalContext);
 
   const handleLogin = async (e) => {
@@ -19,13 +19,13 @@ const LogIn = ({ onCancel }) => {
         password: userPassword,
       };
       const response = await axios.post(
-        "http://localhost:5000/api/users/login",
+        "https://ogt-backend.onrender.com/api/users/login",
         reqData
       );
       const resData = await response.data;
       const loginToken = await resData.token;
       const userInfo = await resData.info;
-      setISUserLoggedIn(true);
+      setIsUserLoggedIn(true);
 
       onCancel()
 
@@ -34,10 +34,9 @@ const LogIn = ({ onCancel }) => {
         ...userInfo,
         password: "",
       });
-      console.log(`You have been logged in as ${user.username}`);
     } catch (err) {
       setError(err.response.data);
-      console.log(error);
+      console.log(err.response.data);
     }
   };
 
