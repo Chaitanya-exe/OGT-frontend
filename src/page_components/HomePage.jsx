@@ -17,16 +17,6 @@ const backdrop = {
 };
 
 const HomePage = () => {
-  const {
-    // showChats,setShowChats,
-    signUp,
-    // isScrolled,
-    // showDonationBox,
-    // setShowDonationBox,
-    setSignUp,
-    hasDialogBeenShown,
-    setHasDialogBeenShown,
-  } = useContext(GlobalContext);
 
   const [showDonationBox, setShowDonationBox] = useState(false);
   const [showChats, setShowChats] = useState(false);
@@ -84,10 +74,8 @@ const HomePage = () => {
         </motion.div>
       )} */}
         <div className="mx-16 *:rounded-lg">
-          {/* <div className="w-full mt-2"> */}
           <Advertisements />
           <Jobs />
-          {/* </div> */}
           <RightSide />
           <DonateSteps />
         </div>

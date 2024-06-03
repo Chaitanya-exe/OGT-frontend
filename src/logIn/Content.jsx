@@ -29,26 +29,7 @@ const Content = ({onCancel}) => {
             </motion.button>
           </div>
           <p className="">You have to be<span className='font-semibold'> Logged In</span> to use the platform</p>
-          {/* <div className="mt-6">
-            <p className=" flex justify-center items-center space-x-3">
-              <PiHandWavingBold className="text-yellow-600 mr-2 size-4 " />
-              Only paying users can Log In
-              <GrPersonalComputer />
-            </p>
-
-            <p className="flex justify-center items-center space-x-2">
-              <LuAlertTriangle className="mr-2 size-4 text-slate-950" />
-              Non-paying users have no login/password on Remotive
-              <GrPersonalComputer className="" />
-            </p>
-            <p className="flex justify-center items-baseline space-x-3">
-              <IoSparkles className="text-red-600 size-4" />
-              <Link className="underline underline-offset-2 pr-1" to="/">
-                Join Ogt Acceletor{" "}
-              </Link>{" "}
-              to get access today!
-            </p>
-          </div> */}
+         
         </div>
 
         <LogIn onCancel={onCancel} />

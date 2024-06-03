@@ -206,8 +206,7 @@ const GlobalState = ({ children }) => {
   const [jobTitle, setJobTitle] = useState("");
   const [ComapanyName, setCompanyName] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
-  const [price, setPrice] = useState();
-  const [Jobdesciption, setJobDescription] = useState("");
+ 
   const [token, setToken] = useState("");
 
   
@@ -243,10 +242,10 @@ const GlobalState = ({ children }) => {
   const [receiverText, setReceiverText] = useState("");
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(true);
 
   const [user, setUser] = useState({
-    username: "",
+    username: "Rashmi",
     firstName: "",
     lastName: "",
     age: 18,

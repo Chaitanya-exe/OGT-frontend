@@ -5,7 +5,7 @@ const Dashboard = () => {
   const {user, token} = useContext(GlobalContext);
   const [showDashboard, setShowDashboard] = useState(true)
   return (
-    <div className=''
+    <div className='bg-red-400 w-[20vw]  sticky right-0'
     onClick={() => setShowDashboard(prev => !prev)} >
       {`${user.username}`}
     </div>

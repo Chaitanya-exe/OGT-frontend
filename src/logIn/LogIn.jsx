@@ -5,13 +5,19 @@ import { FcGoogle } from "react-icons/fc";
 import { GlobalContext } from "../Context";
 import axios from "axios";
 import { data } from "autoprefixer";
+import PulseLoader from "react-spinners/PulseLoader";
+
+
 const LogIn = ({ onCancel }) => {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState();
-  const { user, token, setToken, setError, error, setIsUserLoggedIn, setUser } =
+  const [loading,setLoading] = useState(false)
+  const [error,setError] = useState("")
+  const { user, setToken, isUserLoggedIn ,setIsUserLoggedIn, setUser } =
     useContext(GlobalContext);
 
   const handleLogin = async (e) => {
+    setLoading(true)
     try {
       e.preventDefault();
       const reqData = {
@@ -26,24 +32,30 @@ const LogIn = ({ onCancel }) => {
       const loginToken = await resData.token;
       const userInfo = await resData.info;
       setIsUserLoggedIn(true);
-
       onCancel()
-
       setToken(loginToken);
       setUser({
         ...userInfo,
         password: "",
       });
     } catch (err) {
-      setError(err.response.data);
-      console.log(err.response.data);
+      setLoading(false)
+      // setError(err.response.data);
+      // console.log(err.response.data);
+      const errorMessage = err.response?.data?.error || 'An error occurred';
+      setError(errorMessage);
+      console.error(errorMessage);
     }
+    setLoading(false)
   };
 
   return (
     <>
       <div className=" mx-auto w-full bg-slate-100 z-50 shado rounded-2xl overflow-hidden text-center text-sky-900 ">
         <form className="my-10 px-8 ">
+        {error && (
+          <p className="capitalize text-red-500 text-sm underline ">{error}</p>
+        )}
           <div className="relative">
             <input
               onChange={(e) => setUserName(e.target.value)}
@@ -82,11 +94,23 @@ const LogIn = ({ onCancel }) => {
             </label>
           </div>
           <div className="mt-3 space-y-3">
-            <button
+            <button 
               className="button w-full hover:bg-slate-100 font-semibold hover:border border-slate-950 hover:text-slate-950"
               onClick={(e) => handleLogin(e)}
             >
-              Log In
+              Log In {loading && (
+                <PulseLoader
+
+
+    color={'#ffffff'}
+        loading={true}
+        size={7}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+        className='mx-3'
+      />
+
+              )}
             </button>
             {/* <div  className="flex space-x-2 items-center justify-center px-5 py-3 my-2 w-full rounded-lg bg-slate-200/70 font-semibold border text-slate-950">
 <FcGoogle className="size-5"/>
