@@ -1,8 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext,useState,useEffect } from "react";
 import { GlobalContext } from "../Context";
 
 const AboutJob = () => {
   const { JobLi, project, setProject } = useContext(GlobalContext);
+
+  const [conuntryList, setCountryList] = useState([]);
+
+  useEffect(() => {
+    fetch("https://restcountries.com/v3.1/all")
+      .then((response) => response.json())
+      .then((data) => {
+        const countryNames = data.map((country) => country.name.common);
+        countryNames.sort((a, b) => a.localeCompare(b));
+        setCountryList(countryNames);
+      })
+      .catch((error) => {
+        console.error("Error fetching country names:", error);
+      });
+  });
   const Fill=[{
     id:1,
     name:"Project title",
@@ -56,18 +71,22 @@ const AboutJob = () => {
 
 ]
 
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  setProject(prevProject => ({
+    ...prevProject,
+    [name]: value
+  }));
+}
+
   return (
     <>
-      <div>
-        <form className="text-sm m-8  *:my-3 text-slate-900">
+        <form className="text-sm mx-auto w-[56vw] *:my-5 text-slate-900">
           <div className=" *:my-1">
-            <label className=" font-semibold">Project Title*</label>
+            <label className=" font-semibold after:content-['*'] after:ml-0.5 after:text-red-500">Project Title</label>
             <input
               value={project.title}
-              onChange={(e) => {
-                const { name } = e.target;
-                setProject({ ...project, [name]: e.target.value });
-              }}
+              onChange={handleChange}
               id="title"
               name="title"
               type="text"
@@ -78,30 +97,10 @@ const AboutJob = () => {
             />
           </div>
           <div className="*:my-1">
-            <label className=" font-semibold ">Username (Posted by)*</label>
-            <input
-              value={project.postedBy}
-              onChange={(e) => {
-                const { name, value } = e.target;
-                setProject({ ...project, [name]: e.target.value });
-              }}
-              id="postedBy"
-              name="postedBy"
-              type="text"
-              required
-              autoComplete="off"
-              placeholder="Posted by"
-              className="w-full border  p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md"
-            />
-          </div>
-          <div className="*:my-1">
-            <label className=" font-semibold ">Company*</label>
+            <label className=" font-semibold after:content-['*'] after:ml-0.5 after:text-red-500 ">Company</label>
             <input
               value={project.company}
-              onChange={(e) => {
-                const { name, value } = e.target;
-                setProject({ ...project, [name]: e.target.value });
-              }}
+              onChange={handleChange}
               id="company"
               name="company"
               type="text"
@@ -112,13 +111,10 @@ const AboutJob = () => {
             />
           </div>
           <div className=" *:my-1">
-            <label className=" font-semibold">Catergory*</label>
+            <label className=" font-semibold after:content-['*'] after:ml-0.5 after:text-red-500">Catergory</label>
             <select
               value={project.category}
-              onChange={(e) => {
-                const { name } = e.target;
-                setProject({ ...project, [name]: e.target.value });
-              }}
+              onChange={handleChange}
               name="category"
               className="w-full bg-white border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md"
             >
@@ -129,16 +125,28 @@ const AboutJob = () => {
               ))}
             </select>
           </div>
+          <div className=" *:my-1">
+            <label className=" font-semibold after:content-['*'] after:ml-0.5 after:text-red-500">Country</label>
+            <select
+              value={project.country}
+              onChange={handleChange}
+              name="country"
+              className="w-full bg-white border p-2 text-xs focus:outline-none focus:border-orange-500 focus:border-2 focus:border-opacity-30 rounded-md"
+            >
+              {conuntryList.map((country,index) => (
+                <option key={index} value={country}>
+                  {country}
+                </option>
+              ))}
+            </select>
+          </div>
 
           <div className="*:my-1">
-            <label className=" font-semibold text-sm">Salary (in $)*</label>
+            <label className=" font-semibold after:content-['*'] after:ml-0.5 after:text-red-500">Salary (in $)</label>
             <input
               value={project.price}
               placeholder="15 $ on completion"
-              onChange={(e) => {
-                const { name } = e.target;
-                setProject({ ...project, [name]: e.target.value });
-              }}
+              onChange={handleChange}
               id="price"
               name="price"
               type="number"
@@ -149,13 +157,10 @@ const AboutJob = () => {
             /></div>
             <div className=" *:my-1">
 
-            <label className=" font-semibold text-sm">Delivery Time*</label>
+            <label className=" font-semibold after:content-['*'] after:ml-0.5 after:text-red-500">Delivery Time</label>
             <input
               value={project.DeliveryTime}
-              onChange={(e) => {
-                const { name } = e.target;
-                setProject({ ...project, [name]: e.target.value });
-              }}
+              onChange={handleChange}
               id="DeliveryTime"
               name="DeliveryTime"
               type="text"
@@ -167,7 +172,7 @@ const AboutJob = () => {
            
           </div>
           <div className=" *:my-1">
-            <h2 className="font-semibold text-sm">Project Description*</h2>
+            <h2 className="font-semibold after:content-['*'] after:ml-0.5 after:text-red-500">Project Description</h2>
             <p className=" italic text-sm font-thin tracking-wide">
               Don’t worry if that’s not 100% perfect, you can
               <span className="text-slate-900 font-semibold">
@@ -183,10 +188,7 @@ const AboutJob = () => {
             </p>
             <textarea
               value={project.desc}
-              onChange={(e) => {
-                const { name } = e.target;
-                setProject({ ...project, [name]: e.target.value });
-              }}
+              onChange={handleChange}
               className="w-full p-2 shadow focus:outline-none"
               name="desc"
               rows="15"
@@ -195,7 +197,6 @@ const AboutJob = () => {
             ></textarea>
           </div>
         </form>
-      </div>
     </>
   );
 };

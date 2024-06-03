@@ -2,6 +2,18 @@ import React, { createContext, useState, useEffect } from "react";
 
 export const GlobalContext = createContext(null);
 
+// interface Project {
+//   title: string;
+//   company: string;
+//   desc: string;
+//   price: number;
+//   category: string;
+//   postedBy: string;
+//   DeliveryTime: string;
+//   isCompleted: boolean;
+//   id: string;
+// }
+
 const JobLi = [
   "Software Development",
   "Web Development",
@@ -198,6 +210,9 @@ const GlobalState = ({ children }) => {
   const [Jobdesciption, setJobDescription] = useState("");
   const [token, setToken] = useState("");
 
+  
+
+
   const [project, setProject] = useState({
     title: "",
     company:"",
@@ -205,8 +220,10 @@ const GlobalState = ({ children }) => {
     price: 8,
     category: "",
     postedBy: "",
+    country:"India",
     DeliveryTime: "",
     isCompleted: false,
+    id:""
   });
 
   const [logoImg, setLogoImg] = useState(null);

@@ -15,8 +15,8 @@ const Form_page = () => {
   const { project } = useContext(GlobalContext);
   return (
     <>
-      <div className="space-y-1 relative">
-        <div className="divide-y-2 mb-4 mx-8 ">
+      <div className="relative">
+        <div className="mb-6 space-y-8 mx-10">
           <Head stepNum={stepNum} setStepNum={setStepNum} />
           <AboutJob />
         </div>
