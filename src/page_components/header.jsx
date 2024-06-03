@@ -33,22 +33,15 @@ const item = {
 
 export default function Header({ text = "OGT", speed = "1000" ,showChats,setShowChats,isScrolled,setIsScrolled}) {
   const {
-    // showChats,
-    // setShowChats,
-    // isMenu,
+    
     handleLoginButtonClick,
     handleCancel,
-    // isScrolled,
-    // setIsScrolled,
+   
     isLoginFormOpen,
-    // toggleMenu,
     handleSignUpButtonClick,
     isUserLoggedIn,
-    setISUserLoggedIn,
-    user,
   } = useContext(GlobalContext);
 
-  // const [isScrolled, setIsScrolled] = useState(false);
   const [isMenu, setIsMenu] = useState(false);
 
 
@@ -74,7 +67,6 @@ export default function Header({ text = "OGT", speed = "1000" ,showChats,setShow
   return (
     <>
       <header className="">
-        <div>
           <div class=" flex p-5 items-center justify-between relative">
             <Link
               to="/home"
@@ -84,11 +76,9 @@ export default function Header({ text = "OGT", speed = "1000" ,showChats,setShow
             </Link>
 
             <nav class="md:ml-auto  items-center  text-base hidden md:flex justify-between space-x-6">
-              {/* <div className="flex space-x-3 justify-center items-center"> */}
               <div onClick={() => setShowChats(!showChats)}>
                 <RiMessage3Fill className="size-5 text-slate-700 inline-flex mr-1 mb-1 align-middle" />
                 Messages
-                {/* </div> */}
               </div>
 
               <a class="mr-5 inline-flex text-gray-900 group/first ">
@@ -258,7 +248,6 @@ export default function Header({ text = "OGT", speed = "1000" ,showChats,setShow
               )}
             </button>
           </div>
-        </div>
 
         {isLoginFormOpen && (
           <div className="flex fixed top-0 left-0 w-full h-full items-center justify-center bg-black/80 z-10">

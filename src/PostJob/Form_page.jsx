@@ -4,10 +4,11 @@ import AboutJob from "./AboutJob";
 import Head from "./Head";
 import Help from "./Help";
 
-import Footer from "../page_components/Footer";
+// import Footer from "../page_components/Footer";
 import axios from "axios";
 import { GlobalContext } from "../Context";
 import {motion,AnimatePresence} from "framer-motion"
+import Footer from "../landing_components/footer";
 
 const Form_page = () => {
   const [stepNum,setStepNum] = useState(2)
@@ -38,8 +39,8 @@ const Form_page = () => {
 
         <Help />
       </div>
-      <div className="mb-20">
-        <Footer />
+      <div className="mb-24 bg-gradient-to-br  from-indigo-200 to-pink-100 via-blue-100 font-semibold">
+        <Footer route="home" />
 
       </div>
       {stepNum === 2 ? <Preview project={project} setStepNum={setStepNum} /> : null}

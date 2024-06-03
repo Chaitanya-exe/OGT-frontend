@@ -23,9 +23,9 @@ const LandingPage = () => {
           opacity: 0,
           transition: { duration: 0.1 },
         }}
-        className="bg-gradient-to-l from-pink-300 via-orange-200 to-blue-200  font-fontBody "
+        className={`${isDeveloperChecked ? "bg-gradient-to-l" : "bg-gradient-to-l from-purple-200 via-blue-200 to-pink-100" }  from-pink-300 via-orange-200 to-blue-200 delay-150 font-fontBody transition-all duration-300 ease-in-out`}
       >
-        <div className="bg-gradient-to-l transition-all ease-linear fixed z-10 right-0 left-0 top-0">
+        <div className={`${isDeveloperChecked ? " bg-gradient-to-l" : "bg-gradient-to-l" } transition-all ease-in-out duration-300 fixed z-10 right-0 left-0 top-0 `}>
           <Header />
         </div>
         <Main route="/" isDeveloperChecked={isDeveloperChecked} setIsDeveloperChecked={setIsDeveloperChecked}/>

@@ -10,7 +10,7 @@ import { IconContext } from "react-icons";
 
 const Footer = () => {
   return (
-    <div className="bg-sky-10 bg-gradient-to-br  from-indigo-200 to-pink-100 via-blue-100 mt-8">
+    <div className="bg-gradient-to-br  from-indigo-200 to-pink-100 via-blue-100 mt-8">
       <div className="flex justify-between p-1 mx-4 py-8 ">
         <div>
           <h1 className="text-orange-950 font-semibold uppercase">

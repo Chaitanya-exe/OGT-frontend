@@ -66,7 +66,7 @@ const HomePage = () => {
       >
         <div  className=
          {`${isScrolled
-              ? "bg-gradient-to-t from-purple-100 to-blue-200 text-slate-800" : "bg-gradient-to-t from-purple-100 to-orange-50" } transition-all ease-linear  fixed z-50 right-0 left-0 top-0 `}>
+              ? "bg-gradient-to-t from-purple-100 to-blue-200 text-slate-800 shadow" : "bg-gradient-to-t from-purple-100 to-orange-50" } transition-all ease-linear  fixed z-50 right-0 left-0 top-0 `}>
 
         <Header showChats={showChats} setShowChats={setShowChats} isScrolled={isScrolled} setIsScrolled={setIsScrolled} />
         </div>

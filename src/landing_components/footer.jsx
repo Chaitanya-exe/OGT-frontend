@@ -63,8 +63,8 @@ const Footer = ({route}) => {
             </ul>
           </div>
         </div>
-          <div className={` ${route === 'home' ? null : "bg-gradient-to-r"} py-4 flex items-center justify-center font-thin"`}>
-            <p className={`"m-1 ${route == 'aboutus' || route=='Faqs' ? "text-slate-100" : "text-slate-900"} "`}>&copy; 2024, made <span className="ogt ">O G T</span> with</p>
+          <div className={` ${route === 'home' ? "" : "bg-gradient-to-r  from-pink-300 via-orange-200 to-blue-200 "} py-4 flex items-center justify-center font-thin"`}>
+            <p className={`m-1  `}>&copy; 2024, made <span className="ogt ">O G T</span> with</p>
             <FaHeart className="text-red-600 mx-2 -mb-0.5" />
           </div>
           {/* <div className="flex flex-shrink justify-center p-3 *:m-3">
