@@ -200,6 +200,7 @@ const GlobalState = ({ children }) => {
 
   const [project, setProject] = useState({
     title: "",
+    company:"",
     desc: "",
     price: 8,
     category: "",
