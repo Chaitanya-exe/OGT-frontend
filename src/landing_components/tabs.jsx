@@ -142,7 +142,7 @@ Once you've posted your project, qualified Developers will submit proposals outl
       </div>
       <div className="flex content-center mt-24">
         <Link to={"/donate"} className="button mx-auto ">
-          Donate Us
+          Donate, please
         </Link>
       </div>
     </>
