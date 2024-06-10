@@ -2,18 +2,6 @@ import React, { createContext, useState, useEffect } from "react";
 
 export const GlobalContext = createContext(null);
 
-// interface Project {
-//   title: string;
-//   company: string;
-//   desc: string;
-//   price: number;
-//   category: string;
-//   postedBy: string;
-//   DeliveryTime: string;
-//   isCompleted: boolean;
-//   id: string;
-// }
-
 const JobLi = [
   "Software Development",
   "Web Development",
@@ -242,10 +230,10 @@ const GlobalState = ({ children }) => {
   const [receiverText, setReceiverText] = useState("");
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(true);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   const [user, setUser] = useState({
-    username: "Rashmi",
+    username: "CY",
     firstName: "",
     lastName: "",
     age: 18,
